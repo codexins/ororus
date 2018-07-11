@@ -1,0 +1,119 @@
+/**
+ * Components Header Search
+ *
+ */
+
+.header-search-area {
+	width: 100%;
+    display: inline-block;
+    border: 1px solid $cx-primary-color-1;
+    padding: 5px;
+	@extend %rounded-corners;
+
+    .nice-select {
+    	font-size: 13px;
+	    color: #333333;
+	    height: 40px;
+	    line-height: 40px;
+	    width: 32%;
+	    z-index: 9910;
+	    border: 0;
+
+    	@include respond-to(notebook) {
+    		width: 40%;
+    	}
+
+	    &::after {
+		    content: "\f107";
+		    font-family: FontAwesome;
+		    border: 0;
+		    width: auto;
+		    transform-origin: initial;
+		    height: 40px;
+		    line-height: 40px;
+		    transform: rotate(0);
+		    top: 4px;
+		    right: 15px;
+		    font-size: 12px;
+	    }
+
+	    > ul {
+		    max-height: 320px;
+		    overflow-y: auto;
+		    border-radius: 5px;
+		    box-shadow: 0 0 9.6px 0.4px rgba(0, 0, 0, 0.1);
+
+		    li {
+			    text-transform: capitalize;
+			    color: #333;
+			    font-size: 12px;
+		    }
+	    }
+
+	    .option {
+	    	&.selected {
+	    		font-weight: 600;
+	    	}
+	    }
+
+	    &.open {
+	    	&::after {
+	    		transform: rotate(180deg);
+	    	}
+	    }
+    }
+
+    .search-wrapper {
+    	overflow: hidden;
+    	position: relative;
+    	width: 68%;
+
+    	@include respond-to(notebook) {
+    		width: 60%;
+    	}
+
+    	&::before {
+		    content: "";
+		    width: 1px;
+		    height: 16px;
+		    background: #a1a1a1;
+		    position: absolute;
+		    top: 50%;
+		    margin-top: -8px;
+		    left: 0;
+    	}
+
+    	input[type="text"] {
+		    border: 0;
+		    border-left: 0;
+		    box-shadow: none;
+		    height: 40px;
+		    line-height: 40px;
+		    color: #555;
+		    width: 100%;
+		    font-size: 14px;
+		    font-weight: 400;
+		    padding: 0 40px 0 20px;
+    	}
+    }
+
+	.header-search-btn {
+	    padding: 0;
+	    height: 40px;
+	    line-height: 40px;
+	    width: 40px;
+	    font-size: 26px;
+	    position: absolute;
+	    right: 0;
+	    top: 0;
+	    cursor: pointer;
+	    @extend %rounded-corners;
+	    @extend %color-white;
+	    @extend %bgc-primary-1;
+
+	    &:focus,
+	    &:hover {
+	    	background: #555;
+	    }
+	}
+}

@@ -1,0 +1,109 @@
+/**
+ * Components Slider nav
+ *
+ */
+
+.swiper-arrow {
+    margin-top: -23px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 9;
+    width: 46px;
+    height: 46px;
+    text-align: center;
+    line-height: 44px;
+    display: inline-block;
+    top: 50%;
+    opacity: 0;
+    border-radius: 100%;
+    border: 1px solid #e8e8e8;
+    @extend %bgc-white;
+    @extend %cx-transition;
+
+    &.prev {
+    	left: -7px;
+    	i {
+			right: 1px;
+    	}
+    }
+
+    &.next {
+    	right: -7px;
+
+    	i {
+    		left: 1px;
+    	}
+    }
+
+    &:hover {
+    	border-color: $cx-primary-color-1;
+    	@extend %bgc-primary-1;
+    	@extend %color-white;
+    }
+
+    &.swiper-button-disabled {
+		@extend .visually-hidden;
+    }
+
+    &.top-nav {
+        opacity: 1;
+        top: 0;
+        margin-top: -78px;
+        width: 30px;
+        height: 30px;
+        line-height: 29px;
+
+        &.next {
+            right: 0;
+        }
+
+        &.prev {
+            left: auto;
+            right: 38px;
+        }
+    }
+
+    @include media-only(wide, max) {
+        @extend .visually-hidden;
+    }
+}
+
+.swiper-container-horizontal {
+    .swiper-pagination {
+        &.swiper-pagination-bullets {
+            bottom: -45px;
+
+            > span {
+                width: 12px;
+                height: 12px;
+                position: relative;
+                border: 1px solid #898989;
+                opacity: 1;
+                margin: 0px 7px;
+                @extend %bgc-white;
+
+                &::before {
+                    content: '';
+                    width: 4px;
+                    height: 4px;
+                    background: none;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    @extend .circle;
+                    @extend %cx-transition;
+                }
+            }
+            > span:hover,
+            > .swiper-pagination-bullet-active {
+                border-color: $cx-primary-color-1;
+
+                &::before {
+                    @extend %bgc-primary-1;
+                }
+            }
+        }
+    }
+}
+
+

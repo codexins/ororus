@@ -1,0 +1,104 @@
+/**
+ * Layout Footer
+ *
+ */
+
+.footer-widgets-area {
+	.footer-inner {
+		border-bottom: 1px solid #eeeeee;
+		@extend %pb-full;
+	}
+
+	@include media-only(notebook, max) {
+		.widgettitle {
+			cursor: pointer;
+
+			&::after {
+			    content: "\f107";
+			    display: block;
+			    font-weight: 700;
+			    font-family: FontAwesome;
+			    font-size: 20px;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			    color: #333;
+			}
+		}
+
+		.widget-content {
+		    display: none;
+		    margin-bottom: 40px;
+		}
+		
+		.footer-inner {
+			.row {
+				> div[class*='col-'] {
+					&:last-child {
+						.widget-content {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer-description {
+	@extend %pt-full;
+	@extend %pb-full;
+
+	h2 {
+    color: #333333;
+    font-size: 18px;
+    margin: 0;
+    text-transform: capitalize;
+	}
+
+	p {
+    font-size: 14px;
+    color: #666666;
+    margin: 16px 0 0;
+    line-height: 25px;
+    font-weight: 300;
+	}
+}
+
+.footer-copyright {
+	padding: 20px 0;
+	@extend %bgc-primary-1;
+	@extend %color-white;
+
+	p {
+		font-size: 14px;
+		@extend %mb0;
+	}
+
+	a {
+		@extend %color-white;
+
+		&:hover {
+			color: #333;
+		}
+	}
+
+	.footer-payment {
+		text-align: right;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				display: inline-block;
+			    margin-left: 10px;
+
+			    &:first-child {
+			    	margin-left: 0;
+			    }
+			}
+		}
+	}
+}

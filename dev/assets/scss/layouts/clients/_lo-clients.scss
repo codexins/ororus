@@ -1,0 +1,11 @@
+/**
+ * Layout Clients
+ *
+ */
+
+.client-carousel {
+    padding: 5px;
+    border: 1px solid $cx-border-color;
+    @extend %rounded-corners;
+	@extend %overflow-hidden;
+}

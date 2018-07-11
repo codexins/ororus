@@ -1,0 +1,58 @@
+/**
+ * Layout Category Slider
+ *
+ */
+
+.categories-carousel {
+
+	.media-wrapper {
+		position: relative;
+	    overflow: hidden;
+	    @extend .circle;
+	}
+
+	.media-image {
+		@include media-only(notebook, max) {
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.media-content {
+		position: absolute;
+	    bottom: 10px;
+	    background: rgba(#fff,0.5);
+	    left: 0;
+	    right: 0;
+	    width: 100%;
+	    text-align: center;
+		@extend %cx-transition;
+
+		h2 {
+			font-size: 14px;
+		    font-weight: 400;
+		    text-transform: capitalize;
+			@extend %mb0;
+
+			a {
+			    padding: 10px 0 13px;
+			    display: block;
+				color: $cx-text-color;
+			}
+		}
+	}
+
+	.single-category {
+		&:hover {
+			.media-content {
+				@extend %bgc-primary-1;
+			}
+			h2 {
+				a {
+					@extend %color-white;
+				}
+			}
+		}
+	}
+}

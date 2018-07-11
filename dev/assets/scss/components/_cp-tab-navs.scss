@@ -1,0 +1,32 @@
+/**
+ * Components Tab Navs
+ *
+ */
+
+.nav {
+	&.nav-pills {
+		.nav-item {
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		.nav-link {
+			font-size: 14px;
+		    color: #666666;
+		    height: 36px;
+		    line-height: 36px;
+		    padding: 0 15px;
+		    text-transform: capitalize;
+		    border: 1px solid transparent;
+		    @extend %rounded-corners;
+
+			&:hover,
+		    &.active {
+				border-color: $cx-primary-color-1;
+				@extend %bgc-transparent;
+				@extend %color-primary-1;
+		    }
+		}
+	}
+}

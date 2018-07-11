@@ -1,0 +1,30 @@
+/**
+ * Layout Main-menu
+ *
+ */
+ 
+.main-nav-area {
+    position: relative;
+    z-index: 99;
+    background: #6e87b2;
+
+    &.transparent-nav {
+        background: rgba(#fff, 0.1);
+    }
+
+    &.sticky {
+    	position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+	    background: #6d86b1;
+        opacity: 0.9;
+        box-shadow: 0 8px 6px -6px rgba(0,0,0,0.1);
+        animation: 900ms cubic-bezier(.2,1,.22,1) 0s normal none 1 running fadeInDown;
+        @extend %cx-transition;
+
+        &:hover {
+        	opacity: 1;
+        }
+    }
+}

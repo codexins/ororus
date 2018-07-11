@@ -1,0 +1,161 @@
+/**
+ * Components Primary Slider
+ *
+ */
+
+#primary_slider {
+	.swiper-arrow {
+	    margin-top: -30px;
+	    position: absolute;
+	    cursor: pointer;
+	    z-index: 9;
+	    width: 60px;
+	    height: 60px;
+	    text-align: center;
+	    line-height: 66px;
+	    display: inline-block;
+	    background: rgba(#fff, 0.1);
+	    top: 50%;
+	    opacity: 0;
+	    border: 0;
+	    @extend .circle;
+	    @extend %color-white;
+	    @extend %cx-transition;
+
+	    i {
+	    	font-size: 20px;
+	    	position: relative;
+	    }
+
+	    &.prev {
+	    	left: 30px;
+	    	i {
+				right: 1px;
+	    	}
+	    }
+
+	    &.next {
+	    	right: 30px;
+
+	    	i {
+	    		left: 1px;
+	    	}
+	    }
+
+	    &:hover {
+	    	@extend %bgc-white;
+	    	@extend %color-primary-1;
+	    }
+	}
+
+	&:hover {
+		.swiper-arrow {
+			opacity: 1;
+		}
+	}
+
+	.slide-content {
+		width: 510px;
+		position: absolute;
+		top: 50%;
+		margin-top: 60px;
+		transform: translateY(-60%);
+		h1,
+		h2 {
+			text-transform: uppercase;
+			line-height: 1;
+			@extend %color-white;
+		}
+		h1 {
+		    font-size: 60px;
+		    margin: 0 0 20px;
+
+		    @include respond-to(notebook) {
+		    	font-size: 50px;
+		    }
+		}
+
+		h2 {
+		    margin: 5px 0 0;
+		    font-size: 34px;
+		    font-weight: 400;
+
+		    @include respond-to(notebook) {
+		    	font-size: 30px;
+		    }
+		}
+
+		p {
+		    text-transform: inherit;
+		    margin: 5px 0 0;
+		    font-size: 86px;
+		    font-weight: 600;
+		    line-height: 1;
+		    @extend %color-white;
+
+		    @include respond-to(notebook) {
+		    	font-size: 66px;
+		    }
+		}
+
+		.slide-button {
+			margin:30px 0 0;
+			.default-btn {
+				padding: 0 25px;
+				height: 46px;
+				line-height: 46px;
+			}
+		}
+
+		* {
+			animation-duration: 0.8s;
+			animation-fill-mode: both;
+		}
+	}
+
+	.swiper-slide-active {
+		.layer-animation-1 {
+			h1 {
+				animation-delay: 0.5s;
+				animation-name: fadeInLeft;
+			}
+
+			h2 {
+				animation-delay: 0.7s;
+				animation-name: fadeInLeft;
+			}
+
+			p {
+				animation-delay: 0.9s;
+				animation-name: fadeInLeft;
+			}
+
+			.slide-button {
+				animation-delay: 1s;
+				animation-name: fadeInLeft;
+			}
+		}
+
+		.layer-animation-2 {
+			h1 {
+				animation-delay: 0.5s;
+				animation-name: fadeInDown;
+			}
+
+			h2 {
+				animation-delay: 0.7s;
+				animation-name: fadeInDown;
+			}
+
+			p {
+				animation-delay: 0.9s;
+				animation-name: fadeInUp;
+			}
+
+			.slide-button {
+				animation-delay: 1s;
+				animation-name: fadeInLeft;
+			}
+		}
+	}
+}

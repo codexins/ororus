@@ -1,0 +1,99 @@
+/**
+ * Components Section Title
+ *
+ */
+
+.section-title {
+    text-align: center;
+    margin: 0 0 30px;
+
+	h2 {
+	    font-size: 24px;
+	    color: #333333;
+	    margin: 0;
+	    padding: 0 0 20px;
+	    position: relative;
+	    display: inline-block;
+
+	    &::before,
+	    &::after {
+		    content: '';
+		    height: 1px;
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+		    margin: 0 auto;
+		    bottom: -1px;
+	    }
+
+	    &::before {
+		    width: 70px;
+		    z-index: 1;
+		    @extend %bgc-primary-1;
+	    }
+
+	    &::after {
+		    width: 170px;
+		    background: $cx-border-color;
+	    }
+	}
+
+	.subtitle {
+	    font-size: 14px;
+	    line-height: 23px;
+	    color: #666;
+	    margin: 20px 0 0;
+	}
+
+	&.type-2 {
+		h2 {
+			&::after {
+				content: none;
+			}
+		}
+	}
+
+	&.left-aligned {
+		text-align: left;
+		@extend %mb0;
+
+		h2 {
+			&::before {
+				margin: 0;
+				right: initial;
+			}
+
+			&::after {
+				width: 100%;
+			}
+		}
+
+		&.type-2 {
+			h2 {
+				&::before {
+					margin: 0;
+					right: initial;
+				}
+			}
+		}
+	}
+
+	&.with-border {
+	    border-bottom: 1px solid $cx-border-color;
+	    margin-bottom: 30px;
+
+	    h2 {
+	    	&::after {
+	    		content: none;
+	    	}
+	    }
+	}
+
+	.with-right-padding {
+		padding-right: 70px;
+	}
+
+	.with-left-padding {
+		padding-left: 70px;
+	}
+}

@@ -1,0 +1,41 @@
+/**
+ * Components To Top
+ *
+ */
+
+#to_top {
+	display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transform: rotate(-90deg);
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #333;
+    border-radius: 5px;
+    z-index: 999;
+	@extend %cx-transition;
+    @extend %color-white;
+
+    i {
+    	font-size: 12px;
+    	position: relative;
+
+    	&:first-child {
+    		right:-1px;
+    	}
+
+    	&:last-child {
+    		left:-1px;
+    	}
+    }
+
+    &:hover {
+    	@extend %bgc-primary-1;
+    }
+}

@@ -1,0 +1,51 @@
+/*
+	Template Name: Lineage
+	Author: Codexin
+	Description: Responsive Multipurpose HTML Template
+	Version: 1.0
+
+*/
+
+/******************************
+
+INDEX:
+
+	c00 - Base - Global
+	c01 - Base - Typography
+	c02 - Base - Helpers
+
+	c10 - Components Section
+
+	c20 - Layout - Header
+
+******************************/
+
+/*
+	Deafult Primary Color:      #947cb0;
+	Default Secondary Color:    #d7706d;
+	Default Tertiary Color:     #3e3e3e;
+	Default Fourth Color:       #ffcb5e;
+	Default Grey Color:         #9aabb8;
+	Default Offset Color:       #f8f9fa;
+	Default Border Color:       #ddd;
+	Default Text Color:         #545454;
+	Default Body Font:          'Lato', sans-serif;
+	Default Heading Font:       'Raleway', sans-serif;
+*/
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
+
+
+
+// Abstracts
+@import "abstracts/__abstracts-dir";
+
+// Base Styles
+@import "base/__base-dir";
+
+// Components
+@import "components/__components-dir";
+
+// Layouts
+@import "layouts/__layouts-dir";

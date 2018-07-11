@@ -1,0 +1,39 @@
+/**
+ * Layout Modal
+ *
+ */
+
+.modal {
+	z-index: 9920;
+	.modal-lg {
+	    max-width: 970px;
+	    margin: 60px auto;
+	}
+	
+	.modal-content {
+		@extend %rounded-corners;
+	}
+
+	.modal-header {
+		border-bottom: 0;
+
+		.close {
+		    position: relative;
+		    top: -5px;
+		    font-size: 24px;
+
+		    &:hover {
+		    	@extend %bgc-transparent;
+		    	@extend %color-primary-1;;
+		    }
+		}
+	}
+
+	.modal-body {
+		padding: 0 40px 40px;
+	}
+
+	.modal-footer {
+		padding: 20px 15px;
+	}
+}
