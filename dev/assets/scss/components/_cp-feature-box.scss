@@ -20,6 +20,17 @@
 		    position: relative;
 		    right: -1px;
 	    }
+
+	    @include respond-to(tablet) {
+	    	font-size: 30px;
+	    	width: 60px;
+	    	height: 60px;
+	    	line-height: 60px;
+	    }
+	}
+
+	.feature-content {
+		overflow: hidden;
 	}
 
 	h2 {
@@ -28,6 +39,14 @@
 	    margin: 0;
 	    font-weight: 400;
 	    text-transform: uppercase;
+
+	    @include media-only(wide, max) {
+			font-size: 13px;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    width: 100%;
+	    }
 	}
 
 	p {
@@ -35,6 +54,9 @@
 	    color: #666666;
 	    margin: 5px 0 0;
 	    font-weight: 300;
+	    @include media-only(wide, max) {
+			font-size: 12px;
+	    }
 	}
 
 	&:hover {

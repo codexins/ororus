@@ -40,8 +40,8 @@ gulp.task('sass', function() {
 	    .pipe(sourcemaps.init())
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
         .pipe(autoprefixer('last 4 versions')) // Browser Prefix
-        .pipe(sourcemaps.write('.')) // Source maps for sass
-        // .pipe(gcmq())
+        // .pipe(sourcemaps.write('.')) // Source maps for sass
+        .pipe(gcmq())
         .pipe(gulp.dest('dev/assets/css')) // destination
         .pipe(cssbeautify())
         .pipe(gulp.dest('dist/ororus/assets/css')) // final build destination

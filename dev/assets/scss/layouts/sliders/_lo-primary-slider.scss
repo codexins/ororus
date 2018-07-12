@@ -12,11 +12,11 @@
 	}
 
 	@include respond-to(tablet) {
-		height: 450px;
+		height: 430px;
 	}
 
 	@include respond-to(mobile) {
-		height: 350px;
+		height: 370px;
 	}
 
 	.swiper-slide {

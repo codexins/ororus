@@ -7,6 +7,10 @@
 	.footer-inner {
 		border-bottom: 1px solid #eeeeee;
 		@extend %pb-full;
+
+		@include media-only(notebook, max) {
+			padding-bottom: 20px;
+		}
 	}
 
 	@include media-only(notebook, max) {
@@ -95,9 +99,25 @@
 				display: inline-block;
 			    margin-left: 10px;
 
+				@include media-only(small-mobile, max) {
+					margin-left: 5px;
+				}
+
 			    &:first-child {
 			    	margin-left: 0;
 			    }
+			}
+		}
+	}
+
+	@include media-only(notebook, max) {
+		text-align: center;
+
+		.footer-payment {
+			margin-top: 20px;
+
+			ul {
+				text-align: center;
 			}
 		}
 	}

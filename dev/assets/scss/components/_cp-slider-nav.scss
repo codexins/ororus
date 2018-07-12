@@ -64,7 +64,8 @@
     }
 
     @include media-only(wide, max) {
-        @extend .visually-hidden;
+        visibility: hidden;
+        opacity: 0;
     }
 }
 

@@ -10,6 +10,9 @@
 
     &.transparent-nav {
         background: rgba(#fff, 0.1);
+        @include media-only(notebook, max) {
+            background: #434343;
+        }
     }
 
     &.sticky {
@@ -17,14 +20,74 @@
     	top: 0;
     	left: 0;
     	width: 100%;
-	    background: #6d86b1;
-        opacity: 0.9;
+        z-index: 9920;
+	    background: rgba(#6d86b1, 0.9);
         box-shadow: 0 8px 6px -6px rgba(0,0,0,0.1);
-        animation: 900ms cubic-bezier(.2,1,.22,1) 0s normal none 1 running fadeInDown;
+	    animation-name: fadeInDown;
+	    animation-duration: 900ms;
+	    animation-timing-function: cubic-bezier(0.2, 1, 0.22, 1);
+	    animation-delay: 0s;
+	    animation-iteration-count: 1;
+	    animation-direction: normal;
+	    animation-fill-mode: none;
+	    animation-play-state: running;
         @extend %cx-transition;
 
         &:hover {
-        	opacity: 1;
+        	background: #6d86b1;
+        }
+
+        @include media-only(notebook, max) {
+            background: #434343;
+            &:hover {
+                background: #434343;
+            }
+        }
+    }
+
+    @include media-only(notebook, max) {
+        background: #434343;
+        text-align: left;
+        .menu-toggle {
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+            padding-left: 0;
+            padding-right: 0;
+            
+            &::after {
+                content: "\f078";
+                font-family: FontAwesome;
+                position: absolute;
+                right: 0;
+                top: 48%;
+                // transform: translateY(-50%);
+                height: 13px;
+                font-size: 12px;
+                margin-top: -6.5px;
+                color: #fff;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .stellarnav {
+            &.active {
+                .menu-toggle {
+                    &::after {
+                        transform: rotate(180deg)
+                    }
+                }
+            }
+
+            &.mobile {
+                > ul {
+                    background: #434343;
+                }
+            }
+        }
+
+        &.transparent-nav {
+            background: #434343;
         }
     }
 }

@@ -4,7 +4,7 @@
  */
 
 .modal {
-	z-index: 9920;
+	z-index: 9990;
 	.modal-lg {
 	    max-width: 970px;
 	    margin: 60px auto;
@@ -31,9 +31,20 @@
 
 	.modal-body {
 		padding: 0 40px 40px;
+
+		.product-availability {
+			@include respond-to(tablet) {
+				margin-top: 20px;
+			}
+		}
 	}
 
 	.modal-footer {
 		padding: 20px 15px;
 	}
+}
+
+.modal-backdrop {
+   background-color: #000;
+   z-index: 9950;
 }

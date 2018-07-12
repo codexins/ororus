@@ -36,6 +36,10 @@
 		    width: 170px;
 		    background: $cx-border-color;
 	    }
+
+	    @include media-only(notebook, max) {
+	    	font-size: 18px;
+	    }
 	}
 
 	.subtitle {
@@ -74,6 +78,10 @@
 					margin: 0;
 					right: initial;
 				}
+			}
+
+			@include media-only(notebook, max) {
+				margin-bottom: $cx-col-spacing;
 			}
 		}
 	}

@@ -9,3 +9,9 @@
     @extend %rounded-corners;
 	@extend %overflow-hidden;
 }
+
+.client-section {
+	@include media-only(small-mobile, max) {
+		padding-top: $cx-col-spacing;
+	}
+}

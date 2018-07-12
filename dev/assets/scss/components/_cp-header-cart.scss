@@ -66,13 +66,17 @@
 	    display: block;
 	    overflow: hidden;
 	    opacity: 0;
-	    z-index: 9901;
-        transition: all .2s cubic-bezier(.5,0,0,1.25),opacity .15s ease-out;
+	    z-index: 9911;
+        transition: all .2s cubic-bezier(.2,1,.22,1),opacity .15s ease-out;
         border: 1px solid #e0e0e0;
 	    box-shadow: none;
 	    padding: 30px 20px 20px;
 	    width: 355px;
 	    @extend %rounded-corners;
+
+	    @include media-only(small-mobile, max) {
+			width: 285px;
+	    }
 
 	    &.show {
 		    max-height: 600px;
@@ -128,6 +132,15 @@
 			line-height: 42px;
 		    &:last-child {
 		    	float: right;
+		    }
+
+		    @include media-only(small-mobile, max) {
+		    	display: block;
+		    	width: 100%;
+
+		    	&:last-child {
+		    		margin-top: 15px;
+		    	}
 		    }
 		}
 	}

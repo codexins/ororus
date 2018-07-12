@@ -163,4 +163,100 @@
             }
         }
     }
+
+    @include media-only(notebook, max) {
+        &.mobile {
+            .menu-toggle {
+                i {
+                    margin-right: 5px;
+                }
+            }
+
+            .dd-toggle {
+                width: 70px;
+                right: -15px;
+            }
+
+            ul {
+                li {
+                    a {
+                        padding: 15px 0;
+                        font-size: 13px;
+                        span {
+                            border: 0;
+                            background: transparent;
+
+                            &::after {
+                                content: none;
+                            }
+                        }
+                    }
+
+                    .dd-toggle {
+                        i {
+                            font-size: 12px;
+                            top: 53%;
+                            margin-top: -6px;
+                        }
+                    }
+
+                    ul {
+                        background: #434343;
+                        padding-top: 0;
+                        padding-bottom: 15px;
+                        box-shadow: none;
+
+                        a {
+                            color: #fff;
+                        }
+
+                        li {
+                            &:last-child {
+                                a {
+                                    // border-bottom: 0;
+                                    padding-bottom: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .mega-container {
+                background: #434343;
+                padding: 15px 30px;
+
+                .mega-menu-title {
+                    margin: 0;
+                    padding: 15px 0;
+                    border-bottom-color: rgba(255,255,255,.15);
+
+                    h3 {
+                        font-size: 13px;
+                        color: #fff;
+                        font-weight: normal;
+                        line-height: 30px;
+                    }
+
+                    &::before {
+                        content: none;
+                    }
+                }
+
+                li {
+                    &.open {
+                        &:last-child {
+                            margin-bottom: -15px;
+                        }
+                    }
+                }
+
+                .dd-toggle {
+                    i {
+                        top: 65%;
+                    }
+                }
+            }
+        }
+    }
 }

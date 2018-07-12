@@ -87,4 +87,27 @@
 		  color: #9d9d9d;
 		}
 	}
+
+	@include media-only(notebook, max) {
+		text-align: center;
+		
+		.newsletter-title {
+			h6,
+			h3 {
+				flex-basis: 100%;
+				max-width: 100%;
+			}
+
+			h3 {
+				margin-top: 20px;
+			}
+		}
+
+		.newsletter-form-wrapper {
+			margin-top: 20px;
+			max-width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
 }

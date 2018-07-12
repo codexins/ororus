@@ -60,6 +60,21 @@
 		top: 50%;
 		margin-top: 60px;
 		transform: translateY(-60%);
+
+	    @include respond-to(tablet) {
+	    	margin-top: 50px;
+	    }
+
+	    @include respond-to(mobile) {
+	    	margin-top: 40px;
+	    	width: 400px;
+	    }
+
+	    @include media-only(small-mobile, max) {
+	    	margin-top: 40px;
+	    	width: 285px;
+	    }
+
 		h1,
 		h2 {
 			text-transform: uppercase;
@@ -73,6 +88,18 @@
 		    @include respond-to(notebook) {
 		    	font-size: 50px;
 		    }
+
+		    @include respond-to(tablet) {
+		    	font-size: 40px;
+		    }
+
+		    @include respond-to(mobile) {
+		    	font-size: 32px;
+		    }
+
+		    @include media-only(small-mobile, max) {
+		    	font-size: 28px;
+		    }
 		}
 
 		h2 {
@@ -82,6 +109,18 @@
 
 		    @include respond-to(notebook) {
 		    	font-size: 30px;
+		    }
+
+		    @include respond-to(tablet) {
+		    	font-size: 24px;
+		    }
+
+		    @include respond-to(mobile) {
+		    	font-size: 20px;
+		    }
+
+		    @include media-only(small-mobile, max) {
+		    	font-size: 18px;
 		    }
 		}
 
@@ -96,6 +135,18 @@
 		    @include respond-to(notebook) {
 		    	font-size: 66px;
 		    }
+
+		    @include respond-to(tablet) {
+		    	font-size: 50px;
+		    }
+
+		    @include respond-to(mobile) {
+		    	font-size: 40px;
+		    }
+
+		    @include media-only(small-mobile, max) {
+		    	font-size: 34px;
+		    }
 		}
 
 		.slide-button {
@@ -105,6 +156,10 @@
 				height: 46px;
 				line-height: 46px;
 			}
+
+		    @include respond-to(mobile) {
+		    	margin-top: 20px;
+		    }
 		}
 
 		* {

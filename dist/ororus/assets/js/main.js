@@ -72,21 +72,9 @@ INDEX:
     ORORUS.mainNav = function() {
         $mainMenu.stellarNav({
             theme: 'plain',
-            breakpoint: 768,
+            breakpoint: 991,
             openingSpeed: 250,
             closingDelay: 250
-        });
-
-        // Submenu Intelligent hover functionality
-        $mainMenu.on('mouseover', ".sub-menu", function() {
-            var menu = $(this);
-            var child_menu = $(this).find('ul');
-            if ($(menu).offset().left + $(menu).width() + $(child_menu).width() > $window.width()) {
-                $(child_menu).css({
-                    "left": "inherit",
-                    "right": "100%"
-                });
-            }
         });
 
         // Adding active class to nav menu dependent on page
@@ -195,6 +183,7 @@ INDEX:
         var headerHeight = $intelHeader[0].getBoundingClientRect().height;
         var headerTopHeight = $('header .header-area')[0].getBoundingClientRect().height;
 
+        // Sticky header
         if ($window.width() > 991) {
             $window.on('scroll', function() {
                 var height = $window.scrollTop();
@@ -206,7 +195,7 @@ INDEX:
                     $intelHeader.addClass("sticky");
                 }
             });   
-        }     
+        }
 
         // For Main Menu float over Primary Slider
         if ($mainMenutp.elExists()) {
@@ -227,6 +216,8 @@ INDEX:
 
         var visibleSlides       = null;
         var visibleSlides_lg    = null;
+        var visibleSlides_md    = null;
+        var visibleSlides_sm    = null;
         var slideLoop           = null;
         var slideSpeed          = null;
         var slideSpace          = null;
@@ -242,6 +233,8 @@ INDEX:
                 // Fetching from data attributes
                 var visibleSlides       = $this.attr("data-visible-slide") ? parseInt($this.attr("data-visible-slide")) : 5;
                 var visibleSlides_lg    = $this.attr("data-visible-lg-slide") ? parseInt($this.attr("data-visible-lg-slide")) : 4;
+                var visibleSlides_md    = $this.attr("data-visible-md-slide") ? parseInt($this.attr("data-visible-md-slide")) : 3;
+                var visibleSlides_sm    = $this.attr("data-visible-sm-slide") ? parseInt($this.attr("data-visible-sm-slide")) : 2;
                 var slideSpeed          = $this.attr("data-speed") ? parseInt($this.attr("data-speed")) : 1000;
                 var slideLoop           = $this.attr("data-loop") === 'true' ? 1 : 0;
                 var slideSpace          = $this.attr("data-space-between") ? parseInt($this.attr("data-space-between")) : 30;
@@ -275,11 +268,12 @@ INDEX:
                             centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         991: {
-                            slidesPerView: 3
+                            slidesPerView: visibleSlides_md,
+                            centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
-                        768: {
-                            slidesPerView: 2,
-                            centeredSlides: false
+                        767: {
+                            slidesPerView: visibleSlides_sm,
+                            centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         479: {
                             slidesPerView: 1
@@ -480,6 +474,9 @@ INDEX:
                     767: {
                         slidesPerView: 3
                     },
+                    575: {
+                        slidesPerView: 3
+                    },
                     479: {
                         slidesPerView: 1
                     }
@@ -500,7 +497,20 @@ INDEX:
                 slidesPerView: 1,
                 spaceBetween: 0,
                 speed: 1000,
+
+                // Responsive breakpoints
+                breakpoints: {
+                    767: {
+                        slidesPerView: 2,
+                        centeredSlides: false
+                    },
+                    575: {
+                        slidesPerView: 1,
+                    }
+                }
             });
+
+            // Slider update in footer accordion
             $footer.on('click', '.widgettitle', function() {
                 setTimeout(function() {
                     postCarousel.update();
@@ -528,7 +538,7 @@ INDEX:
             $("html,body").animate({
                 scrollTop: 0
             }, 800)
-        }); //scrollup finished
+        });
     };
 
 
@@ -545,8 +555,6 @@ INDEX:
             });
         }
     };
-
-
 
 
     // Window load functions

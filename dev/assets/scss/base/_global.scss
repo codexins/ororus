@@ -46,6 +46,16 @@ section {
 	@extend %visuallyhidden;
 }
 
+/* Modal Fixes */
+
+.modal-open .main-nav-area {
+  overflow-y: scroll;
+}
+
+.modal-open #to_top {
+	@extend .visually-hidden;
+}
+
 // hide an element
 
 .visually-hidden {

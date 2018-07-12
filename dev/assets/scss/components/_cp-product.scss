@@ -106,8 +106,6 @@
 
 	.product-actions {
 		margin: 25px 0 0;
-		// padding-bottom: 25px;
-		// border-bottom: 1px solid $cx-border-color;
 
 		ul {
 			list-style: none;
@@ -214,8 +212,33 @@
 				   	font-weight: 500;
 				   	@extend %mb0;
 				}
+
+				i {
+					margin-right: 5px;
+				}
+			}
+
+			@include respond-to(mobile) {
+				button {
+					padding: 0 20px;
+				}
+			}
+
+			@include media-only(small-mobile, max) {
+				ul {
+					> li {
+						&:not(:last-child) {
+							margin-bottom: 20px;
+							margin-right: 8px;
+						}
+					}
+				}
 			}
 		}
+	}
+
+	@include respond-to(mobile) {
+		margin-top: $cx-col-spacing;
 	}
 }
 
@@ -288,11 +311,21 @@
 		    	margin-right: 0;
 		    }
 
+		    @include respond-to(mobile) {
+		    	margin-right: 5px;
+		    }
+
 		    a {
 				text-align: center;
 				font-size: 13px;
 				padding: 7px 15px;
+				line-height: 40px;
 		    	@extend %color-white;
+		    	@extend %rounded-corners;
+
+			    @include respond-to(mobile) {
+			    	padding: 7px 10px;
+			    }
 		    }
 		}
 
@@ -326,10 +359,22 @@
 		    text-align: center;
 		    position: relative;
 
+		    @include media-only(notebook, max) {
+		    	min-width: 50px;
+		    }
+
 		    .countdown-amount {
 			    font-size: 18px;
 			    font-weight: 500;
 			    @extend %color-white;
+
+			    @include respond-to(tablet) {
+			    	font-size: 12px;
+			    }
+
+			    @include respond-to(mobile) {
+			    	font-size: 14px;
+			    }
 		    }
 
 		    .countdown-word {

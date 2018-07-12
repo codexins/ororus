@@ -135,7 +135,6 @@
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
-
 			@extend %cx-transition;
 
 			> a {
@@ -201,6 +200,9 @@
 		.action-links {
 			transform: translateY(0);
 			background: lighten($cx-text-color, 100%);
+		    @include media-only(notebook, max) {
+		    	justify-content: flex-start;
+		    }
 		}
 	}
 
@@ -233,5 +235,12 @@
 				}
 			}
 		}
+	}
+}
+
+.single-category-wrapper,
+.product-carousel-wrapper {
+	@include media-only(notebook, max) {
+		margin-bottom: $cx-col-spacing;
 	}
 }
