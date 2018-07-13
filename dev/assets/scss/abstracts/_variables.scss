@@ -31,6 +31,32 @@ $cx-offset-color:				#f7f7f7 !default;
 $cx-border-color:				#ededed !default;
 
 
+//-------------------- Color Palletes --------------------//
+
+$scheme: (
+    pallete-one: (
+        primary:		#ec610a,
+        secondary:		#ec610a,
+        header:			#fff
+    ),
+    pallete-two: (
+        primary:		#ffc300,
+        secondary:		#ffc300,
+        header:			rgba(255, 255, 255, 0)
+    ),
+    pallete-three: (
+        primary:		#2b7fd0,
+        secondary:		#f8ce31,
+        header:			#2b7fd0
+    ),
+    pallete-four: (
+        primary:		#d13636,
+        secondary:		#f9ce31,
+        header:			#cf2c2c
+    )
+);
+
+
 //-------------------- Line Height --------------------//
 
 $cx-body-line-height: 			20px !default;

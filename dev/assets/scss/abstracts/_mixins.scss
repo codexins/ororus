@@ -531,3 +531,31 @@
         }
     }
 }
+
+
+@mixin cx-color($color, $property) {
+
+    $schemes: one two three four;
+
+    @each $current-scheme in $schemes {
+
+        @if $property == color {
+            .color-scheme-#{$current-scheme} & {
+                @extend %#{$color}-#{$property}-#{$current-scheme};
+            }
+        }
+
+        @if $property == bg {
+            .color-scheme-#{$current-scheme} & {
+                @extend %#{$color}-#{$property}-#{$current-scheme};
+            }
+        }
+
+        @if $property == border {
+            .color-scheme-#{$current-scheme} & {
+                @extend %#{$color}-#{$property}-#{$current-scheme};
+            }
+        }
+
+    }
+}

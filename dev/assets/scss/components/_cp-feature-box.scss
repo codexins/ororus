@@ -13,8 +13,8 @@
 	    line-height: 70px;
 	    text-align: center;
 	    @extend %rounded-corners;
-	    @extend %color-primary-1;
 	    @extend %cx-transition;
+	    @include cx-color(primary, color);
 
 	    &::before {
 		    position: relative;

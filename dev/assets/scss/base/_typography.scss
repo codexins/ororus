@@ -92,7 +92,7 @@ a:hover, a:focus {
 a:focus, a:active, a:hover {
     outline: 0 none;
     text-decoration: none;
-    @extend %color-primary-1;
+    @include cx-color(primary, color);
 }
 
 .btn-link {
@@ -100,7 +100,7 @@ a:focus, a:active, a:hover {
     &:hover,
     &:focus,
     &:active {
-        @extend %color-primary-1;
+        @include cx-color(primary, color);
     }
 }
 
@@ -182,24 +182,24 @@ textarea:focus {
 button:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover {
-    border-color: $cx-primary-color-1;
-    background-color: $cx-primary-color-1;
+    @include cx-color(primary, border);
+    @include cx-color(primary, bg);
 }
 
 ::-webkit-selection {
-    background: $cx-primary-color-1;
+    background: cx-color(pallete-one, primary);
     text-shadow: none;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: $cx-primary-color-1;
+    background: cx-color(pallete-one, primary);
     text-shadow: none;
     color: #fff;
 }
 
 ::selection {
-    background: $cx-primary-color-1;
+    background: cx-color(pallete-one, primary);
     text-shadow: none;
     color: #fff;
 }

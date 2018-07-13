@@ -15,7 +15,7 @@
     cursor: pointer;
     @extend %rounded-corners;
     @extend %color-white;
-    @extend %bgc-primary-1;
+    @include cx-color(primary, bg);
 
     &:hover,
     &:focus {
@@ -29,8 +29,8 @@
 
 	    &:hover,
 	    &:focus {
-		    border-color: $cx-primary-color-1;
-		    @extend %bgc-primary-1;
+		    @include cx-color(primary, border);
+		    @include cx-color(primary, bg);
 	    }
     }
 }
