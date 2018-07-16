@@ -18,6 +18,7 @@
 		.product-image {
 		    position: relative;
 		    z-index: 4;
+		    text-align: center;
 
 		    > a {
 			    display: block;
@@ -36,8 +37,8 @@
 		    .hover-image {
 			    position: absolute;
 			    top: 0;
-			    left: 0;
-			    right: 0;
+			    left: auto;
+			    right: auto;
 			    bottom: 0;
 			    opacity: 0;
 		    }
@@ -60,7 +61,11 @@
 			    @extend .circle;
 
 			    &.label-sale {
-					@extend %bgc-primary-1;
+					@include cx-color(secondary, bg);
+
+					.color-scheme-three & {
+						color: #333;
+					}
 			    }
 		    }
 		}
@@ -92,7 +97,7 @@
 		    	color: #333333;
 
 		    	&:hover {
-		    		@extend %color-primary-1;
+		    		@include cx-color(primary, color);
 		    	}
 		    }
 	    }
@@ -133,7 +138,7 @@
 		    background: rgba(#fff,0.9);
 		    transform: translateY(50px);
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
 			align-items: center;
 			@extend %cx-transition;
 
@@ -148,8 +153,12 @@
 			    @extend %cx-transition;
 
 			    &:hover {
-			    	@extend %bgc-primary-1;
+			    	@include cx-color(primary, bg);
 			    	@extend %color-white;
+			    }
+
+			    &:not(:first-child) {
+			    	margin-left: 5px;
 			    }
 			}
 	    }
@@ -179,6 +188,14 @@
 	.product-list {
 		.product-list-single {
 			margin-bottom: 20px;
+
+			.with-narrow-margin {
+				margin-bottom: 10px;
+			}
+
+			&:last-child {
+				@extend %mb0;
+			}
 		}
 
 		.product-inner {
@@ -200,6 +217,7 @@
 		.action-links {
 			transform: translateY(0);
 			background: lighten($cx-text-color, 100%);
+			justify-content: flex-start;
 		    @include media-only(notebook, max) {
 		    	justify-content: flex-start;
 		    }
@@ -210,6 +228,24 @@
 	&:hover {
 		.swiper-arrow {
 			opacity: 1;
+		}
+	}
+
+	&.with-border {
+	    border: 1px solid $cx-border-color;
+	    padding: 20px 10px 30px;
+	    @extend %rounded-corners;
+	}
+}
+
+.with-narrow-margin {
+	& .product-list {
+		.product-list-single {
+			margin-bottom: 10px;
+
+			&:last-child {
+				@extend %mb0;
+			}
 		}
 	}
 }
@@ -242,5 +278,90 @@
 .product-carousel-wrapper {
 	@include media-only(notebook, max) {
 		margin-bottom: $cx-col-spacing;
+	}
+}
+
+.daily-deals-products {
+	.countdown-wrapper {
+		.countdown-timer {
+			background: rgba(0,0,0,0.4);
+		}
+	}
+}
+
+.best-selling-wrapper {
+	.nav-pills {
+		&.top-nav-pills {
+		    position: absolute;
+		    right: 100px;
+		    top: 0;
+		    margin-top: -80.5px;
+
+		    @include media-only(wide, max) {
+		    	right: 0;
+		    }
+
+		    &.type-2 {
+		    	right: auto;
+		    	top: 14px;
+
+		    	> li {
+		    		&:not(:last-child) {
+		    			margin-right: 30px;
+		    		}
+		    	}
+
+    			.nav-link {
+				    padding: 0;
+				    border: 0;
+				    background: none;
+				    color: #9a9999;
+				    margin: 0;
+				    font-size: 20px;
+				    line-height: 1;
+				    text-transform: uppercase;
+				    position: relative;
+				    margin-top: -7px;
+				    font-weight: 500;
+
+				    &::after {
+					    content: '';
+					    height: 1px;
+					    width: 60%;
+					    position: absolute;
+					    left: 0;
+					    bottom: -8px;
+					    opacity: 0;
+						@extend %cx-transition;
+					    @include cx-color(primary, bg)
+				    }
+
+					&:hover,
+					&:active,
+				    &.active {
+				    	color: #333;
+
+				    	&::after {
+				    		opacity: 1;
+				    	}
+				    }
+    			}
+		    }
+		}
+	}
+}
+
+.color-scheme-two {
+	#content {
+		.action-links > a:hover,
+		.label-product:not(.label-new) {
+			color: #333;
+		}
+	}
+}
+
+.best-selling-section {
+	&.no-title {
+		margin-top: -12px;
 	}
 }

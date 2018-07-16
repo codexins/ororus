@@ -27,6 +27,7 @@ section {
 }
 
 .main-content-wrapper {
+	overflow-x: hidden;
 	@extend %clearfix;
 }
 
@@ -46,6 +47,14 @@ section {
 	@extend %visuallyhidden;
 }
 
+.row {
+	&.with-border {
+	    padding: 30px;
+	    border: 1px solid $cx-border-color;
+	    @extend %rounded-corners;
+	}
+}
+
 /* Modal Fixes */
 
 .modal-open .main-nav-area {
@@ -56,13 +65,22 @@ section {
 	@extend .visually-hidden;
 }
 
-// hide an element
+/* Slider blurry texts fix for -webkit */
+
+.swiper-wrapper,
+.swiper-slide,
+.swiper-slide * {
+	background: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Hides an element */
 
 .visually-hidden {
 	@extend %visuallyhidden;
 }
 
-// global notice
+/* global notice */
 
 .browserupgrade {
 	padding: 50px;
@@ -71,7 +89,7 @@ section {
 	text-align: center;
 }
 
-// Border classes
+/* Border classes */
 
 .rb-bordered {
 	@extend %cx-right-bottom-border;
@@ -114,7 +132,7 @@ section {
 }
 
 
-//section zero margin & padding
+/* section zero margin & padding */
 
 .vmargin {
 	@extend %vmargin;
@@ -140,7 +158,7 @@ section {
 	@extend %margin-0;
 }
 
-// full margin & padding 
+/* full margin & padding */
 
 .vpadding {
 	@extend %vpadding;
@@ -166,7 +184,7 @@ section {
 	@extend %pb-full;
 }
 
-// half padding & margin
+/* half padding & margin */
 
 .mt-half {
 	@extend %mt-half;
@@ -184,7 +202,7 @@ section {
 	@extend %pb-half;
 }
 
-// Section with padding 
+/* Section with padding */
 
 .wrapper-with-right-padding {
 	padding-right: $cx-heading-margin-bottom;
@@ -200,116 +218,7 @@ section {
 	}
 }
 
-// Background Colors
 
-.bgc-primary-1 {
-	@extend %bgc-primary-1;
-}
-
-.bgc-secondary-1 {
-	@extend %bgc-secondary-1;
-}
-
-// .bgc-tertiary {
-// 	@extend %bgc-tertiary;
-// }
-
-// .bgc-fourth {
-// 	@extend %bgc-fourth;
-// }
-
-.bgc-transparent {
-	@extend %bgc-transparent;
-}
-
-.bgc-offset {
-	@extend %bgc-offset;
-}
-
-// .bgc-grey {
-// 	@extend %bgc-grey;
-// }
-
-.bgc-white {
-	@extend %bgc-white;
-}
-
-// .bgc-tertiary-textured {
-// 	background-color: rgba($cx-tertiary-color, 0.98);
-// 	@include cx-background('../img/cta/cta-bg-1.png');
-// }
-
-
-// color
-
-.color-primary-1 {
-	@extend %color-primary-1;
-}
-
-.color-secondary-1 {
-	@extend %color-secondary-1;
-}
-
-// .color-tertiary {
-// 	@extend %color-tertiary;
-// }
-
-// .color-fourth {
-// 	@extend %color-fourth;
-// }
-
-.color-transparent {
-	@extend %color-transparent;
-}
-
-.color-offset {
-	@extend %color-offset;
-}
-
-.color-white {
-	@extend %color-white;
-}
-
-// Border-colors 
-
-// $border-colors: ($cx-primary-color, $twitter-color, $gplus-color, $cx-secondary-color, $linkedin-color, $youtube-color);
-// $border-colors-count: length($border-colors);
-
-// @for $i from 1 to $border-colors-count + 1 {
-// 	.border-color-#{$i} {
-// 		border-color: lighten(nth($border-colors, $i), 10%);
-// 	}
-// }
-
-// Social Media Colors
-
-.bg-facebook {
-	background: $facebook-color;
-	&:hover {
-		background: darken($facebook-color, 10%);
-	}
-}
-
-.bg-twitter {
-	background: $twitter-color;
-	&:hover {
-		background: darken($twitter-color, 10%);
-	}
-}
-
-.bg-gplus {
-	background: $gplus-color;
-	&:hover {
-		background: darken($gplus-color, 10%);
-	}
-}
-
-.bg-pinterest {
-	background: $pinterest-color;
-	&:hover {
-		background: darken($pinterest-color, 10%);
-	}
-}
 
 // .bg-linkedin {
 // 	background: $linkedin-color;
@@ -363,7 +272,7 @@ section {
 
 
 
-// Border-radius
+/* Border-radius */
 
 .rounded-corners {
 	@extend %rounded-corners;
@@ -373,20 +282,20 @@ section {
 	@include border-radius(50%);
 }
 
-// equal height by display: table
+/* Equal height by display: table */
 
 .eqheight {
 	@extend %eqheight;
 }
 
 
-// Overflow
+/* Overflow */
 
 .oflow-hidden {
 	@extend %overflow-hidden;
 }
 
-// Position
+/* Position */
 
 .pos-r {
 	position: relative;
@@ -396,7 +305,7 @@ section {
 	position: absolute;
 }
 
-// Tooltips
+/* Tooltips */
 
 .tooltip {
 	z-index: 9950;

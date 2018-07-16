@@ -24,7 +24,7 @@
 
 		    &:hover {
 		    	@extend %bgc-transparent;
-		    	@extend %color-primary-1;;
+		    	@include cx-color(primary, color);
 		    }
 		}
 	}

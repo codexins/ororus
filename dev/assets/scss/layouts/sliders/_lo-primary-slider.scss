@@ -5,18 +5,20 @@
 
 
 #primary_slider {
-	height: 540px;
+	&:not([class*='slider-type-']) {
+		height: 540px;
 
-	@include respond-to(notebook) {
-		height: 490px;
-	}
+		@include respond-to(notebook) {
+			height: 490px;
+		}
 
-	@include respond-to(tablet) {
-		height: 430px;
-	}
+		@include respond-to(tablet) {
+			height: 430px;
+		}
 
-	@include respond-to(mobile) {
-		height: 370px;
+		@include respond-to(mobile) {
+			height: 370px;
+		}
 	}
 
 	.swiper-slide {
@@ -29,5 +31,236 @@
 		height: 100%;
 		left: 0;
 		top: 0;
+	}
+
+	&.slider-type-2 {
+	    @include media-only(notebook, max) {
+	    	margin-bottom: $cx-col-spacing;
+	    }
+		.slide-content {
+		    margin-top: 0;
+		    top: 50px;
+		    width: 400px;
+		    left: 50px;
+		    padding: 0;
+		    transform: none;
+
+		    @include media-only(wide, max) {
+				width: 250px;
+		    }
+
+		    h1 {
+		    	font-size: 64px;
+			    @include respond-to(notebook) {
+			    	font-size: 50px;
+			    }
+
+			    @include respond-to(tablet) {
+			    	font-size: 40px;
+			    }
+
+			    @include respond-to(mobile) {
+			    	font-size: 32px;
+			    }
+
+			    @include media-only(small-mobile, max) {
+			    	font-size: 28px;
+			    }
+		    }
+
+		    h2 {
+		    	font-size: 38px;
+		    	text-transform: capitalize;
+				margin: 5px 0 0;
+			    line-height: 1;
+
+			    @include respond-to(notebook) {
+			    	font-size: 30px;
+			    }
+
+			    @include respond-to(tablet) {
+			    	font-size: 24px;
+			    }
+
+			    @include respond-to(mobile) {
+			    	font-size: 20px;
+			    }
+
+			    @include media-only(small-mobile, max) {
+			    	font-size: 18px;
+			    }			    
+		    }
+
+		    p {
+		    	margin-top: 25px;
+		    	font-size: 86px;
+		    	span {
+		    		&:first-child {
+		    			font-size: 24px;
+		    			display: block;
+		    			font-weight: 400;
+		    		}
+		    	}
+
+			    @include respond-to(notebook) {
+			    	font-size: 66px;
+			    }
+
+			    @include respond-to(tablet) {
+			    	font-size: 50px;
+			    }
+
+			    @include respond-to(mobile) {
+			    	font-size: 40px;
+			    }
+
+			    @include media-only(small-mobile, max) {
+			    	font-size: 34px;
+			    }
+		    }
+
+		    .slide-button {
+		    	margin-top: 20px;
+		    }
+
+		    &.layer-animation-1 {
+		    	top: 150px;
+
+				@include respond-to(notebook) {
+					top: 100px;
+				}
+
+				@include respond-to(mobile) {
+					top: 50px;
+				}
+		    }
+
+		    &.layer-animation-2 {
+		    	h1 {
+				    font-size: 48px;
+				    text-transform: inherit;
+				    margin: 0 0 20px;
+				    @include respond-to(notebook) {
+				    	font-size: 30px;
+				    }
+
+				    @include respond-to(tablet) {
+				    	font-size: 40px;
+				    }
+
+				    @include respond-to(mobile) {
+				    	font-size: 32px;
+				    }
+
+				    @include media-only(small-mobile, max) {
+				    	font-size: 28px;
+				    }
+		    	}
+
+		    	p {
+				    text-transform: inherit;
+				    font-weight: 400;
+				    margin: 25px 0 0;
+				    line-height: 23px;
+
+				    span {
+				    	font-size: 18px;
+				    	display: inline-block;
+					    @include respond-to(notebook) {
+					    	line-height: 1.6;
+					    }
+				    }
+		    	}
+		    }
+		}
+	}
+
+	&.slider-type-3 {
+		@extend .slider-type-2;
+
+		.layer-animation-1 {
+			&.slide-content {
+				width: 345px;
+				left: 60px;
+				top: 60px;
+				
+				h1 {
+					font-size: 48px;
+				}
+
+				h2 {
+					font-size: 36px;
+				}
+
+				p {
+					font-size: 64px;
+					span {
+						&:first-child {
+							font-size: 18px;
+						}
+					}
+				}
+			}
+		}
+
+		.layer-animation-2 {
+			&.slide-content {
+				left: inherit;
+				right: 37px;
+				width: 345px;
+				top: 80px;
+				
+				h1 {
+					font-size: 72px;
+					margin: 0;
+					line-height: 1;
+					text-transform: uppercase;
+				}
+
+				h2 {
+					font-size: 48px;
+					margin: 0;
+					text-transform: uppercase;
+				}
+
+				p {
+					line-height: 25px;
+					margin: 20px 0 0;
+				}
+			}
+		}
+	}
+
+	&.slider-4 {
+		.slide-content {
+		    width: 520px;
+		    left: 80px;
+		    margin: 0;
+
+		    h1 {
+		    	margin: 0;
+		    }
+
+		    h2 {
+		    	margin-top: 25px;
+		    	font-size: 24px;
+		    	text-transform: initial;
+		    }
+
+		    p {
+		    	font-size: 70px;
+		    	margin-top: 13px;
+
+		    	@include cx-color(secondary, color);
+		    }
+
+		    .default-btn {
+		    	&:hover,
+		    	&:focus {
+		    		@include cx-color(secondary, bg);
+		    		@include cx-color(secondary, border);
+		    	}
+		    }
+		}
 	}
 }

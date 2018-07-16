@@ -6,13 +6,18 @@
 .header-search-area {
 	width: 100%;
     display: inline-block;
-    border: 1px solid $cx-primary-color-1;
     padding: 5px;
+    border: 1px solid;
+    @include cx-color(primary, border);
 	@extend %rounded-corners;
+
+	.color-scheme-three & {
+		border-color: #d7d7d7;
+	}
 
     .nice-select {
     	font-size: 13px;
-	    color: #333333;
+	    color: #333;
 	    height: 40px;
 	    line-height: 40px;
 	    width: 32%;
@@ -132,7 +137,7 @@
 	    cursor: pointer;
 	    @extend %rounded-corners;
 	    @extend %color-white;
-	    @extend %bgc-primary-1;
+	    @include cx-color(secondary, bg);
 
 	    &:focus,
 	    &:hover {

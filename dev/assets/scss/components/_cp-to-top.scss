@@ -36,6 +36,6 @@
     }
 
     &:hover {
-    	@extend %bgc-primary-1;
+    	@include cx-color(primary, bg);
     }
 }

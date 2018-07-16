@@ -64,4 +64,30 @@
 			@extend .circle;
 		}
 	}
+
+	&.type-2 {
+	    padding: 23px 20px;
+	    border: 1px solid $cx-border-color;
+	    @extend %rounded-corners;
+	    @extend %mb-half;
+
+	    @include media-only(wide, max) {
+	    	padding: 18px 20px;
+	    }
+
+	    i {
+		    width: 60px;
+		    height: 60px;
+		    line-height: 60px;
+		    font-size: 54px;
+		    border: 0;
+
+		    @include media-only(wide, max) {
+				width: 40px;
+				height: 40px;
+				line-height: 40px;
+				font-size: 40px;
+		    }
+	    }
+	}
 }

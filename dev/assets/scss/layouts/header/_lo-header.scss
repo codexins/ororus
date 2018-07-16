@@ -32,6 +32,7 @@ header {
 					text-decoration: none;
 					height: auto;
 					line-height: 20px;
+					@extend %bgc-transparent;
 				}
 
 				i {
@@ -78,9 +79,10 @@ header {
 		    opacity: 0;
 		    border: 0;
 		    padding: 0;
-		    z-index: 9911;
+		    z-index: 9921;
 	        transition: all .2s cubic-bezier(.2,1,.22,1),opacity .15s ease-out;
 	        @extend %rounded-corners;
+	        @extend %bgc-transparent;
 
 		    &.show {
 			    max-height: 200px;
@@ -97,6 +99,7 @@ header {
 			    list-style: none;
 			    overflow: hidden;
 			    @extend %rounded-corners;
+			    @extend %bgc-white;
 
 				li {
 				    a {
@@ -111,7 +114,7 @@ header {
 					    border-bottom: 1px solid #eeeeee;
 
 					    &:hover {
-					    	@extend %color-primary-1;
+					    	@include cx-color(primary, color);
 					    }
 				    }
 				    &:last-child {
@@ -175,6 +178,7 @@ header {
 	}
 
 	.header-contact {
+		align-items: center;
 		margin-right: 30px;
 
 		i {
@@ -195,6 +199,7 @@ header {
 			    font-size: 14px;
 			    margin: 3px 0 0;
 			    display: block;
+			    line-height: 1;
 			}
 		}
 
@@ -211,5 +216,193 @@ header {
 
 	@include media-only(notebook, max) {
 		text-align: center;
+	}
+
+	&.with-bg {
+		background-image: url(../images/backgrounds/header-bg.jpg);
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: cover;
+	}
+
+	&.white-scheme {
+		@extend .color-white;
+		
+		button,
+		a {
+			@extend .color-white;
+
+			&:hover,
+			&:focus {
+				@include cx-color(primary, color);
+			}
+		}
+
+		.header-contact-content {
+			span {
+				@extend .color-white;
+			}
+		}
+
+		.header-search-area {
+			border: 0;
+			@extend .bgc-white;
+		}
+
+		.header-search-btn {
+			i {
+				color: #333;
+				@extend %cx-transition;
+				&:hover,
+				&:focus {
+					@extend .color-white;
+				}
+			}
+		}
+		
+		.header-cart {
+			.dropdown-toggle {
+				@extend %bgc-white;
+			}
+
+			.count-style {
+				color: #333;
+			}
+
+			.shopping-cart-title {
+				a {
+					color: #333;
+
+					&:hover {
+						@include cx-color(primary, color);
+					}
+				}
+			}
+		}
+	}
+
+	.color-scheme-three & {
+		.header-search-btn {
+			i {
+				color: #333;
+				@extend %cx-transition;
+				&:hover,
+				&:focus {
+					@extend .color-white;
+				}
+			}
+		}
+	}
+
+	&.header-type-2 {
+		@extend .pos-r;
+
+		.header-area {
+			padding: 40px 0 25px;
+		}
+
+		.logo {
+			margin: -5px 0 0;
+		}
+
+		.list-inline {
+			> li {
+				&:not(:last-child) {
+					margin-right: 5px;
+				}
+
+				&::after {
+					content: none;
+				}
+
+				i {
+					margin-left: 3px;
+				}
+
+				.dropdown-toggle {
+				    padding: 0 15px;
+				    border: 1px solid $cx-border-color;
+				    line-height: 36px;
+
+				    @extend %rounded-corners;
+
+				    .color-scheme-four & {
+				    	border-color: #db6161;
+				    }
+					
+				    &:hover, 
+				    &:focus {
+				    	@include cx-color(secondary, color);
+				    }
+				}
+
+				.dropdown-menu {
+					a {
+					    &:hover, 
+					    &:focus {
+					    	@include cx-color(secondary, color);
+					    }
+					}
+				}
+
+				&:last-child {
+					.dropdown-toggle {
+						padding-right: 15px;
+					}
+				}
+			}
+		}
+
+		.header-cart-area {
+		    position: absolute;
+		    right: 15px;
+		    z-index: 991;
+		    bottom: -93px;
+
+		    .dropdown-toggle {
+		    	width: auto;
+		    	height: 36px;
+			    padding: 0 13px;
+			    text-decoration: none;
+			    border: 0;
+			    @include cx-color(secondary, bg);
+
+			    i {
+			    	font-size: 20px;
+			    	margin-right: 3px;
+			    	width: auto;
+			    	height: 36px;
+			    	line-height: 38px;
+			    	color: #333
+			    }
+
+			    .cart-text {
+					color: #333;
+					position: relative;
+					text-transform: uppercase;
+					top: -4px;
+			    }
+		    }
+
+		    .dropdown-menu {
+		    	margin-top: 15px;
+
+		    	.default-btn {
+		    		@include cx-color(secondary, bg);
+		    		&:hover,
+		    		&:focus {
+		    			@extend .color-white;
+		    			background: #333;
+		    		}
+		    	}
+
+				a {
+				    &:hover, 
+				    &:focus {
+				    	@include cx-color(secondary, color);
+				    }
+				}
+		    }
+		}
 	}
 }

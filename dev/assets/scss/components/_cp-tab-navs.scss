@@ -31,9 +31,9 @@
 
 			&:hover,
 		    &.active {
-				border-color: $cx-primary-color-1;
+				@include cx-color(primary, border);
 				@extend %bgc-transparent;
-				@extend %color-primary-1;
+				@include cx-color(primary, color);
 		    }
 		}
 	}

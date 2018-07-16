@@ -74,4 +74,56 @@
 			}
 		}
 	}
+
+	.top-promo-banners & {
+		> a {
+			display: block;
+		}
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.banner-with-text {
+	height: 360px;
+	@extend .pos-r;
+
+	.banner-content {
+	    position: absolute;
+	    left: 60px;
+	    top: 80px;
+	    width: 50%;
+	    text-align: center;
+
+	    h3 {
+		    font-size: 24px;
+		    margin: 0;
+		    text-transform: uppercase;
+		    @extend .color-white;
+	    }
+
+	    h2 {
+			font-size: 32px;
+		    text-transform: capitalize;
+		    font-weight: 500;
+		    margin: 20px 0 0;
+		    @include cx-color(secondary, color);
+	    }
+
+	    .default-btn {
+	    	font-size: 14px;
+	    	text-transform: capitalize;
+	    	padding: 0 20px;
+	    	margin-top: 35px;
+	    	@include cx-color(secondary, color);
+	    	@include cx-color(secondary, border);
+
+	    	&:hover,
+	    	&:focus {
+		    	@include cx-color(secondary, bg);
+		    	@extend .color-white;
+	    	}
+	    }
+	}
 }

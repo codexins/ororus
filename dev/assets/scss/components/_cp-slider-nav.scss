@@ -36,8 +36,8 @@
     }
 
     &:hover {
-    	border-color: $cx-primary-color-1;
-    	@extend %bgc-primary-1;
+    	@include cx-color(primary, border);
+    	@include cx-color(primary, bg);
     	@extend %color-white;
     }
 
@@ -70,7 +70,11 @@
 }
 
 .swiper-container-horizontal {
-    .swiper-pagination {
+    .swiper-pagination-testimonial {
+        position: absolute;
+        text-align: center;
+        z-index: 10;
+
         &.swiper-pagination-bullets {
             bottom: -45px;
 
@@ -97,11 +101,38 @@
             }
             > span:hover,
             > .swiper-pagination-bullet-active {
-                border-color: $cx-primary-color-1;
+                @include cx-color(primary, border);
 
                 &::before {
-                    @extend %bgc-primary-1;
+                    @include cx-color(primary, bg);
                 }
+            }
+        }
+    }
+
+    .with-right-padding & {
+        .swiper-pagination-bullets {
+            padding-right: 30px;
+        }
+    }
+}
+
+#primary_slider {
+    .swiper-pagination {
+        bottom: 20px;
+
+        .swiper-pagination-bullet {
+            border: none;
+            height: 12px;
+            margin: 0 6px;
+            width: 12px;
+            cursor: pointer;
+            background: rgba(255,255,255,0.8);
+            @extend %cx-transition;
+
+            &:hover,
+            &.swiper-pagination-bullet-active {
+                @include cx-color(secondary, bg);
             }
         }
     }

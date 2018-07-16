@@ -46,7 +46,7 @@
 	.single-category {
 		&:hover {
 			.media-content {
-				@extend %bgc-primary-1;
+				@include cx-color(primary, bg);
 			}
 			h2 {
 				a {
@@ -54,5 +54,65 @@
 				}
 			}
 		}
+	}
+
+	.single-category-2 {
+	    position: relative;
+	    overflow: hidden;
+	    border: 1px solid $cx-border-color;
+	    padding: 10px;
+	    @extend %mb-half;
+	    @extend %rounded-corners;
+
+	    @include media-only(wide, max) {
+	    	padding: 15px;
+	    	flex-wrap: wrap;
+	    }
+
+	    .media-image {
+	    	width: 170px;
+	    	@include media-only(wide, max) {
+	    		width: 100%;
+	    	}
+	    }
+
+	    .media-body {
+	    	h2 {
+	    		margin-bottom: 15px;
+
+	    		a {
+	    			color: #333;
+				    font-size: 16px;
+				    font-weight: 400;
+				    text-transform: uppercase;
+	    		}
+	    	}
+			
+			ul {
+		    	> li {
+		    		margin-bottom: 6px;
+
+		    		&:last-child {
+		    			@extend %mb0;
+		    		}
+		    	}
+		    }
+
+			a {
+			    font-size: 14px;
+			    color: #666;
+			    font-weight: 300;
+			    text-transform: capitalize;
+			    &:hover,
+			    &:active {
+			    	padding-left: 5px;
+			    	@include cx-color(primary, color);
+			    }
+			}
+
+	    	@include media-only(wide, max) {
+    		    margin-top: $cx-col-spacing;
+	    	}
+	    }
 	}
 }

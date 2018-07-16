@@ -5,6 +5,9 @@
 
 
 #main_nav {
+    .menu-toggle {
+        @extend %color-white;
+    }
     > ul {
         > li {
             a {
@@ -45,9 +48,9 @@
             &.active {
                 .active {
                     > a {
-                        @extend %color-primary-1;
+                        @include cx-color(primary, color);
                         &:hover {
-                            color: darken($cx-primary-color-1, 10%);
+                            @include cx-color(secondary, color);
                         }
                     }
                 }
@@ -74,7 +77,7 @@
     .mega-container,
     > ul >li > ul {
         padding: 45px 40px;
-        color: #333333;
+        color: #333;
         border-radius: 0 0 3px 3px;
         box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
         @extend %bgc-white;
@@ -107,13 +110,13 @@
                 margin: 0;
                 bottom: -1px;
                 z-index: 1;
-                @extend %bgc-primary-1;
+                @include cx-color(primary, bg);
             }
 
             h3 {
                 font-size: 16px;
                 line-height: 16px;
-                @extend %color-primary-1;
+                @include cx-color(primary, color);
                 @extend %mb0;
             }
         }
@@ -132,7 +135,7 @@
             line-height: 30px;
             &:hover,
             &:focus {
-                @extend %color-primary-1;
+                @include cx-color(primary, color);
             }
         }
     }
@@ -149,7 +152,7 @@
                     font-size: 14px;
 
                     &:hover {
-                        @extend %color-primary-1;
+                        @include cx-color(primary, color);
                     }
                 }
 
@@ -166,6 +169,9 @@
 
     @include media-only(notebook, max) {
         &.mobile {
+            max-height: 500px;
+            overflow-y: scroll;
+            
             .menu-toggle {
                 i {
                     margin-right: 5px;

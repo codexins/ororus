@@ -44,7 +44,7 @@
 
 	    &:hover {
 	    	@extend %bgc-white;
-	    	@extend %color-primary-1;
+	    	@include cx-color(primary, color);
 	    }
 	}
 

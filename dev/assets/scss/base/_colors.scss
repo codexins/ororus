@@ -112,6 +112,43 @@
 	background: cx-color(pallete-four, header);
 }
 
+%color-secondary-1 {
+	color: $cx-secondary-color-1;
+}
+
+%bgc-secondary-1 {
+	background-color: $cx-secondary-color-1;
+}
+
+%color-transparent {
+	color: transparent;
+}
+
+%color-offset {
+	color: $cx-offset-color;
+}
+
+%color-white {
+	color: #fff;
+}
+
+%bgc-transparent {
+	background-color: transparent;
+}
+
+%bgc-offset {
+	background-color: $cx-offset-color;
+}
+
+%bgc-white {
+	background-color: #fff;
+}
+
+%bgc-dark {
+	background-color: #333;
+}
+
+
 
 // Color Schemes
 
@@ -143,195 +180,64 @@
 	@include cx-color(header, bg);
 }
 
-%color-transparent {
-	body & {
-		color: transparent;
+body {
+	.color-transparent {
+		@extend %color-transparent;
 	}
-}
 
-%color-offset {
-	body & {
-		color: $cx-offset-color;
+	.color-offset {
+		@extend %color-offset;
 	}
-}
 
-%color-white {
-	body & {
-		color: #fff;
+	.color-white {
+		@extend %color-white;
 	}
-}
 
-%bgc-transparent {
-	body & {
-		background-color: transparent;
+	.bgc-transparent {
+		@extend %bgc-transparent;
 	}
-}
 
-%bgc-offset {
-	body & {
-		background-color: $cx-offset-color;
+	.bgc-offset {
+		@extend %bgc-offset;
 	}
-}
 
-%bgc-white {
-	body & {
-		background-color: #fff;
+	.bgc-white {
+		@extend %bgc-white;
+	}
+
+	.bgc-dark {
+		@extend %bgc-dark;
 	}
 }
 
 
+/* Social Media Colors */
 
-
-
-
-
-%primary-bg-1 {
-	background: cx-color(pallete-one, primary);
+.bg-facebook {
+	background: $facebook-color;
+	&:hover {
+		background: darken($facebook-color, 10%);
+	}
 }
 
-%primary-border-1 {
-	border-color: cx-color(pallete-one, primary);
+.bg-twitter {
+	background: $twitter-color;
+	&:hover {
+		background: darken($twitter-color, 10%);
+	}
 }
 
-%secondary-color-1 {
-	color: cx-color(pallete-one, secondary);
+.bg-gplus {
+	background: $gplus-color;
+	&:hover {
+		background: darken($gplus-color, 10%);
+	}
 }
 
-%secondary-bg-1 {
-	background: cx-color(pallete-one, secondary);
+.bg-pinterest {
+	background: $pinterest-color;
+	&:hover {
+		background: darken($pinterest-color, 10%);
+	}
 }
-
-%secondary-border-1 {
-	border-color: cx-color(pallete-one, secondary);
-}
-
-%header-bg-color-1 {
-	color: cx-color(pallete-one, header);
-}
-
-%primary-color-2 {
-	color: cx-color(pallete-two, primary);
-}
-
-%secondary-color-2 {
-	color: cx-color(pallete-two, secondary);
-}
-
-%header-bg-color-2 {
-	color: cx-color(pallete-two, header);
-}
-
-%primary-color-3 {
-	color: cx-color(pallete-three, primary);
-}
-
-%secondary-color-3 {
-	color: cx-color(pallete-three, secondary);
-}
-
-%header-bg-color-3 {
-	color: cx-color(pallete-three, header);
-}
-
-%primary-color-4 {
-	color: cx-color(pallete-four, primary);
-}
-
-%secondary-color-4 {
-	color: cx-color(pallete-four, secondary);
-}
-
-%header-bg-color-4 {
-	color: cx-color(pallete-four, header);
-}
-
-
-// // Scheme two
-// .primary-color {
-// 	@include cx-color(primary, color);
-// }
-
-// .primary-bg-color {
-// 	@include cx-color(primary, bg);
-// }
-
-// .primary-border-color {
-// 	@include cx-color(primary, border);
-// }
-
-// .secondary-color {
-// 	@include cx-color(secondary, color);
-// }
-
-// .secondary-bg-color {
-// 	@include cx-color(secondary, bg);
-// }
-
-// .secondary-border-color {
-// 	@include cx-color(secondary, border);
-// }
-
-// .header-bg-color {
-// 	@include cx-color(header, bg);
-// }
-
-
-// // Scheme three
-// .primary-color {
-// 	@include cx-color(primary, color);
-// }
-
-// .primary-bg-color {
-// 	@include cx-color(primary, bg);
-// }
-
-// .primary-border-color {
-// 	@include cx-color(primary, border);
-// }
-
-// .secondary-color {
-// 	@include cx-color(secondary, color);
-// }
-
-// .secondary-bg-color {
-// 	@include cx-color(secondary, bg);
-// }
-
-// .secondary-border-color {
-// 	@include cx-color(secondary, border);
-// }
-
-// .header-bg-color {
-// 	@include cx-color(header, bg);
-// }
-
-
-// // Scheme four
-// .primary-color {
-// 	@include cx-color(primary, color);
-// }
-
-// .primary-bg-color {
-// 	@include cx-color(primary, bg);
-// }
-
-// .primary-border-color {
-// 	@include cx-color(primary, border);
-// }
-
-// .secondary-color {
-// 	@include cx-color(secondary, color);
-// }
-
-// .secondary-bg-color {
-// 	@include cx-color(secondary, bg);
-// }
-
-// .secondary-border-color {
-// 	@include cx-color(secondary, border);
-// }
-
-// .header-bg-color {
-// 	@include cx-color(header, bg);
-// }
 

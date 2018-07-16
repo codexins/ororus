@@ -19,8 +19,8 @@
 
     &:hover,
     &:focus {
-	    background: #333;
-	    @extend %color-white;
+        @extend .color-white;
+	    @extend .bgc-dark;
     }
 
     &.transparent {

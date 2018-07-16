@@ -71,7 +71,7 @@
 
 .footer-copyright {
 	padding: 20px 0;
-	@extend %bgc-primary-1;
+	@include cx-color(primary, bg);
 	@extend %color-white;
 
 	p {
@@ -118,6 +118,18 @@
 
 			ul {
 				text-align: center;
+			}
+		}
+	}
+
+	.color-scheme-two & {
+		color: #333;
+
+		a {
+			color: #333;
+
+			&:hover {
+				@extend .color-white;
 			}
 		}
 	}

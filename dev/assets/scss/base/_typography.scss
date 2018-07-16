@@ -186,20 +186,26 @@ input[type="button"]:hover {
     @include cx-color(primary, bg);
 }
 
-::-webkit-selection {
-    background: cx-color(pallete-one, primary);
-    text-shadow: none;
-    color: #fff;
-}
+$c_schemes: one two three four;
 
-::-moz-selection {
-    background: cx-color(pallete-one, primary);
-    text-shadow: none;
-    color: #fff;
-}
+@each $single-scheme in $c_schemes {
+    .color-scheme-#{$single-scheme} {
+        ::-webkit-selection {
+            background: cx-color(pallete-#{$single-scheme}, primary);
+            text-shadow: none;
+            color: #fff;
+        }
 
-::selection {
-    background: cx-color(pallete-one, primary);
-    text-shadow: none;
-    color: #fff;
+        ::-moz-selection {
+            background: cx-color(pallete-#{$single-scheme}, primary);
+            text-shadow: none;
+            color: #fff;
+        }
+
+        ::selection {
+            background: cx-color(pallete-#{$single-scheme}, primary);
+            text-shadow: none;
+            color: #fff;
+        }
+    }
 }

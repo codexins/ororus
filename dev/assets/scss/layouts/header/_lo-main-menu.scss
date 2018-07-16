@@ -37,6 +37,48 @@
         	background: #6d86b1;
         }
 
+        .color-scheme-two & {
+            background: rgba(#254672, 0.8);
+            &:hover {
+                background: #254672;
+            }
+
+            @include media-only(notebook, max) {
+                background: #434343;
+                &:hover {
+                    background: #434343;
+                }
+            }
+        }
+
+        .color-scheme-three & {
+            background: rgba(#2b7fd0, 0.8);
+            &:hover {
+                background: #2b7fd0;
+            }
+
+            @include media-only(notebook, max) {
+                background: #434343;
+                &:hover {
+                    background: #434343;
+                }
+            }
+        }
+
+        .color-scheme-four & {
+            background: rgba(#d44242, 0.8);
+            &:hover {
+                background: #d44242;
+            }
+
+            @include media-only(notebook, max) {
+                background: #434343;
+                &:hover {
+                    background: #434343;
+                }
+            }
+        }
+
         @include media-only(notebook, max) {
             background: #434343;
             &:hover {
@@ -86,8 +128,10 @@
             }
         }
 
-        &.transparent-nav {
+        &.floating-nav {
             background: #434343;
         }
     }
+
+    @include cx-color(header, bg);
 }

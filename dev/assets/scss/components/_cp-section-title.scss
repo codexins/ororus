@@ -29,7 +29,7 @@
 	    &::before {
 		    width: 70px;
 		    z-index: 1;
-		    @extend %bgc-primary-1;
+		    @include cx-color(primary, bg);
 	    }
 
 	    &::after {
@@ -97,11 +97,34 @@
 	    }
 	}
 
-	.with-right-padding {
+	&.with-right-padding {
 		padding-right: 70px;
 	}
 
-	.with-left-padding {
+	&.with-left-padding {
 		padding-left: 70px;
+	}
+
+	&.with-icon {
+		h2 {
+		    font-size: 20px;
+		    text-transform: uppercase;
+		    padding: 0 0 20px 45px;
+				
+			i {
+			    &::before {
+				    width: 36px;
+				    height: 36px;
+				    line-height: 37px;
+				    font-size: 22px;
+				    text-align: center;
+				    position: absolute;
+				    left: 0;
+				    top: -8px;
+				    @include cx-color(primary, bg);
+				    @extend %rounded-corners;
+			    }
+			}
+		}
 	}
 }

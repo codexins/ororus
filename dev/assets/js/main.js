@@ -7,7 +7,7 @@ INDEX:
     s02 - Main Navigation Menu
     s03 - Image Background Settings
     s04 - Primary Slider Settings
-    s05 - Elements Spacing
+    s05 - Elements Spacing and classes
     s06 - Element Carousels
     s07 - Tooltips
     s08 - Product Gallery with Thumbnails
@@ -38,7 +38,7 @@ INDEX:
         $document           = $(document),
         $niceSelect         = $(".nice-select"),
         $mainMenu           = $(".stellarnav"),
-        $mainMenutp         = $(".transparent-nav"),
+        $mainMenufl         = $(".floating-nav"),
         $pSlider            = $("#primary_slider"),
         $prodCarousel       = $(".product-carousel"),
         $galleryThumbs      = $(".gallery-with-thumbs"),
@@ -83,9 +83,10 @@ INDEX:
             if ($(this).attr("href") === pageUrl || $(this).attr("href") === '') {
                 $(this).closest('li').addClass("active");
                 $(this).parents('li').addClass('active');
-            } else if (window.location.pathname === '/') {
-                $('#main_nav a[href="index.html"]').parent('li').addClass('active');
             }
+            //  else if (window.location.pathname === '/') {
+            //     $('#main_nav a[href="index.html"]').parent('li').addClass('active');
+            // }
         })
     };
 
@@ -135,8 +136,13 @@ INDEX:
                 },
 
                 navigation: {
-                    nextEl: ".swiper-arrow.next",
-                    prevEl: ".swiper-arrow.prev"
+                    nextEl: ".swiper-arrow.next.slide",
+                    prevEl: ".swiper-arrow.prev.slide"
+                },
+
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
                 },
 
                 // Giving slider a background parallax sliding effect
@@ -174,36 +180,44 @@ INDEX:
 
 
     /************************************************************
-        s05 - Elements Spacing
+        s05 - Elements Spacing and classes
     *************************************************************/
 
-    ORORUS.elementHeights = function() {
+    ORORUS.elementHeightsClasses = function() {
 
         // Fixed Navigation Menu Height
         var headerHeight = $intelHeader[0].getBoundingClientRect().height;
         var headerTopHeight = $('header .header-area')[0].getBoundingClientRect().height;
 
         // Sticky header
-        if ($window.width() > 991) {
-            $window.on('scroll', function() {
-                var height = $window.scrollTop();
-                if (height < headerTopHeight) {
-                    $(".fixed-header-space").height(0);
-                    $intelHeader.removeClass("sticky");
-                } else {
-                    $(".fixed-header-space").height(headerHeight);
-                    $intelHeader.addClass("sticky");
-                }
-            });   
-        }
+        $window.on('scroll', function() {
+            var height = $window.scrollTop();
+            if (height < headerTopHeight + headerHeight) {
+                $(".fixed-header-space").height(0);
+                $intelHeader.removeClass("sticky");
+            } else {
+                $(".fixed-header-space").height(headerHeight);
+                $intelHeader.addClass("sticky");
+            }
+        });
 
         // For Main Menu float over Primary Slider
-        if ($mainMenutp.elExists()) {
-            var navHeight       = $mainMenutp[0].getBoundingClientRect().height;
-            var sliderHeight    = $pSlider[0].getBoundingClientRect().height;
+        if ($mainMenufl.elExists()) {
+            var navHeight       = $mainMenufl[0].getBoundingClientRect().height;
 
             $pSlider.css("margin-top", -navHeight);
+        }
+
+        if ($pSlider.elExists) {
+            var sliderHeight    = $pSlider[0].getBoundingClientRect().height;
             $("#primary_slider .slide-content").parent(this).css("height", sliderHeight);
+        }
+
+        if ($window.width() > 991) {
+            if ($(".top-promo-banners").elExists()) {
+                var topBanners = $('.top-promo-banners')[0].getBoundingClientRect().height;
+                $pSlider.height(topBanners);
+            }
         }
     };
 
@@ -241,8 +255,8 @@ INDEX:
 
                 // Adding slider and slider-nav instances to use multiple times in a page
                 $this.addClass("instance-" + index);
-                $this.parent().find(".swiper-arrow.prev").addClass("prev-" + index);
-                $this.parent().find(".swiper-arrow.next").addClass("next-" + index);
+                $this.parent().find(".prev").addClass("prev-" + index);
+                $this.parent().find(".next").addClass("next-" + index);
 
                 swiperInstances[index] = new Swiper(".instance-" + index, {
                     slidesPerView: visibleSlides,
@@ -265,15 +279,15 @@ INDEX:
                     breakpoints: {
                         1199: {
                             slidesPerView: visibleSlides_lg,
-                            centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
+                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         991: {
                             slidesPerView: visibleSlides_md,
-                            centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
+                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         767: {
                             slidesPerView: visibleSlides_sm,
-                            centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
+                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         479: {
                             slidesPerView: 1
@@ -426,18 +440,18 @@ INDEX:
                 spaceBetween: 0,
                 parallax: true,
                 speed: 1000,
-                autoplay: {
-                    delay: 6000
-                },
+                // autoplay: {
+                //     delay: 6000
+                // },
 
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.swiper-pagination-testimonial',
                     clickable: true
                 },
 
                 navigation: {
-                    nextEl: '.swiper-arrow.next',
-                    prevEl: '.swiper-arrow.prev'
+                    nextEl: '.swiper-arrow.next.testimonial-slide',
+                    prevEl: '.swiper-arrow.prev.testimonial-slide'
                 }
             });
         }
@@ -580,7 +594,7 @@ INDEX:
 
     // Window load and resize functions
     $window.on('load resize', function() {
-        ORORUS.elementHeights();
+        ORORUS.elementHeightsClasses();
     });
 
 })(jQuery);

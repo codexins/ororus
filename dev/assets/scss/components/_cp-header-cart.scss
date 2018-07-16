@@ -45,14 +45,19 @@
 		    right: -5px;
 		    z-index: 2;
 		    @extend %color-white;
-		    @extend %bgc-primary-1;
+		    @include cx-color(secondary, bg);
+
+		    .color-scheme-three & {
+		    	color: #333;
+		    }
 	    }
 
 		&:focus,
 	    &:hover {
-	    	border-color: $cx-primary-color-1;
+	    	@extend %bgc-transparent;
+	    	@include cx-color(primary, border);
 	    	i {
-	    		@extend %color-primary-1;
+	    		@include cx-color(primary, color);
 	    	}
 	    }
 
@@ -130,6 +135,12 @@
 		> .default-btn {
 			height: 42px;
 			line-height: 42px;
+
+    		&:hover,
+    		&:focus {
+    			@extend .color-white;
+    		}
+    		
 		    &:last-child {
 		    	float: right;
 		    }

@@ -67,7 +67,7 @@
 			@extend %cx-transition;
 
 			&:hover {
-				border-color: $cx-primary-color-1;
+				@include cx-color(primary, border);
 			}
 		}
 
@@ -83,7 +83,7 @@
 .product-details {
 	.product-name {
 	    font-size: 24px;
-	    color: #333333;
+	    color: #333;
 	    text-transform: capitalize;
 	    line-height: 1;
 	    font-weight: 400;
@@ -143,6 +143,7 @@
 
 		.nice-select {
 			padding-right: 40px;
+			width: 75px;
 
 			.current {
 			    display: block;
@@ -276,7 +277,7 @@
 
 		.price-new {
 			font-size: 28px;
-			@extend %color-primary-1;
+			@include cx-color(primary, color);
 		}
 
 		.price-discount {
@@ -347,7 +348,7 @@
 
 	.countdown-timer {
 	    display: inline-block;
-	    background: lighten($cx-primary-color-1, 10%);
+	    @include cx-color(primary, bg);
 	    @extend %rounded-corners;
 
 	    .countdown-section {
@@ -360,7 +361,7 @@
 		    position: relative;
 
 		    @include media-only(notebook, max) {
-		    	min-width: 50px;
+		    	min-width: 46px;
 		    }
 
 		    .countdown-amount {
