@@ -57,7 +57,7 @@ section {
 
 /* Modal Fixes */
 
-.modal-open .main-nav-area {
+.modal-open .main-nav-area.sticky {
   overflow-y: scroll;
 }
 

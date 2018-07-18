@@ -1,6 +1,6 @@
 
 
-/* v01:
+/* v07:
  * Stellarnav.js 2.3.0
  * jQuery responsive multi-level dropdown menu designed to do most of the heavy CSS work for you.    
  * Copyright (c) 2016 Vinny Moreira - http://vinnymoreira.com

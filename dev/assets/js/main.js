@@ -17,6 +17,7 @@ INDEX:
     s12 - Recent Post Widget Carousel
     s13 - Scroll to Top JS
     s14 - Footer Accordion Activation
+    s15 - Price range Slider
 
 
 
@@ -48,7 +49,8 @@ INDEX:
         $recentPosts        = $(".recent-posts-widget"),
         $toTop              = $("#to_top"),
         $intelHeader        = $(".main-nav-area"),
-        $footer             = $("#colophon");
+        $footer             = $("#colophon"),
+        $priceRange         = $("#price_slider");
 
 
     // Check if element exists
@@ -208,7 +210,7 @@ INDEX:
             $pSlider.css("margin-top", -navHeight);
         }
 
-        if ($pSlider.elExists) {
+        if ($pSlider.elExists()) {
             var sliderHeight    = $pSlider[0].getBoundingClientRect().height;
             $("#primary_slider .slide-content").parent(this).css("height", sliderHeight);
         }
@@ -571,6 +573,30 @@ INDEX:
     };
 
 
+    /************************************************************
+        s15 - Price Range Slider
+    *************************************************************/
+
+    ORORUS.rangeSlider = function() {
+        if ($priceRange.elExists()) {
+            $priceRange.slider({
+                range: true,
+                min: 0,
+                max: 145,
+                values: [ 20, 440 ],
+                slide: function( event, ui ) {
+                    $( "#min_price" ).val('$' + ui.values[ 0 ] );
+                    $( "#max_price" ).val('$' + ui.values[ 1 ] );
+                }
+            });
+            $( "#min_price" ).val('$' + $priceRange.slider( "values", 0 ));
+            $( "#max_price" ).val('$' + $priceRange.slider( "values", 1 ));
+        }
+    };
+
+
+
+
     // Window load functions
     $window.on('load', function() {
         ORORUS.imageBgSettings();
@@ -589,6 +615,7 @@ INDEX:
         ORORUS.countDown(),        
         ORORUS.scrollToTop(),        
         ORORUS.toolTips(),
+        ORORUS.rangeSlider(),
         ORORUS.footerAccordion();
     });
 

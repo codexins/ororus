@@ -22,6 +22,20 @@
     }
 }
 
+.sidebar-widget {
+	margin-bottom: 50px;
+
+	.widgettitle {
+		font-size: 20px;
+	    padding: 0 0 20px;
+	    margin-bottom: 30px;
+	}
+
+	&:last-child {
+		@extend %mb0;
+	}
+}
+
 
 /* Text Widget */
 .widget-content {
@@ -212,6 +226,113 @@
 			&:hover {
 				color: #333;
 			}
+		}
+	}
+}
+
+/* Price Slider Widget */
+.filter-price-content {
+	#price_slider {
+	    margin: 10px 0px 0px;
+	    border-radius: 0;
+	    background: #29323b;
+	    border: none !important;
+	    height: 4px;
+	    position: relative;
+
+	    .ui-slider-range {
+		    position: absolute;
+		    z-index: 1;
+		    font-size: .7em;
+		    display: block;
+		    border: 0;
+		    top: 0;
+		    height: 100%;
+		    @include cx-color(primary, bg);
+	    }
+
+	    .ui-slider-handle {
+		    width: 14px;
+		    height: 14px;
+		    top: -5px;
+		    border-radius: 50%;
+		    position: absolute;
+		    border: 0;
+		    cursor: pointer;
+		    @include cx-color(primary, bg);
+	    }
+	}
+
+    .filter-price-wrapper {
+		padding: 5px 0;
+	    text-align: center;
+	    font-size: 14px;
+	    margin-top: 10px;
+	    color: #363f4d;
+	    font-weight: 400;
+
+	    .filter-content {
+		    display: flex;
+		    font-weight: 600;
+		    justify-content: center;
+
+	    	input {
+			    width: 100px;
+			    border: none;
+			    background: none;
+			    text-align: center;
+			    font-size: 14px;
+	    	}
+	    }
+    }
+}
+
+/* Category Widget */
+.list-widget {
+	.list-group {
+		> a {
+		    text-transform: capitalize;
+		    color: #333333;
+		    font-size: 14px;
+		    font-weight: 400;
+		    padding-bottom: 13px;
+		    display: block;
+		    margin: 5px 0;
+
+		    &:first-child {
+		    	margin-top: 0;
+		    }
+
+		    &:last-child {
+		    	margin-bottom: 0;
+		    	padding-bottom: 0;
+		    }
+
+		    &::before {
+			    content: "\f2bc";
+			    font-family: "Ionicons";
+			    width: 17px;
+			    height: 17px;
+			    line-height: 15px;
+			    border: 1px solid #dfdfdf;
+			    display: inline-block;
+			    margin-right: 10px;
+			    border-radius: 2px;
+			    text-align: center;
+			    color: transparent;
+			    @extend %cx-transition;
+		    }
+
+		    &:hover,
+		    &:focus {
+		    	@include cx-color(primary, color);
+
+		    	&::before {
+		    		@extend .color-white;
+		    		@include cx-color(primary, bg);
+		    		@include cx-color(primary, border);
+		    	}
+		    }
 		}
 	}
 }

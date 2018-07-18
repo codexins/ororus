@@ -23,8 +23,9 @@
     @extend %color-white;
 
     i {
-    	font-size: 12px;
+    	font-size: 16px;
     	position: relative;
+        top: 2px;
 
     	&:first-child {
     		right:-1px;

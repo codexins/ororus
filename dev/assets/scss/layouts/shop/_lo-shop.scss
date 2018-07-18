@@ -1,0 +1,161 @@
+/**
+ * Layout Shop
+ *
+ */
+
+.shop-toolbar {
+    width: 100%;
+    margin: 0 0 40px;
+    padding: 20px;
+    min-height: 52px;
+    border: 1px solid #e9e9e9;
+	display: flex;
+	justify-content: space-between;
+	@extend %rounded-corners;
+
+    .toolbar-inner {
+    	display: flex;
+    	justify-content: space-between;
+    	line-height: 28px;
+    }
+
+	.product-view-mode {
+		margin-right: 40px;
+
+		ul {
+			li {
+			    margin-right: 15px;
+
+			    a {
+			    	&.active {
+			    		@include cx-color(primary, color);
+			    	}
+
+			    	i {
+						display: block;
+					    font-size: 26px;
+					    line-height: 28px;
+			    	}
+			    }
+			}
+		}
+	}
+
+	.toolbar-amount {
+	    font-size: 14px;
+	    color: #666666;
+	}
+
+	.product-select-box {
+		display: flex;
+		> div {
+			display: flex;
+		}
+
+		.product-sort,
+		.product-show {
+			p {
+				margin: 0 8px 0 0;
+				line-height: 28px;
+			}
+
+			.nice-select {
+				height: 28px;
+			    border: 1px solid #ebebeb;
+			    border-radius: 3px;
+			    padding: 0 10px;
+			    line-height: 28px;
+
+			    .option {
+			    	&.selected {
+			    		font-weight: 600;
+			    	}
+			    }
+
+			    &::after {
+					content: "\f107";
+				    font-family: FontAwesome;
+				    border: 0;
+				    width: auto;
+				    transform-origin: initial;
+				    transform: rotate(0);
+				    top: 4px;
+				    right: 10px;
+				    font-size: 12px;
+				    height: 28px;
+				    line-height: 28px;
+			    }
+
+			    &.open {
+			    	&::after {
+			    		transform: rotate(180deg);
+			    	}
+			    }
+			}
+		}
+
+		.product-show {
+			margin-right: 25px;
+			.nice-select {
+				width: 70px;
+			}
+		}
+
+		.product-sort {
+			.nice-select {
+				width: 165px;
+			}
+		}
+	}
+}
+
+.shop-products-wrapper {
+	.product-grid {
+		margin-bottom: 20px;
+
+		.product-inner {
+			padding-bottom: 25px;
+		}
+	}
+
+	.product-layout {
+		&.product-list {
+			.product-image {
+				> a {
+					max-width: 270px;
+				}
+			}
+
+			.action-links {
+				justify-content: center;
+			    transform: translateY(50px);
+		        background: rgba(255, 255, 255, 0.9);
+			}
+
+			.price-new {
+				font-size: 22px;
+				font-weight: 500;
+			}
+
+			.product-name {
+				font-size: 18px;
+			    margin-bottom: 20px;
+			    margin-top: -5px;
+			}
+
+			.product-inner {
+				padding: 30px 20px 20px;
+			    margin-bottom: 25px;
+			    border: 1px solid rgba(0,0,0,0);
+			    @extend %rounded-corners;
+				&:hover {
+					@include cx-color(primary, border);
+					.action-links {
+				    	transform: translateY(0);
+				    	opacity: 1;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,8 +1,9 @@
 /**
- * Layout product Slider
+ * Layout Product Slider
  *
  */
 
+.shop-products-wrapper,
 .product-carousel {
 	@extend %overflow-hidden;
 

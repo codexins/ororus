@@ -405,4 +405,69 @@ header {
 		    }
 		}
 	}
+
+	&.inner-header {
+		.color-scheme-one & {
+			.main-nav-area {
+				background: #6e87b2;
+
+				&.sticky {
+					background: rgba(#6d86b1, 0.9);
+				}
+			}
+		}
+
+		.color-scheme-two & {
+			.main-nav-area {
+				background: #254672;
+
+				&.sticky {
+					background: rgba(#254672, 0.9);
+				}
+			}
+		}
+
+		.color-scheme-three & {
+			.main-nav-area {
+				background: #2b7fd0;
+
+				&.sticky {
+					background: rgba(#2b7fd0, 0.9);
+				}
+			}
+		}
+
+		.color-scheme-four & {
+			.main-nav-area {
+				background: #d44242;
+
+				&.sticky {
+					background: rgba(#d44242, 0.9);
+				}
+			}
+		}
+
+
+	    @include media-only(notebook, max) {
+	    	.color-scheme-one &,
+	    	.color-scheme-two &,
+	    	.color-scheme-three &,
+	    	.color-scheme-four & {
+				.main-nav-area {
+			        background: #434343;
+			        &:hover {
+			            background: #434343;
+			        }
+
+			        &.sticky {
+				        background: #434343;
+				        &:hover {
+				            background: #434343;
+				        }
+			        }
+				}
+		    }
+	    }
+	}
+
 }

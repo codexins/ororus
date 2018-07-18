@@ -127,11 +127,25 @@ input[type="tel"] {
     font-size: 12px;
     box-shadow: none;
     border-radius: 0;
+    height: 34px;
     @extend %cx-transition;
+
+    &:focus {
+        box-shadow: none;
+        @include cx-color(primary, border);
+    }
+}
+
+.form-control {
+    border-radius: 0;
+    &:focus {
+        box-shadow: none;
+        @include cx-color(primary, border);
+    }
 }
 
 textarea {
-    min-height: 160px;
+    min-height: 100px;
 }
 
 .input-group,

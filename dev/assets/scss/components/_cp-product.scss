@@ -89,6 +89,7 @@
 	    font-weight: 400;
 	}
 
+	.product-meta,
 	.product-description {
 		color: #666666;
 	    font-size: 14px;
@@ -102,6 +103,24 @@
 	    		@extend %mb0;
 	    	}
 	    }
+	}
+
+	.product-meta {
+		li {
+		    line-height: 25px;
+		    font-style: initial;
+		    font-size: 14px;
+		    margin: 0 0 5px;
+
+		    &:last-child {
+		    	@extend %mb0;
+		    }
+
+		    span {
+			    color: #58bd1a;
+			    margin-left: 5px;
+		    }
+		}
 	}
 
 	.product-actions {
@@ -216,7 +235,13 @@
 
 				i {
 					margin-right: 5px;
+					font-size: 18px;
 				}
+			}
+
+			.default-btn {
+				text-transform: initial;
+				font-size: 14px;
 			}
 
 			@include respond-to(mobile) {
@@ -258,6 +283,13 @@
 		    }
 	    }
     }
+}
+
+.product-des {
+    margin: 20px 0 0 0;
+    font-size: 14px;
+    color: #666666;
+    line-height: 26px;
 }
 
 .product-price {
@@ -405,6 +437,56 @@
 		    		content: none;
 		    	}
 		    }
+	    }
+	}
+}
+
+.wishlist-compare {
+	> button {
+	    width: auto;
+	    height: auto;
+	    border-radius: 0;
+	    border: none;
+	    padding: 0;
+	    background: none;
+	    color: #666666;
+	    font-size: 14px;
+	    box-shadow: none;
+	    text-transform: initial;
+	    font-weight: normal;
+	    cursor: pointer;
+	    line-height: 1;
+
+	    &::before {
+			font-family: 'Pe-icon-7-stroke';
+		    display: inline-block;
+		    font-size: 18px;
+		    color: #666666;
+		    margin-right: 8px;
+			position: relative;
+		    bottom: -3px;
+		    @extend %cx-transition;
+	    }
+
+	    &:hover {
+	    	background: none;
+	    	@include cx-color(primary, color);
+
+	    	&::before {
+	    		@include cx-color(primary, color);
+	    	}
+	    }
+	}
+	.btn-wishlist {
+	    margin-right: 25px;
+	    &::before {
+    	    content: "\e642";
+	    }
+	}
+
+	.btn-compare {
+	    &::before {
+    	    content: "\e6c2";
 	    }
 	}
 }

@@ -1,0 +1,39 @@
+/**
+ * Components Breadcrumbs
+ *
+ */
+
+.breadcrumb {
+	padding: 25px 0 20px;
+    margin: 0 0 40px 0;
+    background: none;
+    border-radius: 0;
+    text-align: left;
+    border-bottom: 1px solid $cx-border-color;
+
+    .breadcrumb-item {
+    	position: relative;
+    	font-size: 14px;
+    	
+    	+ .breadcrumb-item {
+    		padding-left: 30px;
+	    	&::before {
+			    position: absolute;
+			    color: #222;
+			    content: "\e684";
+			    font-family: 'Pe-icon-7-stroke';
+			    font-size: 28px;
+			    width: 30px;
+			    height: 24px;
+			    line-height: 24px;
+			    text-align: center;
+			    left: 0;
+			    top: -2px;
+	    	}
+	    }
+
+	    &.active {
+	    	@include cx-color(primary, color);
+	    }
+    }
+}
