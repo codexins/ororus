@@ -1,0 +1,31 @@
+/**
+ * Layout Login / Register
+ *
+ */
+
+.login-wrapper {
+	.login-form {
+	    padding: 50px 50px 30px;
+	    border: 1px solid rgba(0,0,0,.125);
+        box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+	}
+
+	p {
+		font-size: 14px;
+		@extend %mb0;
+	}
+
+	.registration-form {
+		padding-bottom: 50px;
+	}
+
+	.login-info {
+		p {
+			font-size: 15px;
+
+			a {
+				font-size: 16px;
+			}
+		}
+	}
+}

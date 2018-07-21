@@ -118,6 +118,7 @@ textarea,
 select,
 input[type="text"],
 input[type="url"],
+input[type="number"],
 input[type="email"],
 input[type="button"],
 input[type="reset"],
@@ -127,7 +128,8 @@ input[type="tel"] {
     font-size: 12px;
     box-shadow: none;
     border-radius: 0;
-    height: 34px;
+    height: 40px;
+    border-color: #ddd;
     @extend %cx-transition;
 
     &:focus {
@@ -198,6 +200,58 @@ input[type="submit"]:hover,
 input[type="button"]:hover {
     @include cx-color(primary, border);
     @include cx-color(primary, bg);
+}
+
+.nice-select {
+    width: 100%;
+    padding: 0 .75rem;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    border-color: #ddd;
+
+    &:not(.open) {
+        .list {
+            max-height: 0;
+        }
+    }
+
+    .list {
+        max-height: 280px;
+        height: auto;
+        overflow-y: auto;
+        width: 100%;
+
+        .selected {
+            font-weight: 600;
+        }
+    }
+
+    span {
+        &.current {
+            color: #777
+        }
+    }
+
+    &::after {
+        content: "\f107";
+        font-family: FontAwesome;
+        border: 0;
+        width: auto;
+        transform-origin: initial;
+        height: 40px;
+        line-height: 40px;
+        transform: rotate(0);
+        top: 4px;
+        right: 15px;
+        font-size: 12px;
+    }
+    
+    &.open {
+        &::after {
+            transform: rotate(180deg);
+        }
+    }
 }
 
 $c_schemes: one two three four;

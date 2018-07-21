@@ -7,7 +7,7 @@ INDEX:
     s02 - Main Navigation Menu
     s03 - Image Background Settings
     s04 - Primary Slider Settings
-    s05 - Elements Spacing and classes
+    s05 - Elements Spacing & Classes
     s06 - Element Carousels
     s07 - Tooltips
     s08 - Product Gallery with Thumbnails
@@ -18,6 +18,7 @@ INDEX:
     s13 - Scroll to Top JS
     s14 - Footer Accordion Activation
     s15 - Price range Slider
+    s16 - Checkout Accordion Behaviour
 
 
 
@@ -182,10 +183,10 @@ INDEX:
 
 
     /************************************************************
-        s05 - Elements Spacing and classes
+        s05 - Elements Spacing & Classes
     *************************************************************/
 
-    ORORUS.elementHeightsClasses = function() {
+    ORORUS.ElementsSpacingClasses = function() {
 
         // Fixed Navigation Menu Height
         var headerHeight = $intelHeader[0].getBoundingClientRect().height;
@@ -205,16 +206,17 @@ INDEX:
 
         // For Main Menu float over Primary Slider
         if ($mainMenufl.elExists()) {
-            var navHeight       = $mainMenufl[0].getBoundingClientRect().height;
+            var navHeight = $mainMenufl[0].getBoundingClientRect().height;
 
             $pSlider.css("margin-top", -navHeight);
         }
 
         if ($pSlider.elExists()) {
-            var sliderHeight    = $pSlider[0].getBoundingClientRect().height;
+            var sliderHeight = $pSlider[0].getBoundingClientRect().height;
             $("#primary_slider .slide-content").parent(this).css("height", sliderHeight);
         }
 
+        // Equal height columns in slider
         if ($window.width() > 991) {
             if ($(".top-promo-banners").elExists()) {
                 var topBanners = $('.top-promo-banners')[0].getBoundingClientRect().height;
@@ -351,6 +353,7 @@ INDEX:
                 loopAdditionalSlides: 10,
                 speed:1000,
                 slidesPerView: 3,
+                centeredSlides: true,
                 spaceBetween: 15,
                 touchRatio: 0.2,
                 grabCursor: true,
@@ -442,9 +445,9 @@ INDEX:
                 spaceBetween: 0,
                 parallax: true,
                 speed: 1000,
-                // autoplay: {
-                //     delay: 6000
-                // },
+                autoplay: {
+                    delay: 6000
+                },
 
                 pagination: {
                     el: '.swiper-pagination-testimonial',
@@ -594,6 +597,38 @@ INDEX:
         }
     };
 
+    /************************************************************
+        s16 - Checkout Accordion Behaviour
+    *************************************************************/
+    ORORUS.checkoutAccordion = function() {
+        $( '#show_login' ).on('click', function() {
+            $( '#checkout_login' ).slideToggle(300);
+        });
+
+        $( '#show_coupon' ).on('click', function() {
+            $( '#checkout_coupon' ).slideToggle(300);
+        });
+
+        $("#different_shipping").on("change",function(){
+            $(".ship-box-info").slideToggle(300);
+        });
+
+        $("#create_account").on("change",function(){
+            $(".new-account-info").slideToggle(300);
+        });
+
+        // $(".checkout-payment .form-check-input").on("change",function(){
+        //     if (this.value === 'check') {
+        //         $("#check_pay").slideToggle(300);
+        //     } else if (this.value === 'cash') {
+        //         $("#cash_pay").slideToggle(300);
+        //     } else if (this.value === 'paypal') {
+        //         $("#paypal_pay").slideToggle(300);
+        //     } else {
+        //         this.hide();
+        //     }
+        // });
+    };
 
 
 
@@ -616,12 +651,13 @@ INDEX:
         ORORUS.scrollToTop(),        
         ORORUS.toolTips(),
         ORORUS.rangeSlider(),
+        ORORUS.checkoutAccordion(),
         ORORUS.footerAccordion();
     });
 
     // Window load and resize functions
     $window.on('load resize', function() {
-        ORORUS.elementHeightsClasses();
+        ORORUS.ElementsSpacingClasses();
     });
 
 })(jQuery);

@@ -145,7 +145,7 @@
                                                         </select>
                                                         <div class="search-wrapper">
                                                             <input type="text" placeholder="Search">
-                                                            <button class="header-search-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
+                                                            <button class="header-search-btn" type="submit"><i class="ion ion-ios-search"></i></button>
                                                         </div>
                                                     </div>
                                                 </form>
@@ -174,7 +174,7 @@
                                                                         <span class="cart-price">$120.00</span>
                                                                     </div>
                                                                     <div class="shopping-cart-delete">
-                                                                        <a href="#"><i class="ion-android-close"></i></a>
+                                                                        <a href="#"><i class="ion ion-md-close"></i></a>
                                                                     </div>
                                                                 </li>
                                                                 <li class="single-cart-item media">
@@ -188,7 +188,7 @@
                                                                         <span class="cart-price">$120.00</span>
                                                                     </div>
                                                                     <div class="shopping-cart-delete">
-                                                                        <a href="#"><i class="ion-android-close"></i></a>
+                                                                        <a href="#"><i class="ion ion-md-close"></i></a>
                                                                     </div>
                                                                 </li>
                                                             </ul>
@@ -223,7 +223,7 @@
             </div> <!-- end of header-area -->
 
             <!-- Start of Main and Mobile Navigation -->
-            <div class="main-nav-area transparent-nav">
+            <div class="main-nav-area transparent-nav floating-nav">
                 <div class="container">
                     <nav id="main_nav" class="stellarnav">
                         <ul class="text-left">
@@ -255,18 +255,26 @@
                                         </ul>
                                     </li>
 
-                                    <li><a href="#" class="mega-menu-title"><h3>Shop Pages</h3></a>
+                                    <li><a href="#" class="mega-menu-title"><h3>Other Pages</h3></a>
                                         <ul>
-                                            <li><a href="#">Shop Left</a></li>
-                                            <li><a href="#">Shop Right</a></li>
-                                            <li><a href="#">Shop Full Width</a></li>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">Contact Us</a></li>
                                             <li><a href="#">Wishlist</a></li>
+                                            <li><a href="#">Checkout</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
                             <li><a href="#"><span>Blog</span></a></li>
-                            <li><a href="#"><span>Shop</span></a></li>
+                            <li><a href="shop-grid.html"><span>Shop</span></a>
+                                <ul>
+                                    <li><a href="shop-grid.html">Shop Grid</a></li>
+                                    <li><a href="shop-list.html">Shop List</a></li>
+                                    <li><a href="shop-right-sidebar.html">Shop Right Sidebar</a></li>
+                                    <li><a href="shop-fullwidth.html">Shop Full Width</a></li>
+                                    <li><a href="single-product.html">Single Product Page</a></li>
+                                </ul>
+                            </li>
                             <li><a href="#"><span>About Us</span></a></li>
                             <li><a href="#"><span>Contact Us</span></a></li>
                         </ul>
@@ -327,14 +335,14 @@
                 </div>
 
                 <!-- Slider Navigation -->
-                <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
-                <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
+                <div class="swiper-arrow next slide"><i class="fa fa-angle-right"></i></div>
+                <div class="swiper-arrow prev slide"><i class="fa fa-angle-left"></i></div>
             </div>
         </section>
         <!-- End of Primary Slider Section -->
 
         <!-- Start of Main Content Wrapper -->
-        <main id="content" class="main-content-wrapper bt-shadow">
+        <main id="content" class="main-content-wrapper">
             
             <!-- Start of Support Section -->
             <section class="support-section mb0 pt-5">
@@ -373,7 +381,7 @@
             <!-- End of Support Section -->
 
             <!-- Start of Banner Section -->
-            <section class="banner-section mb-half">
+            <div class="banner-section mb-half">
                 <div class="container">
                     <div class="row">
                         <div class="col-6 col-sm-6 col-md-3 col-lg-3">
@@ -409,7 +417,7 @@
                         </div> <!-- end of promo-banner -->
                     </div> <!-- end of row -->
                 </div> <!-- end of container -->
-            </section>
+            </div>
             <!-- End of Banner Section -->
 
             <!-- Start of Featured Category -->
@@ -540,12 +548,14 @@
                             <div class="tab-content" id="best_products_contents">
                                 <div class="tab-pane fade show active" id="category_gamepad" role="tabpanel" aria-labelledby="nav_gamepad">
                                     <div class="product-carousel" data-visible-slide="5" data-loop="true" data-speed="1000">
+
+                                        <!-- Slides -->
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide product-layout product-grid">
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-new">-64%</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -813,7 +823,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-ne">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -851,7 +861,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-New">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                             </a>
@@ -925,7 +935,7 @@
                                         </div> <!-- end of swiper-wrapper -->
                                         <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
                                         <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
-                                    </div> <!-- end of bs-product-carousel -->
+                                    </div> <!-- end of product-carousel -->
                                 </div> <!-- end of tab-pane -->
 
                                 <div class="tab-pane fade" id="category_laptop" role="tabpanel" aria-labelledby="nav_laptop">
@@ -937,7 +947,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-new">-64%</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -1207,7 +1217,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-ne">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -1245,7 +1255,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-New">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                             </a>
@@ -1321,7 +1331,7 @@
                                         <!-- Navigation -->
                                         <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
                                         <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
-                                    </div> <!-- end of bs-product-carousel -->
+                                    </div> <!-- end of product-carousel -->
                                 </div> <!-- end of tab-pane -->
 
                                 <div class="tab-pane fade" id="category_smartwatch" role="tabpanel" aria-labelledby="nav_smartwatch">
@@ -1333,7 +1343,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-new">-64%</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -1603,7 +1613,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-ne">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -1641,7 +1651,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-New">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                             </a>
@@ -1717,7 +1727,7 @@
                                         <!-- Navigation -->
                                         <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
                                         <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
-                                    </div> <!-- end of bs-product-carousel -->
+                                    </div> <!-- end of product-carousel -->
                                 </div> <!-- end of tab-pane -->
 
                                 <div class="tab-pane fade" id="category_tvs" role="tabpanel" aria-labelledby="nav_tvs">
@@ -1729,7 +1739,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-new">-64%</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -1999,7 +2009,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-ne">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                 <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -2037,7 +2047,7 @@
                                                 <div class="product-thumb">
                                                     <div class="product-inner">
                                                         <div class="product-image">
-                                                            <div class="label-product label-New">New</div>
+                                                            <div class="label-product label-new">New</div>
                                                             <a href="#">
                                                                 <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                             </a>
@@ -2113,7 +2123,7 @@
                                         <!-- Navigation -->
                                         <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
                                         <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
-                                    </div> <!-- end of bs-product-carousel -->
+                                    </div> <!-- end of product-carousel -->
                                 </div> <!-- end of tab-pane -->
                             </div> <!-- end of tab-content -->
                         </div>
@@ -2350,7 +2360,7 @@
                                 <!-- Navigation -->
                                 <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
                                 <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
-                            </div> <!-- end of bs-product-carousel -->
+                            </div> <!-- end of product-carousel -->
                         </div>
                     </div> <!-- end of row -->
                 </div> <!-- end of container -->
@@ -3278,7 +3288,7 @@
                                             <!-- Navigation -->
                                             <div class="swiper-arrow top-nav next"><i class="fa fa-angle-right"></i></div>
                                             <div class="swiper-arrow top-nav prev"><i class="fa fa-angle-left"></i></div>
-                                        </div> <!-- end of bs-product-carousel -->
+                                        </div> <!-- end of product-carousel -->
                                     </div> <!-- end of single-category-wrapper -->
                                 </div>
 
@@ -3480,7 +3490,7 @@
                                             <!-- Navigation -->
                                             <div class="swiper-arrow top-nav next"><i class="fa fa-angle-right"></i></div>
                                             <div class="swiper-arrow top-nav prev"><i class="fa fa-angle-left"></i></div>
-                                        </div> <!-- end of bs-product-carousel -->
+                                        </div> <!-- end of product-carousel -->
                                     </div> <!-- end of single-category-wrapper -->
                                 </div>
                             </div><!-- end of row -->
@@ -3612,7 +3622,7 @@
                                                     <div class="product-thumb">
                                                         <div class="product-inner">
                                                             <div class="product-image">
-                                                                <div class="label-product label-ne">New</div>
+                                                                <div class="label-product label-new">New</div>
                                                                 <a href="#">
                                                                     <img src="assets/images/products/deals/product-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/deals/product-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
@@ -3650,7 +3660,7 @@
                                                     <div class="product-thumb">
                                                         <div class="product-inner">
                                                             <div class="product-image">
-                                                                <div class="label-product label-New">New</div>
+                                                                <div class="label-product label-new">New</div>
                                                                 <a href="#">
                                                                     <img src="assets/images/products/deals/product-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -3741,11 +3751,11 @@
                                             </div> <!-- end of swiper-wrapper -->
 
                                             <!-- Pagination -->
-                                            <div class="swiper-pagination"></div>
+                                            <div class="swiper-pagination-testimonial"></div>
 
                                             <!-- Navigation -->
-                                            <div class="swiper-arrow top-nav next"><i class="fa fa-angle-right"></i></div>
-                                            <div class="swiper-arrow top-nav prev"><i class="fa fa-angle-left"></i></div>
+                                            <div class="swiper-arrow top-nav next testimonial-slide"><i class="fa fa-angle-right"></i></div>
+                                            <div class="swiper-arrow top-nav prev testimonial-slide"><i class="fa fa-angle-left"></i></div>
                                         </div> <!-- end of testimonial-container -->
                                     </div> <!-- end of testimonials -->
                                 </div>
@@ -4162,12 +4172,16 @@
                                                             </form>
                                                         </li>
                                                         <li>
-                                                            <button type="button" class="default-btn">add to cart</button>
+                                                            <button type="button" class="default-btn">Add to Cart</button>
                                                         </li>
                                                         <li class="product-availability">
-                                                            <p><span class="in-stock"><i class="ion-checkmark-round"></i> in stock</span></p>
+                                                            <p><span class="in-stock"><i class="ion ion-md-checkmark-circle-outline"></i> in stock</span></p>
                                                         </li>
                                                     </ul>
+                                                </div>
+                                                <div class="wishlist-compare">
+                                                    <button class="btn-wishlist" type="button" title="Add to Wishlist">Add to Wishlist</button>
+                                                    <button class="btn-compare" type="button" title="Add to Compare">Add to Compare</button>
                                                 </div>
                                             </div>
                                         </div> <!-- end of product-details -->
@@ -4195,8 +4209,8 @@
 
         <!-- Start of Scroll to Top -->
         <div id="to_top">
-            <i class="ion-chevron-right"></i>
-            <i class="ion-chevron-right"></i>
+            <i class="ion ion-ios-arrow-forward"></i>
+            <i class="ion ion-ios-arrow-forward"></i>
         </div>
         <!-- End of Scroll to Top -->
     </div>

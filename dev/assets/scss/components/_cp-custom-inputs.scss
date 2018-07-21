@@ -1,0 +1,116 @@
+/**
+ * Components Custom Inputs
+ *
+ */
+
+.custom-checkbox {
+	label {
+		padding-left: 30px;
+		text-transform: capitalize;
+	}
+	@extend .pos-r;
+	input[type="checkbox"] {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		width: 100%;
+		left: 0;
+		@extend %cx-transition;
+	}
+
+	.checkmark {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 20px;
+	    width: 20px;
+	    background-color: #dedede;
+	    z-index: -1;
+		@extend %cx-transition;
+
+		&::after {
+		    content: "";
+		    position: absolute;
+		    opacity: 0;
+		    left: 0;
+		    top: 3px;
+		    width: 6px;
+		    height: 11px;
+		    border: solid white;
+		    border-width: 0 2px 2px 0;
+		  	transform: rotate(45deg);
+		  	@extend %cx-transition;
+		}
+	}
+
+	&:hover {
+		input ~ .checkmark {
+			background-color: #ccc;
+		}
+	}
+
+	input:checked ~ .checkmark {
+		@include cx-color(primary, bg);
+
+		&::after {
+			left: 7px;
+			opacity: 1;
+		}
+	}
+}
+
+.custom-radio {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+		input ~ .checkmark {
+		    background-color: #ccc;
+		}
+    }
+
+	.checkmark {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    height: 25px;
+	    width: 25px;
+	    background-color: #dedede;
+	    border-radius: 50%;
+	    z-index: -1;
+	    @extend %cx-transition;
+
+	    &::after {
+		    content: "";
+		    position: absolute;
+		    display: none;
+		 	top: 8.5px;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			@extend .bgc-white;
+			@extend %cx-transition;
+	    }
+	}
+
+    input[type="radio"] {
+	    position: absolute;
+	    opacity: 0;
+	    cursor: pointer;
+		width: 100%;
+	    left: 0;
+
+	    &:checked ~ .checkmark {
+		    @include cx-color(primary, bg);
+
+		    &::after {
+		    	left: 8.5px;
+		    	display: block;
+		    }
+		}
+    }
+}

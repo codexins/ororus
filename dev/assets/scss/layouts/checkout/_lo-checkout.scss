@@ -1,0 +1,202 @@
+/**
+ * Layout Checkout
+ *
+ */
+
+.checkout-wrapper {
+	.user-actions {
+		h3 {
+		    background-color: #f4f4f4;
+		    border-top: 3px solid;
+		    font-size: 14px;
+		    font-weight: 400;
+		    margin-bottom: 30px;
+		    padding: 15px 55px;
+		    position: relative;
+		    text-transform: capitalize;
+		    @include cx-color(primary, border);
+
+		    &::before {
+			    content: "\f161";
+			    display: inline-block;
+			    font-family: 'Ionicons';
+			    left: 20px;
+			    position: absolute;
+			    font-size: 25px;
+			    top: 48%;
+			    transform: translateY(-50%);
+			    color: #777;
+		    }
+
+		    span {
+		    	cursor: pointer;
+		    	@include cx-color(primary, color);
+		    	@extend %cx-transition;
+
+		    	&:hover {
+		    		color: #333;
+		    	}
+		    }
+		}
+	}
+
+	.display-content {
+	    border: 1px solid $cx-border-color;
+	    display: none;
+	    margin-bottom: 30px;
+	    padding: 20px;
+	    border-radius: 4px;
+	}
+
+	.user-login {
+		.login-info {
+			p:not(.lost-password) {
+				font-size: 14px;
+				margin-bottom: 20px;
+			}
+
+			.lost-password {
+				@extend %mb0;
+			}
+		}
+	}
+
+	.user-coupon {
+		h3 {
+			&::before {
+				content: "\f199";
+				font-size: 22px;
+			}
+		}
+
+		input {
+			height: 40px;
+		}
+	}
+
+	.checkout-form {
+		.form-check {
+			padding-left: 0;
+		}
+	}
+
+	.new-account-info,
+	.ship-box-info {
+		display: none;
+	}
+
+	.checkout-area {
+		@extend %mt-half;
+	}
+
+	.form-check-label {
+		cursor: pointer;
+	}
+
+	.order-summary {
+		.product-container {
+			background-color: #f4f4f4;
+		    padding: 20px;
+		    max-height: 450px;
+		    overflow-x: hidden;
+		    overflow-y: auto;
+		    @extend %mb-half;
+		}
+
+		.product-list {
+			margin-bottom: 30px;
+
+			&:last-child {
+				@extend %mb0;
+			}
+
+			h5 {
+			    font-size: 16px;
+			    line-height: 22px;
+			    margin-bottom: 0;
+			    text-transform: capitalize;
+			    font-weight: 400;
+			}
+
+			img {
+				max-width: 120px;
+			}
+
+			.product-quantity {
+				font-weight: 500;
+				margin-top: 7px;
+				margin-bottom: 7px;
+			}
+
+			.product-final-price {
+				font-size: 16px;
+				@include cx-color(primary, color);
+			}
+		}
+
+		.table {
+			@extend %mb0;
+
+			th,
+			td {
+			    font-size: 18px;
+			    padding: 20px;
+			    font-weight: 500;
+			}
+
+			td {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.checkout-payment {
+		padding: 20px;
+		border: 1px solid #ddd;
+		@extend %mt-half;
+
+		.custom-radio {
+			margin-bottom: 20px;
+		    padding-bottom: 20px;
+		    border-bottom: 1px solid $cx-border-color;
+		}
+
+		label {
+			font-size: 16px;
+			line-height: 25px;
+		}
+
+		.payment-info {
+			font-size: 14px;
+			line-height: 22px;
+			margin-top: 20px;
+		}
+
+		p {
+			&:last-of-type {
+				@extend %mb0;
+			}
+		}
+
+		.form-check {
+			margin-bottom: 30px;
+			padding-left: 0;
+
+			label {
+				font-size: 13px;
+			}
+
+			a {
+				@include cx-color(primary, color);
+
+				&:hover {
+					color: #333;
+				}
+			}
+
+			.checkmark {
+				top: 3px;
+			}
+		}
+	}
+}

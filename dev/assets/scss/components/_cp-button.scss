@@ -33,4 +33,33 @@
 		    @include cx-color(primary, bg);
 	    }
     }
+
+    &.tiny-btn {
+        padding: 8px 18px;
+        font-size: 13px;
+        line-height: 2;
+        letter-spacing: 0.05em;
+    }
+}
+
+.btn {
+    &.btn-secondary {
+        text-transform: uppercase;
+        background: #f4f4f4;
+        color: #444;
+        height: 40px;
+        line-height: 40px;
+        border: 0;
+        padding: 0 20px;
+        font-weight: 500;
+        font-size: 13px;
+        @extend %cx-transition;
+
+        &:hover,
+        &:focus {
+            box-shadow: none;
+            @include cx-color(primary, bg);
+            @extend .color-white;
+        }
+    }
 }

@@ -1,0 +1,191 @@
+/**
+ * Layout My Account
+ *
+ */
+
+.user-dashboard {
+	a {
+		&:not(.btn) {
+			@include cx-color(primary, color);
+
+			&:hover {
+				color: #333;
+			}
+		}
+	}
+}
+
+.user-info {
+    border-bottom: 1px solid $cx-border-color;
+    border-top: 1px solid $cx-border-color;
+    margin-bottom: 45px;
+
+    [class*="col-"]:not(:last-child) {
+    	.single-info {
+    		border-right: 1px solid $cx-border-color;
+    	}
+    }
+
+	.single-info {
+	    padding: 30px 20px;
+	}
+
+	.user-name {
+	    padding-left: 45px;
+	    @extend .pos-r;
+		span {
+		    font-size: 15px;
+		    font-weight: 500;
+		}
+
+		&::before {
+		    color: #555;
+		    content: "\f41a";
+		    font-family: Ionicons;
+		    font-size: 35px;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+		    height: 45px;
+		    line-height: 45px;
+		}
+	}
+
+	p {
+		line-height: 1.65;
+		@extend %mb0;
+	}
+}
+
+.dashboard-list {
+	li {
+		> a {
+		    display: block;
+		    font-size: 14px;
+		    padding: 12px 0;
+		    text-transform: capitalize;
+		    @extend .pos-r;
+
+		    &.active {
+		    	font-weight: 500;
+		    	&::after {
+				    content: "\f488";
+				    font-family: Ionicons;
+				    margin-left: 10px;
+				    font-size: 16px;
+				    position: absolute;
+				    top: 48%;
+				    transform: translateY(-50%);
+				}
+		    }
+		}
+		&:not(:last-child) {
+			> a {
+			    border-bottom: 1px solid $cx-border-color;
+			}
+		}
+	}
+}
+
+.dashboard-content {
+    border: 1px solid $cx-border-color;
+    padding: 30px;
+
+    h3 {
+		border-bottom: 1px solid $cx-border-color;
+	    font-size: 24px;
+	    line-height: 24px;
+	    margin-bottom: 20px;
+	    padding-bottom: 15px;
+	    text-transform: capitalize;
+    }
+
+    p {
+    	line-height: 24px;
+    	@extend %mb0;
+    }
+
+    table {
+    	@extend %mb0;
+
+    	> thead {
+    		border-bottom: 1px solid $cx-border-color;
+    		> tr {
+    			> th {
+				    font-size: 14px;
+    				font-weight: 600;
+    				border: 0;
+    			}
+    		}
+    	}
+
+    	> tbody {
+    		> tr {
+    			> td {
+				    color: #7b7b7b;
+				    border: 0;
+				    vertical-align: middle;
+    			}
+    		}
+    	}
+
+    	.btn-secondary {
+    		height: 35px;
+    		line-height: 35px;
+    	}
+    }
+}
+
+.billing-address {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.register-form {
+	padding: 40px;
+	border: 1px solid $cx-border-color;
+}
+
+.login-form {
+	.form-group {
+		.col-form-label {
+			font-size: 14px;
+		}
+	}
+
+	.form-control,
+	.custom-radio,
+	span {
+		font-size: 14px;
+	    height: 40px;
+	    padding-top: 5px;
+	}
+
+	.pass-show-btn {
+	    padding: 0 15px;
+	    height: 40px;
+	    font-size: 13px;
+	    line-height: 40px;
+	    position: absolute;
+	    right: 15px;
+	    top: 0;
+	    text-transform: capitalize;
+	    border-radius: 0;
+	    background: #878787;
+	    cursor: pointer;
+	    @extend .color-white;
+
+	    &:hover,
+	    &:focus {
+	    	background: #333;
+	    }
+	}
+
+	.form-check {
+		label {
+			font-size: 13px;
+		}
+	}
+}
