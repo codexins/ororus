@@ -43,6 +43,14 @@
 }
 
 .btn {
+    &.btn-primary {
+        &:not(:disabled):not(.disabled):active:focus,
+        &:hover,
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    
     &.btn-secondary {
         text-transform: uppercase;
         background: #f4f4f4;
@@ -55,6 +63,7 @@
         font-size: 13px;
         @extend %cx-transition;
 
+        &:not(:disabled):not(.disabled):active:focus,
         &:hover,
         &:focus {
             box-shadow: none;

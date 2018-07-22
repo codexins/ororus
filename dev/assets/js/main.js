@@ -18,7 +18,7 @@ INDEX:
     s13 - Scroll to Top JS
     s14 - Footer Accordion Activation
     s15 - Price range Slider
-    s16 - Checkout Accordion Behaviour
+    s16 - Interactive Behaviour
 
 
 
@@ -598,9 +598,11 @@ INDEX:
     };
 
     /************************************************************
-        s16 - Checkout Accordion Behaviour
+        s16 - Interactive Behaviour
     *************************************************************/
-    ORORUS.checkoutAccordion = function() {
+    ORORUS.interactiveBehaviour = function() {
+
+        // Checkout Page Accordion Behaviour
         $( '#show_login' ).on('click', function() {
             $( '#checkout_login' ).slideToggle(300);
         });
@@ -617,17 +619,16 @@ INDEX:
             $(".new-account-info").slideToggle(300);
         });
 
-        // $(".checkout-payment .form-check-input").on("change",function(){
-        //     if (this.value === 'check') {
-        //         $("#check_pay").slideToggle(300);
-        //     } else if (this.value === 'cash') {
-        //         $("#cash_pay").slideToggle(300);
-        //     } else if (this.value === 'paypal') {
-        //         $("#paypal_pay").slideToggle(300);
-        //     } else {
-        //         this.hide();
-        //     }
-        // });
+        // Newsletter Popup
+        setTimeout(function () {
+            $('#newsletter_popup').css({
+                "opacity": "1",
+                "visibility": "visible"
+            });
+            $('.popup-close').on('click', function () {
+                $("#newsletter_popup").css('visibility', 'hidden').animate({opacity: 0}, 100);
+            })
+        }, 2500);
     };
 
 
@@ -651,7 +652,7 @@ INDEX:
         ORORUS.scrollToTop(),        
         ORORUS.toolTips(),
         ORORUS.rangeSlider(),
-        ORORUS.checkoutAccordion(),
+        ORORUS.interactiveBehaviour(),
         ORORUS.footerAccordion();
     });
 

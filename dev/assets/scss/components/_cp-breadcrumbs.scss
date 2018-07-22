@@ -5,11 +5,11 @@
 
 .breadcrumb {
 	padding: 25px 0 20px;
-    margin: 0 0 40px 0;
     background: none;
     border-radius: 0;
     text-align: left;
     border-bottom: 1px solid $cx-border-color;
+    @extend %mb-full;
 
     .breadcrumb-item {
     	position: relative;

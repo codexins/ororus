@@ -173,7 +173,7 @@ section {
 .circle, #primary_slider .swiper-arrow, .feature-box:hover i, .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span::before, .testimonial-container .testimonial-media, .categories-carousel .media-wrapper, .shop-products-wrapper .product-list .product-image .label-product,
 .shop-products-wrapper .product-grid .product-image .label-product,
 .product-carousel .product-list .product-image .label-product,
-.product-carousel .product-grid .product-image .label-product {
+.product-carousel .product-grid .product-image .label-product, .newsletter-popup .popup-container .popup-close {
     border-radius: 50%;
 }
 
@@ -596,12 +596,12 @@ textarea:focus {
     }
 }
 
-.mb-full {
+.mb-full, .breadcrumb {
     margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 767px) {
-    .mb-full {
+    .mb-full, .breadcrumb {
         margin-bottom: 45px;
     }
 }
@@ -616,22 +616,22 @@ textarea:focus {
     }
 }
 
-.mb-half, .feature-box.type-2, .promo-banner, .gallery-with-thumbs .main-slider .swiper-slide, .categories-carousel .single-category-2, .checkout-wrapper .order-summary .product-container {
+.mb-half, .feature-box.type-2, .promo-banner, .gallery-with-thumbs .main-slider .swiper-slide, .categories-carousel .single-category-2, .newsletter-popup .popup-container h2, .newsletter-popup .popup-container .popup-body p, .checkout-wrapper .order-summary .product-container {
     margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 767px) {
-    .mb-half, .feature-box.type-2, .promo-banner, .gallery-with-thumbs .main-slider .swiper-slide, .categories-carousel .single-category-2, .checkout-wrapper .order-summary .product-container {
+    .mb-half, .feature-box.type-2, .promo-banner, .gallery-with-thumbs .main-slider .swiper-slide, .categories-carousel .single-category-2, .newsletter-popup .popup-container h2, .newsletter-popup .popup-container .popup-body p, .checkout-wrapper .order-summary .product-container {
         margin-bottom: 22.5px;
     }
 }
 
-.mt-half, .single-product-wrapper .product-review .review-form, .checkout-wrapper .checkout-area, .checkout-wrapper .checkout-payment {
+.mt-half, .newsletter-popup .popup-container .popup-footer, .single-product-wrapper .product-review .review-form, .checkout-wrapper .checkout-area, .checkout-wrapper .checkout-payment {
     margin-top: 30px;
 }
 
 @media only screen and (max-width: 767px) {
-    .mt-half, .single-product-wrapper .product-review .review-form, .checkout-wrapper .checkout-area, .checkout-wrapper .checkout-payment {
+    .mt-half, .newsletter-popup .popup-container .popup-footer, .single-product-wrapper .product-review .review-form, .checkout-wrapper .checkout-area, .checkout-wrapper .checkout-payment {
         margin-top: 22.5px;
     }
 }
@@ -697,7 +697,8 @@ input[type="submit"], .header-cart button i, #main_nav > ul > li a span, #primar
 .product-carousel .product-list .product-inner,
 .product-carousel .product-grid .product-inner, .shop-products-wrapper .product-inner .action-links,
 .product-carousel .product-inner .action-links, .shop-products-wrapper .product-inner .action-links > a,
-.product-carousel .product-inner .action-links > a, .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .newsletter-section .newsletter-form-wrapper input[type="email"], .single-product-wrapper .product-review input[type=radio]::after, .shopping-cart-wrapper .card-header i, .checkout-wrapper .user-actions h3 span {
+.product-carousel .product-inner .action-links > a, .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .newsletter-section .newsletter-form-wrapper input[type="email"], .single-product-wrapper .product-review input[type=radio]::after, .shopping-cart-wrapper .card-header i, .checkout-wrapper .user-actions h3 span, .comparison-wrapper .table tr,
+.wishlist-wrapper .table tr {
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
@@ -804,11 +805,11 @@ input[type="submit"], .header-cart button i, #main_nav > ul > li a span, #primar
     color: #ec610a;
 }
 
-.color-scheme-one button:hover, .color-scheme-one input[type="submit"]:hover, .color-scheme-one input[type="button"]:hover, .color-scheme-one .primary-bg-color, .color-scheme-one #main_nav .mega-container .mega-menu-title::before, .color-scheme-one .default-btn, .color-scheme-one .default-btn.transparent:hover, .color-scheme-one .default-btn.transparent:focus, .color-scheme-one .btn.btn-secondary:hover, .color-scheme-one .btn.btn-secondary:focus, .color-scheme-one .section-title h2::before, .color-scheme-one .section-title.with-icon h2 i::before, .color-scheme-one .swiper-arrow:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-one .countdown-wrapper .countdown-timer, .color-scheme-one .widgettitle::before, .color-scheme-one .tags-widget ul li a:hover, .color-scheme-one .filter-price-content #price_slider .ui-slider-range, .color-scheme-one .filter-price-content #price_slider .ui-slider-handle, .color-scheme-one .list-widget .list-group > a:hover::before, .color-scheme-one .list-widget .list-group > a:focus::before, .color-scheme-one #to_top:hover, .color-scheme-one .pagination-area .pagination li a:hover, .color-scheme-one .pagination-area .pagination li a:focus, .color-scheme-one .pagination-area .pagination li span:hover, .color-scheme-one .pagination-area .pagination li span:focus, .color-scheme-one .pagination-area .pagination li.active span, .color-scheme-one .custom-checkbox input:checked ~ .checkmark, .color-scheme-one .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-one .footer-copyright, .color-scheme-one .categories-carousel .single-category:hover .media-content, .color-scheme-one .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-one .product-carousel .product-inner .action-links > a:hover, .color-scheme-one .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="submit"] {
+.color-scheme-one button:hover, .color-scheme-one input[type="submit"]:hover, .color-scheme-one input[type="button"]:hover, .color-scheme-one .primary-bg-color, .color-scheme-one #main_nav .mega-container .mega-menu-title::before, .color-scheme-one .default-btn, .color-scheme-one .default-btn.transparent:hover, .color-scheme-one .default-btn.transparent:focus, .color-scheme-one .btn.btn-secondary:not(:disabled):not(.disabled):active:focus, .color-scheme-one .btn.btn-secondary:hover, .color-scheme-one .btn.btn-secondary:focus, .color-scheme-one .section-title h2::before, .color-scheme-one .section-title.with-icon h2 i::before, .color-scheme-one .swiper-arrow:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-one .countdown-wrapper .countdown-timer, .color-scheme-one .widgettitle::before, .color-scheme-one .tags-widget ul li a:hover, .color-scheme-one .filter-price-content #price_slider .ui-slider-range, .color-scheme-one .filter-price-content #price_slider .ui-slider-handle, .color-scheme-one .list-widget .list-group > a:hover::before, .color-scheme-one .list-widget .list-group > a:focus::before, .color-scheme-one #to_top:hover, .color-scheme-one .pagination-area .pagination li a:hover, .color-scheme-one .pagination-area .pagination li a:focus, .color-scheme-one .pagination-area .pagination li span:hover, .color-scheme-one .pagination-area .pagination li span:focus, .color-scheme-one .pagination-area .pagination li.active span, .color-scheme-one .custom-checkbox input:checked ~ .checkmark, .color-scheme-one .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-one .footer-copyright, .color-scheme-one .categories-carousel .single-category:hover .media-content, .color-scheme-one .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-one .product-carousel .product-inner .action-links > a:hover, .color-scheme-one .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="submit"], .color-scheme-one .comparison-wrapper .table .btn-danger:hover, .color-scheme-one .comparison-wrapper .table .btn-danger:focus, .color-scheme-one .wishlist-wrapper .table .btn-danger:hover, .color-scheme-one .wishlist-wrapper .table .btn-danger:focus {
     background: #ec610a;
 }
 
-.color-scheme-one textarea:focus, .color-scheme-one select:focus, .color-scheme-one input[type="text"]:focus, .color-scheme-one input[type="url"]:focus, .color-scheme-one input[type="number"]:focus, .color-scheme-one input[type="email"]:focus, .color-scheme-one input[type="button"]:focus, .color-scheme-one input[type="reset"]:focus, .color-scheme-one input[type="password"]:focus, .color-scheme-one input[type="search"]:focus, .color-scheme-one input[type="tel"]:focus, .color-scheme-one .form-control:focus, .color-scheme-one button:hover, .color-scheme-one input[type="submit"]:hover, .color-scheme-one input[type="button"]:hover, .color-scheme-one .primary-border-color, .color-scheme-one .header-cart button:focus, .color-scheme-one .header-cart button:hover, .color-scheme-one .header-search-area, .color-scheme-one .default-btn.transparent:hover, .color-scheme-one .default-btn.transparent:focus, .color-scheme-one .swiper-arrow:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-one .nav.nav-pills .nav-link:hover, .color-scheme-one .nav.nav-pills .nav-link.active, .color-scheme-one .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-one .tags-widget ul li a:hover, .color-scheme-one .list-widget .list-group > a:hover::before, .color-scheme-one .list-widget .list-group > a:focus::before, .color-scheme-one .pagination-area .pagination li a:hover, .color-scheme-one .pagination-area .pagination li a:focus, .color-scheme-one .pagination-area .pagination li span:hover, .color-scheme-one .pagination-area .pagination li span:focus, .color-scheme-one .pagination-area .pagination li.active span, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-one .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-one .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-one .checkout-wrapper .user-actions h3 {
+.color-scheme-one textarea:focus, .color-scheme-one select:focus, .color-scheme-one input[type="text"]:focus, .color-scheme-one input[type="url"]:focus, .color-scheme-one input[type="number"]:focus, .color-scheme-one input[type="email"]:focus, .color-scheme-one input[type="button"]:focus, .color-scheme-one input[type="reset"]:focus, .color-scheme-one input[type="password"]:focus, .color-scheme-one input[type="search"]:focus, .color-scheme-one input[type="tel"]:focus, .color-scheme-one .form-control:focus, .color-scheme-one button:hover, .color-scheme-one input[type="submit"]:hover, .color-scheme-one input[type="button"]:hover, .color-scheme-one .primary-border-color, .color-scheme-one .header-cart button:focus, .color-scheme-one .header-cart button:hover, .color-scheme-one .header-search-area, .color-scheme-one .default-btn.transparent:hover, .color-scheme-one .default-btn.transparent:focus, .color-scheme-one .swiper-arrow:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-one .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-one .nav.nav-pills .nav-link:hover, .color-scheme-one .nav.nav-pills .nav-link.active, .color-scheme-one .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-one .tags-widget ul li a:hover, .color-scheme-one .list-widget .list-group > a:hover::before, .color-scheme-one .list-widget .list-group > a:focus::before, .color-scheme-one .pagination-area .pagination li a:hover, .color-scheme-one .pagination-area .pagination li a:focus, .color-scheme-one .pagination-area .pagination li span:hover, .color-scheme-one .pagination-area .pagination li span:focus, .color-scheme-one .pagination-area .pagination li.active span, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-one .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-one .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-one .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-one .checkout-wrapper .user-actions h3, .color-scheme-one .comparison-wrapper .table .btn-danger:hover, .color-scheme-one .comparison-wrapper .table .btn-danger:focus, .color-scheme-one .wishlist-wrapper .table .btn-danger:hover, .color-scheme-one .wishlist-wrapper .table .btn-danger:focus {
     border-color: #ec610a;
 }
 
@@ -832,11 +833,11 @@ input[type="submit"], .header-cart button i, #main_nav > ul > li a span, #primar
     color: #ffc300;
 }
 
-.color-scheme-two button:hover, .color-scheme-two input[type="submit"]:hover, .color-scheme-two input[type="button"]:hover, .color-scheme-two .primary-bg-color, .color-scheme-two #main_nav .mega-container .mega-menu-title::before, .color-scheme-two .default-btn, .color-scheme-two .default-btn.transparent:hover, .color-scheme-two .default-btn.transparent:focus, .color-scheme-two .btn.btn-secondary:hover, .color-scheme-two .btn.btn-secondary:focus, .color-scheme-two .section-title h2::before, .color-scheme-two .section-title.with-icon h2 i::before, .color-scheme-two .swiper-arrow:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-two .countdown-wrapper .countdown-timer, .color-scheme-two .widgettitle::before, .color-scheme-two .tags-widget ul li a:hover, .color-scheme-two .filter-price-content #price_slider .ui-slider-range, .color-scheme-two .filter-price-content #price_slider .ui-slider-handle, .color-scheme-two .list-widget .list-group > a:hover::before, .color-scheme-two .list-widget .list-group > a:focus::before, .color-scheme-two #to_top:hover, .color-scheme-two .pagination-area .pagination li a:hover, .color-scheme-two .pagination-area .pagination li a:focus, .color-scheme-two .pagination-area .pagination li span:hover, .color-scheme-two .pagination-area .pagination li span:focus, .color-scheme-two .pagination-area .pagination li.active span, .color-scheme-two .custom-checkbox input:checked ~ .checkmark, .color-scheme-two .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-two .footer-copyright, .color-scheme-two .categories-carousel .single-category:hover .media-content, .color-scheme-two .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-two .product-carousel .product-inner .action-links > a:hover, .color-scheme-two .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="submit"] {
+.color-scheme-two button:hover, .color-scheme-two input[type="submit"]:hover, .color-scheme-two input[type="button"]:hover, .color-scheme-two .primary-bg-color, .color-scheme-two #main_nav .mega-container .mega-menu-title::before, .color-scheme-two .default-btn, .color-scheme-two .default-btn.transparent:hover, .color-scheme-two .default-btn.transparent:focus, .color-scheme-two .btn.btn-secondary:not(:disabled):not(.disabled):active:focus, .color-scheme-two .btn.btn-secondary:hover, .color-scheme-two .btn.btn-secondary:focus, .color-scheme-two .section-title h2::before, .color-scheme-two .section-title.with-icon h2 i::before, .color-scheme-two .swiper-arrow:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-two .countdown-wrapper .countdown-timer, .color-scheme-two .widgettitle::before, .color-scheme-two .tags-widget ul li a:hover, .color-scheme-two .filter-price-content #price_slider .ui-slider-range, .color-scheme-two .filter-price-content #price_slider .ui-slider-handle, .color-scheme-two .list-widget .list-group > a:hover::before, .color-scheme-two .list-widget .list-group > a:focus::before, .color-scheme-two #to_top:hover, .color-scheme-two .pagination-area .pagination li a:hover, .color-scheme-two .pagination-area .pagination li a:focus, .color-scheme-two .pagination-area .pagination li span:hover, .color-scheme-two .pagination-area .pagination li span:focus, .color-scheme-two .pagination-area .pagination li.active span, .color-scheme-two .custom-checkbox input:checked ~ .checkmark, .color-scheme-two .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-two .footer-copyright, .color-scheme-two .categories-carousel .single-category:hover .media-content, .color-scheme-two .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-two .product-carousel .product-inner .action-links > a:hover, .color-scheme-two .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="submit"], .color-scheme-two .comparison-wrapper .table .btn-danger:hover, .color-scheme-two .comparison-wrapper .table .btn-danger:focus, .color-scheme-two .wishlist-wrapper .table .btn-danger:hover, .color-scheme-two .wishlist-wrapper .table .btn-danger:focus {
     background: #ffc300;
 }
 
-.color-scheme-two textarea:focus, .color-scheme-two select:focus, .color-scheme-two input[type="text"]:focus, .color-scheme-two input[type="url"]:focus, .color-scheme-two input[type="number"]:focus, .color-scheme-two input[type="email"]:focus, .color-scheme-two input[type="button"]:focus, .color-scheme-two input[type="reset"]:focus, .color-scheme-two input[type="password"]:focus, .color-scheme-two input[type="search"]:focus, .color-scheme-two input[type="tel"]:focus, .color-scheme-two .form-control:focus, .color-scheme-two button:hover, .color-scheme-two input[type="submit"]:hover, .color-scheme-two input[type="button"]:hover, .color-scheme-two .primary-border-color, .color-scheme-two .header-cart button:focus, .color-scheme-two .header-cart button:hover, .color-scheme-two .header-search-area, .color-scheme-two .default-btn.transparent:hover, .color-scheme-two .default-btn.transparent:focus, .color-scheme-two .swiper-arrow:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-two .nav.nav-pills .nav-link:hover, .color-scheme-two .nav.nav-pills .nav-link.active, .color-scheme-two .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-two .tags-widget ul li a:hover, .color-scheme-two .list-widget .list-group > a:hover::before, .color-scheme-two .list-widget .list-group > a:focus::before, .color-scheme-two .pagination-area .pagination li a:hover, .color-scheme-two .pagination-area .pagination li a:focus, .color-scheme-two .pagination-area .pagination li span:hover, .color-scheme-two .pagination-area .pagination li span:focus, .color-scheme-two .pagination-area .pagination li.active span, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-two .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-two .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-two .checkout-wrapper .user-actions h3 {
+.color-scheme-two textarea:focus, .color-scheme-two select:focus, .color-scheme-two input[type="text"]:focus, .color-scheme-two input[type="url"]:focus, .color-scheme-two input[type="number"]:focus, .color-scheme-two input[type="email"]:focus, .color-scheme-two input[type="button"]:focus, .color-scheme-two input[type="reset"]:focus, .color-scheme-two input[type="password"]:focus, .color-scheme-two input[type="search"]:focus, .color-scheme-two input[type="tel"]:focus, .color-scheme-two .form-control:focus, .color-scheme-two button:hover, .color-scheme-two input[type="submit"]:hover, .color-scheme-two input[type="button"]:hover, .color-scheme-two .primary-border-color, .color-scheme-two .header-cart button:focus, .color-scheme-two .header-cart button:hover, .color-scheme-two .header-search-area, .color-scheme-two .default-btn.transparent:hover, .color-scheme-two .default-btn.transparent:focus, .color-scheme-two .swiper-arrow:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-two .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-two .nav.nav-pills .nav-link:hover, .color-scheme-two .nav.nav-pills .nav-link.active, .color-scheme-two .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-two .tags-widget ul li a:hover, .color-scheme-two .list-widget .list-group > a:hover::before, .color-scheme-two .list-widget .list-group > a:focus::before, .color-scheme-two .pagination-area .pagination li a:hover, .color-scheme-two .pagination-area .pagination li a:focus, .color-scheme-two .pagination-area .pagination li span:hover, .color-scheme-two .pagination-area .pagination li span:focus, .color-scheme-two .pagination-area .pagination li.active span, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-two .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-two .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-two .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-two .checkout-wrapper .user-actions h3, .color-scheme-two .comparison-wrapper .table .btn-danger:hover, .color-scheme-two .comparison-wrapper .table .btn-danger:focus, .color-scheme-two .wishlist-wrapper .table .btn-danger:hover, .color-scheme-two .wishlist-wrapper .table .btn-danger:focus {
     border-color: #ffc300;
 }
 
@@ -860,11 +861,11 @@ input[type="submit"], .header-cart button i, #main_nav > ul > li a span, #primar
     color: #2b7fd0;
 }
 
-.color-scheme-three button:hover, .color-scheme-three input[type="submit"]:hover, .color-scheme-three input[type="button"]:hover, .color-scheme-three .primary-bg-color, .color-scheme-three #main_nav .mega-container .mega-menu-title::before, .color-scheme-three .default-btn, .color-scheme-three .default-btn.transparent:hover, .color-scheme-three .default-btn.transparent:focus, .color-scheme-three .btn.btn-secondary:hover, .color-scheme-three .btn.btn-secondary:focus, .color-scheme-three .section-title h2::before, .color-scheme-three .section-title.with-icon h2 i::before, .color-scheme-three .swiper-arrow:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-three .countdown-wrapper .countdown-timer, .color-scheme-three .widgettitle::before, .color-scheme-three .tags-widget ul li a:hover, .color-scheme-three .filter-price-content #price_slider .ui-slider-range, .color-scheme-three .filter-price-content #price_slider .ui-slider-handle, .color-scheme-three .list-widget .list-group > a:hover::before, .color-scheme-three .list-widget .list-group > a:focus::before, .color-scheme-three #to_top:hover, .color-scheme-three .pagination-area .pagination li a:hover, .color-scheme-three .pagination-area .pagination li a:focus, .color-scheme-three .pagination-area .pagination li span:hover, .color-scheme-three .pagination-area .pagination li span:focus, .color-scheme-three .pagination-area .pagination li.active span, .color-scheme-three .custom-checkbox input:checked ~ .checkmark, .color-scheme-three .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-three .footer-copyright, .color-scheme-three .categories-carousel .single-category:hover .media-content, .color-scheme-three .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-three .product-carousel .product-inner .action-links > a:hover, .color-scheme-three .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="submit"] {
+.color-scheme-three button:hover, .color-scheme-three input[type="submit"]:hover, .color-scheme-three input[type="button"]:hover, .color-scheme-three .primary-bg-color, .color-scheme-three #main_nav .mega-container .mega-menu-title::before, .color-scheme-three .default-btn, .color-scheme-three .default-btn.transparent:hover, .color-scheme-three .default-btn.transparent:focus, .color-scheme-three .btn.btn-secondary:not(:disabled):not(.disabled):active:focus, .color-scheme-three .btn.btn-secondary:hover, .color-scheme-three .btn.btn-secondary:focus, .color-scheme-three .section-title h2::before, .color-scheme-three .section-title.with-icon h2 i::before, .color-scheme-three .swiper-arrow:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-three .countdown-wrapper .countdown-timer, .color-scheme-three .widgettitle::before, .color-scheme-three .tags-widget ul li a:hover, .color-scheme-three .filter-price-content #price_slider .ui-slider-range, .color-scheme-three .filter-price-content #price_slider .ui-slider-handle, .color-scheme-three .list-widget .list-group > a:hover::before, .color-scheme-three .list-widget .list-group > a:focus::before, .color-scheme-three #to_top:hover, .color-scheme-three .pagination-area .pagination li a:hover, .color-scheme-three .pagination-area .pagination li a:focus, .color-scheme-three .pagination-area .pagination li span:hover, .color-scheme-three .pagination-area .pagination li span:focus, .color-scheme-three .pagination-area .pagination li.active span, .color-scheme-three .custom-checkbox input:checked ~ .checkmark, .color-scheme-three .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-three .footer-copyright, .color-scheme-three .categories-carousel .single-category:hover .media-content, .color-scheme-three .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-three .product-carousel .product-inner .action-links > a:hover, .color-scheme-three .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="submit"], .color-scheme-three .comparison-wrapper .table .btn-danger:hover, .color-scheme-three .comparison-wrapper .table .btn-danger:focus, .color-scheme-three .wishlist-wrapper .table .btn-danger:hover, .color-scheme-three .wishlist-wrapper .table .btn-danger:focus {
     background: #2b7fd0;
 }
 
-.color-scheme-three textarea:focus, .color-scheme-three select:focus, .color-scheme-three input[type="text"]:focus, .color-scheme-three input[type="url"]:focus, .color-scheme-three input[type="number"]:focus, .color-scheme-three input[type="email"]:focus, .color-scheme-three input[type="button"]:focus, .color-scheme-three input[type="reset"]:focus, .color-scheme-three input[type="password"]:focus, .color-scheme-three input[type="search"]:focus, .color-scheme-three input[type="tel"]:focus, .color-scheme-three .form-control:focus, .color-scheme-three button:hover, .color-scheme-three input[type="submit"]:hover, .color-scheme-three input[type="button"]:hover, .color-scheme-three .primary-border-color, .color-scheme-three .header-cart button:focus, .color-scheme-three .header-cart button:hover, .color-scheme-three .header-search-area, .color-scheme-three .default-btn.transparent:hover, .color-scheme-three .default-btn.transparent:focus, .color-scheme-three .swiper-arrow:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-three .nav.nav-pills .nav-link:hover, .color-scheme-three .nav.nav-pills .nav-link.active, .color-scheme-three .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-three .tags-widget ul li a:hover, .color-scheme-three .list-widget .list-group > a:hover::before, .color-scheme-three .list-widget .list-group > a:focus::before, .color-scheme-three .pagination-area .pagination li a:hover, .color-scheme-three .pagination-area .pagination li a:focus, .color-scheme-three .pagination-area .pagination li span:hover, .color-scheme-three .pagination-area .pagination li span:focus, .color-scheme-three .pagination-area .pagination li.active span, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-three .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-three .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-three .checkout-wrapper .user-actions h3 {
+.color-scheme-three textarea:focus, .color-scheme-three select:focus, .color-scheme-three input[type="text"]:focus, .color-scheme-three input[type="url"]:focus, .color-scheme-three input[type="number"]:focus, .color-scheme-three input[type="email"]:focus, .color-scheme-three input[type="button"]:focus, .color-scheme-three input[type="reset"]:focus, .color-scheme-three input[type="password"]:focus, .color-scheme-three input[type="search"]:focus, .color-scheme-three input[type="tel"]:focus, .color-scheme-three .form-control:focus, .color-scheme-three button:hover, .color-scheme-three input[type="submit"]:hover, .color-scheme-three input[type="button"]:hover, .color-scheme-three .primary-border-color, .color-scheme-three .header-cart button:focus, .color-scheme-three .header-cart button:hover, .color-scheme-three .header-search-area, .color-scheme-three .default-btn.transparent:hover, .color-scheme-three .default-btn.transparent:focus, .color-scheme-three .swiper-arrow:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-three .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-three .nav.nav-pills .nav-link:hover, .color-scheme-three .nav.nav-pills .nav-link.active, .color-scheme-three .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-three .tags-widget ul li a:hover, .color-scheme-three .list-widget .list-group > a:hover::before, .color-scheme-three .list-widget .list-group > a:focus::before, .color-scheme-three .pagination-area .pagination li a:hover, .color-scheme-three .pagination-area .pagination li a:focus, .color-scheme-three .pagination-area .pagination li span:hover, .color-scheme-three .pagination-area .pagination li span:focus, .color-scheme-three .pagination-area .pagination li.active span, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-three .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-three .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-three .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-three .checkout-wrapper .user-actions h3, .color-scheme-three .comparison-wrapper .table .btn-danger:hover, .color-scheme-three .comparison-wrapper .table .btn-danger:focus, .color-scheme-three .wishlist-wrapper .table .btn-danger:hover, .color-scheme-three .wishlist-wrapper .table .btn-danger:focus {
     border-color: #2b7fd0;
 }
 
@@ -888,11 +889,11 @@ input[type="submit"], .header-cart button i, #main_nav > ul > li a span, #primar
     color: #d13636;
 }
 
-.color-scheme-four button:hover, .color-scheme-four input[type="submit"]:hover, .color-scheme-four input[type="button"]:hover, .color-scheme-four .primary-bg-color, .color-scheme-four #main_nav .mega-container .mega-menu-title::before, .color-scheme-four .default-btn, .color-scheme-four .default-btn.transparent:hover, .color-scheme-four .default-btn.transparent:focus, .color-scheme-four .btn.btn-secondary:hover, .color-scheme-four .btn.btn-secondary:focus, .color-scheme-four .section-title h2::before, .color-scheme-four .section-title.with-icon h2 i::before, .color-scheme-four .swiper-arrow:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-four .countdown-wrapper .countdown-timer, .color-scheme-four .widgettitle::before, .color-scheme-four .tags-widget ul li a:hover, .color-scheme-four .filter-price-content #price_slider .ui-slider-range, .color-scheme-four .filter-price-content #price_slider .ui-slider-handle, .color-scheme-four .list-widget .list-group > a:hover::before, .color-scheme-four .list-widget .list-group > a:focus::before, .color-scheme-four #to_top:hover, .color-scheme-four .pagination-area .pagination li a:hover, .color-scheme-four .pagination-area .pagination li a:focus, .color-scheme-four .pagination-area .pagination li span:hover, .color-scheme-four .pagination-area .pagination li span:focus, .color-scheme-four .pagination-area .pagination li.active span, .color-scheme-four .custom-checkbox input:checked ~ .checkmark, .color-scheme-four .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-four .footer-copyright, .color-scheme-four .categories-carousel .single-category:hover .media-content, .color-scheme-four .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-four .product-carousel .product-inner .action-links > a:hover, .color-scheme-four .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="submit"] {
+.color-scheme-four button:hover, .color-scheme-four input[type="submit"]:hover, .color-scheme-four input[type="button"]:hover, .color-scheme-four .primary-bg-color, .color-scheme-four #main_nav .mega-container .mega-menu-title::before, .color-scheme-four .default-btn, .color-scheme-four .default-btn.transparent:hover, .color-scheme-four .default-btn.transparent:focus, .color-scheme-four .btn.btn-secondary:not(:disabled):not(.disabled):active:focus, .color-scheme-four .btn.btn-secondary:hover, .color-scheme-four .btn.btn-secondary:focus, .color-scheme-four .section-title h2::before, .color-scheme-four .section-title.with-icon h2 i::before, .color-scheme-four .swiper-arrow:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover::before, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active::before, .color-scheme-four .countdown-wrapper .countdown-timer, .color-scheme-four .widgettitle::before, .color-scheme-four .tags-widget ul li a:hover, .color-scheme-four .filter-price-content #price_slider .ui-slider-range, .color-scheme-four .filter-price-content #price_slider .ui-slider-handle, .color-scheme-four .list-widget .list-group > a:hover::before, .color-scheme-four .list-widget .list-group > a:focus::before, .color-scheme-four #to_top:hover, .color-scheme-four .pagination-area .pagination li a:hover, .color-scheme-four .pagination-area .pagination li a:focus, .color-scheme-four .pagination-area .pagination li span:hover, .color-scheme-four .pagination-area .pagination li span:focus, .color-scheme-four .pagination-area .pagination li.active span, .color-scheme-four .custom-checkbox input:checked ~ .checkmark, .color-scheme-four .custom-radio input[type="radio"]:checked ~ .checkmark, .color-scheme-four .footer-copyright, .color-scheme-four .categories-carousel .single-category:hover .media-content, .color-scheme-four .shop-products-wrapper .product-inner .action-links > a:hover, .color-scheme-four .product-carousel .product-inner .action-links > a:hover, .color-scheme-four .best-selling-wrapper .nav-pills.top-nav-pills.type-2 .nav-link::after, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="submit"], .color-scheme-four .comparison-wrapper .table .btn-danger:hover, .color-scheme-four .comparison-wrapper .table .btn-danger:focus, .color-scheme-four .wishlist-wrapper .table .btn-danger:hover, .color-scheme-four .wishlist-wrapper .table .btn-danger:focus {
     background: #d13636;
 }
 
-.color-scheme-four textarea:focus, .color-scheme-four select:focus, .color-scheme-four input[type="text"]:focus, .color-scheme-four input[type="url"]:focus, .color-scheme-four input[type="number"]:focus, .color-scheme-four input[type="email"]:focus, .color-scheme-four input[type="button"]:focus, .color-scheme-four input[type="reset"]:focus, .color-scheme-four input[type="password"]:focus, .color-scheme-four input[type="search"]:focus, .color-scheme-four input[type="tel"]:focus, .color-scheme-four .form-control:focus, .color-scheme-four button:hover, .color-scheme-four input[type="submit"]:hover, .color-scheme-four input[type="button"]:hover, .color-scheme-four .primary-border-color, .color-scheme-four .header-cart button:focus, .color-scheme-four .header-cart button:hover, .color-scheme-four .header-search-area, .color-scheme-four .default-btn.transparent:hover, .color-scheme-four .default-btn.transparent:focus, .color-scheme-four .swiper-arrow:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-four .nav.nav-pills .nav-link:hover, .color-scheme-four .nav.nav-pills .nav-link.active, .color-scheme-four .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-four .tags-widget ul li a:hover, .color-scheme-four .list-widget .list-group > a:hover::before, .color-scheme-four .list-widget .list-group > a:focus::before, .color-scheme-four .pagination-area .pagination li a:hover, .color-scheme-four .pagination-area .pagination li a:focus, .color-scheme-four .pagination-area .pagination li span:hover, .color-scheme-four .pagination-area .pagination li span:focus, .color-scheme-four .pagination-area .pagination li.active span, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-four .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-four .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-four .checkout-wrapper .user-actions h3 {
+.color-scheme-four textarea:focus, .color-scheme-four select:focus, .color-scheme-four input[type="text"]:focus, .color-scheme-four input[type="url"]:focus, .color-scheme-four input[type="number"]:focus, .color-scheme-four input[type="email"]:focus, .color-scheme-four input[type="button"]:focus, .color-scheme-four input[type="reset"]:focus, .color-scheme-four input[type="password"]:focus, .color-scheme-four input[type="search"]:focus, .color-scheme-four input[type="tel"]:focus, .color-scheme-four .form-control:focus, .color-scheme-four button:hover, .color-scheme-four input[type="submit"]:hover, .color-scheme-four input[type="button"]:hover, .color-scheme-four .primary-border-color, .color-scheme-four .header-cart button:focus, .color-scheme-four .header-cart button:hover, .color-scheme-four .header-search-area, .color-scheme-four .default-btn.transparent:hover, .color-scheme-four .default-btn.transparent:focus, .color-scheme-four .swiper-arrow:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span:hover, .color-scheme-four .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > .swiper-pagination-bullet-active, .color-scheme-four .nav.nav-pills .nav-link:hover, .color-scheme-four .nav.nav-pills .nav-link.active, .color-scheme-four .gallery-with-thumbs .nav-slider .swiper-slide:hover, .color-scheme-four .tags-widget ul li a:hover, .color-scheme-four .list-widget .list-group > a:hover::before, .color-scheme-four .list-widget .list-group > a:focus::before, .color-scheme-four .pagination-area .pagination li a:hover, .color-scheme-four .pagination-area .pagination li a:focus, .color-scheme-four .pagination-area .pagination li span:hover, .color-scheme-four .pagination-area .pagination li span:focus, .color-scheme-four .pagination-area .pagination li.active span, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="email"]:active, .color-scheme-four .newsletter-section .newsletter-form-wrapper input[type="email"]:focus, .color-scheme-four .shop-products-wrapper .product-layout.product-list .product-inner:hover, .color-scheme-four .single-product-wrapper .product-review input[type=radio]:hover::after, .color-scheme-four .checkout-wrapper .user-actions h3, .color-scheme-four .comparison-wrapper .table .btn-danger:hover, .color-scheme-four .comparison-wrapper .table .btn-danger:focus, .color-scheme-four .wishlist-wrapper .table .btn-danger:hover, .color-scheme-four .wishlist-wrapper .table .btn-danger:focus {
     border-color: #d13636;
 }
 
@@ -928,10 +929,12 @@ body .color-offset {
     color: #f7f7f7;
 }
 
-body .color-white, body .header-cart .shopping-cart-btn > .default-btn:hover, .header-cart body .shopping-cart-btn > .default-btn:hover, body .header-cart .shopping-cart-btn > .default-btn:focus, .header-cart body .shopping-cart-btn > .default-btn:focus, body .default-btn:hover, body .default-btn:focus, body .btn.btn-secondary:hover, body .btn.btn-secondary:focus, body .banner-with-text .banner-content h3, .banner-with-text .banner-content body h3, body .banner-with-text .banner-content .default-btn:hover, .banner-with-text .banner-content body .default-btn:hover, body .banner-with-text .banner-content .default-btn:focus, .banner-with-text .banner-content body .default-btn:focus, body .list-widget .list-group > a:hover::before, .list-widget body .list-group > a:hover::before, body .list-widget .list-group > a:focus::before, .list-widget body .list-group > a:focus::before, body .pagination-area .pagination li a:hover, .pagination-area .pagination li body a:hover, body .pagination-area .pagination li a:focus, .pagination-area .pagination li body a:focus,
+body .color-white, body .header-cart .shopping-cart-btn > .default-btn:hover, .header-cart body .shopping-cart-btn > .default-btn:hover, body .header-cart .shopping-cart-btn > .default-btn:focus, .header-cart body .shopping-cart-btn > .default-btn:focus, body .default-btn:hover, body .default-btn:focus, body .btn.btn-secondary:not(:disabled):not(.disabled):active:focus, body .btn.btn-secondary:hover, body .btn.btn-secondary:focus, body .banner-with-text .banner-content h3, .banner-with-text .banner-content body h3, body .banner-with-text .banner-content .default-btn:hover, .banner-with-text .banner-content body .default-btn:hover, body .banner-with-text .banner-content .default-btn:focus, .banner-with-text .banner-content body .default-btn:focus, body .list-widget .list-group > a:hover::before, .list-widget body .list-group > a:hover::before, body .list-widget .list-group > a:focus::before, .list-widget body .list-group > a:focus::before, body .pagination-area .pagination li a:hover, .pagination-area .pagination li body a:hover, body .pagination-area .pagination li a:focus, .pagination-area .pagination li body a:focus,
 body .pagination-area .pagination li span:hover, .pagination-area .pagination li body span:hover,
 body .pagination-area .pagination li span:focus, .pagination-area .pagination li body span:focus, body .pagination-area .pagination li.active span, .pagination-area .pagination li.active body span, body header.white-scheme, body header.white-scheme button, header.white-scheme body button,
-body header.white-scheme a, header.white-scheme body a, body header.white-scheme .header-contact-content span, header.white-scheme .header-contact-content body span, body header.white-scheme .header-search-btn i:hover, header.white-scheme .header-search-btn body i:hover, body header.white-scheme .header-search-btn i:focus, header.white-scheme .header-search-btn body i:focus, body .color-scheme-three header .header-search-btn i:hover, .color-scheme-three header .header-search-btn body i:hover, body .color-scheme-three header .header-search-btn i:focus, .color-scheme-three header .header-search-btn body i:focus, body header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header.header-type-2 .header-cart-area .dropdown-menu body .default-btn:hover, body header.header-type-2 .header-cart-area .dropdown-menu .default-btn:focus, header.header-type-2 .header-cart-area .dropdown-menu body .default-btn:focus, body .color-scheme-two .footer-copyright a:hover, .color-scheme-two .footer-copyright body a:hover, body .color-scheme-two .newsletter-section input[type="submit"]:hover, .color-scheme-two .newsletter-section body input[type="submit"]:hover, body .login-form .pass-show-btn, .login-form body .pass-show-btn, .header-cart button .count-style, .header-search-area .header-search-btn, #main_nav .menu-toggle, #main_nav > ul > li a, #primary_slider .swiper-arrow, #primary_slider .slide-content h1,
+body header.white-scheme a, header.white-scheme body a, body header.white-scheme .header-contact-content span, header.white-scheme .header-contact-content body span, body header.white-scheme .header-search-btn i:hover, header.white-scheme .header-search-btn body i:hover, body header.white-scheme .header-search-btn i:focus, header.white-scheme .header-search-btn body i:focus, body .color-scheme-three header .header-search-btn i:hover, .color-scheme-three header .header-search-btn body i:hover, body .color-scheme-three header .header-search-btn i:focus, .color-scheme-three header .header-search-btn body i:focus, body header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header.header-type-2 .header-cart-area .dropdown-menu body .default-btn:hover, body header.header-type-2 .header-cart-area .dropdown-menu .default-btn:focus, header.header-type-2 .header-cart-area .dropdown-menu body .default-btn:focus, body .color-scheme-two .footer-copyright a:hover, .color-scheme-two .footer-copyright body a:hover, body .color-scheme-two .newsletter-section input[type="submit"]:hover, .color-scheme-two .newsletter-section body input[type="submit"]:hover, body .login-form .pass-show-btn, .login-form body .pass-show-btn, body .comparison-wrapper .table .btn-danger:hover, .comparison-wrapper .table body .btn-danger:hover, body .comparison-wrapper .table .btn-danger:focus, .comparison-wrapper .table body .btn-danger:focus,
+body .wishlist-wrapper .table .btn-danger:hover, .wishlist-wrapper .table body .btn-danger:hover,
+body .wishlist-wrapper .table .btn-danger:focus, .wishlist-wrapper .table body .btn-danger:focus, body .comparison-wrapper .table .btn-secondary:first-child, .comparison-wrapper .table body .btn-secondary:first-child, .header-cart button .count-style, .header-search-area .header-search-btn, #main_nav .menu-toggle, #main_nav > ul > li a, #primary_slider .swiper-arrow, #primary_slider .slide-content h1,
 #primary_slider .slide-content h2, #primary_slider .slide-content p, .default-btn, .swiper-arrow:hover, .gallery-with-thumbs .main-slider .swiper-slide .image-overlay i, .product-price > p .price-discount, .social-sharing .list-inline li a, .countdown-wrapper .countdown-timer .countdown-section .countdown-amount, .countdown-wrapper .countdown-timer .countdown-section .countdown-word, .tags-widget ul li a:hover, #to_top, .footer-copyright, .footer-copyright a, .categories-carousel .single-category:hover h2 a, .shop-products-wrapper .product-list .product-image .label-product,
 .shop-products-wrapper .product-grid .product-image .label-product,
 .product-carousel .product-list .product-image .label-product,
@@ -948,7 +951,7 @@ body .bgc-offset {
     background-color: #f7f7f7;
 }
 
-body .bgc-white, body .custom-radio .checkmark::after, .custom-radio body .checkmark::after, body header.white-scheme .header-search-area, header.white-scheme body .header-search-area, #main_nav .mega-container,
+body .bgc-white, body .custom-radio .checkmark::after, .custom-radio body .checkmark::after, body header.white-scheme .header-search-area, header.white-scheme body .header-search-area, body .newsletter-popup .popup-container, .newsletter-popup body .popup-container, body .newsletter-popup .popup-container .popup-close, .newsletter-popup .popup-container body .popup-close, #main_nav .mega-container,
 #main_nav > ul > li > ul, #main_nav .mega-container ul, #primary_slider .swiper-arrow:hover, .swiper-arrow, .swiper-container-horizontal .swiper-pagination-testimonial.swiper-pagination-bullets > span, .product-details .product-actions .product-size select, .product-details .product-actions .color-list li .white, header .list-inline .dropdown-menu ul, header.white-scheme .header-cart .dropdown-toggle, .shop-products-wrapper .product-list .product-inner,
 .shop-products-wrapper .product-grid .product-inner,
 .product-carousel .product-list .product-inner,
@@ -1769,6 +1772,11 @@ to a reusable component.
     letter-spacing: 0.05em;
 }
 
+.btn.btn-primary:not(:disabled):not(.disabled):active:focus, .btn.btn-primary:hover, .btn.btn-primary:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
 .btn.btn-secondary {
     text-transform: uppercase;
     background: #f4f4f4;
@@ -1781,7 +1789,7 @@ to a reusable component.
     font-size: 13px;
 }
 
-.btn.btn-secondary:hover, .btn.btn-secondary:focus {
+.btn.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn.btn-secondary:hover, .btn.btn-secondary:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -3018,7 +3026,6 @@ to a reusable component.
  */
 .breadcrumb {
     padding: 25px 0 20px;
-    margin: 0 0 40px 0;
     background: none;
     border-radius: 0;
     text-align: left;
@@ -4750,6 +4757,92 @@ header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header
     color: #333;
 }
 
+/**
+ * Layout Newsletter Popup
+ *
+ */
+.newsletter-popup {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    -webkit-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 9999999;
+}
+
+.newsletter-popup .popup-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 390px;
+    left: 0;
+    margin: auto;
+    max-width: 790px;
+    padding: 50px;
+}
+
+.newsletter-popup .popup-container .popup-close {
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.newsletter-popup .popup-container .popup-close .p-close {
+    display: block;
+}
+
+.newsletter-popup .popup-container .popup-close .p-close::before {
+    font-family: "Ionicons";
+    content: "\f2c0";
+    display: inline-block;
+    color: #434343;
+    font-size: 16px;
+}
+
+.newsletter-popup .popup-container .popup-close .p-close span {
+    display: none;
+}
+
+.newsletter-popup .popup-container h2 {
+    font-size: 30px;
+    color: #343434;
+}
+
+.newsletter-popup .popup-container .popup-body {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-popup .popup-container .popup-body input[type="text"] {
+    background: #EBEBEB none repeat scroll 0% 0%;
+    border: medium none;
+    width: 80%;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.newsletter-popup .popup-container .form-check {
+    width: 38%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-popup .popup-container .checkmark {
+    z-index: 1;
+}
+
 /************************************************************
 	c25 - Layout - Shop
 *************************************************************/
@@ -5049,6 +5142,8 @@ header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header
 .shopping-cart-wrapper .table .btn-primary:hover, .shopping-cart-wrapper .table .btn-primary:focus {
     background-color: #286090;
     border-color: #204d74;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .shopping-cart-wrapper .table .btn-danger {
@@ -5059,6 +5154,8 @@ header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header
 .shopping-cart-wrapper .table .btn-danger:hover, .shopping-cart-wrapper .table .btn-danger:focus {
     background-color: #c9302c;
     border-color: #ac2925;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .shopping-cart-wrapper .table button {
@@ -5478,6 +5575,100 @@ header.header-type-2 .header-cart-area .dropdown-menu .default-btn:hover, header
 
 .login-wrapper .login-info p a {
     font-size: 16px;
+}
+
+/************************************************************
+	c31 - Layout - Wishlist & Compare
+*************************************************************/
+/**
+ * Layout Wishlist & Compare
+ *
+ */
+.comparison-wrapper .table,
+.wishlist-wrapper .table {
+    text-align: center;
+}
+
+.comparison-wrapper .table img,
+  .wishlist-wrapper .table img {
+    max-width: 100px;
+}
+
+.comparison-wrapper .table th,
+  .comparison-wrapper .table td,
+  .wishlist-wrapper .table th,
+  .wishlist-wrapper .table td {
+    vertical-align: middle;
+    border-width: 1px;
+}
+
+.comparison-wrapper .table .price,
+  .wishlist-wrapper .table .price {
+    color: #ec0a0a;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.comparison-wrapper .table .btn-primary,
+  .comparison-wrapper .table .btn-danger,
+  .wishlist-wrapper .table .btn-primary,
+  .wishlist-wrapper .table .btn-danger {
+    width: 38px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0;
+}
+
+.comparison-wrapper .table .btn-primary,
+  .wishlist-wrapper .table .btn-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-right: 5px;
+}
+
+.comparison-wrapper .table .btn-primary:hover, .comparison-wrapper .table .btn-primary:focus,
+    .wishlist-wrapper .table .btn-primary:hover,
+    .wishlist-wrapper .table .btn-primary:focus {
+    background-color: #286090;
+    border-color: #204d74;
+}
+
+.comparison-wrapper .table .btn-danger,
+  .wishlist-wrapper .table .btn-danger {
+    background-color: #f4f4f4;
+    border-color: #f4f4f4;
+    color: #333;
+}
+
+.comparison-wrapper .table img {
+    max-width: 150px;
+}
+
+.comparison-wrapper .table tr td {
+    padding: 20px 15px;
+}
+
+.comparison-wrapper .table .product-title {
+    font-size: 14px;
+    font-weight: 500;
+    width: 120px;
+}
+
+.comparison-wrapper .table .product-ratings li {
+    color: #4d4d4d;
+}
+
+.comparison-wrapper .table .btn-secondary {
+    width: 125px;
+}
+
+.comparison-wrapper .table .btn-secondary:first-child {
+    background-color: #337ab7;
+}
+
+.comparison-wrapper .table .btn-secondary:first-child:hover, .comparison-wrapper .table .btn-secondary:first-child:focus {
+    background-color: #286090;
 }
 
 /************************************************************
