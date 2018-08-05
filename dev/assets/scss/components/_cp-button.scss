@@ -14,18 +14,18 @@
     display: inline-block;
     cursor: pointer;
     @extend %rounded-corners;
-    @extend %color-white;
+    @include cx-default-color(color, white);
     @include cx-color(primary, bg);
 
     &:hover,
     &:focus {
-        @extend .color-white;
-	    @extend .bgc-dark;
+        @include cx-default-color(color, white);
+	    @include cx-default-color(bgc, dark);
     }
 
     &.transparent {
     	border: 1px solid lighten($cx-text-color, 100%);
-    	@extend %bgc-transparent;
+    	@include cx-default-color(bgc, transparent);
 
 	    &:hover,
 	    &:focus {
@@ -39,6 +39,13 @@
         font-size: 13px;
         line-height: 2;
         letter-spacing: 0.05em;
+    }
+
+    @include respond-to(mobile) {
+        padding: 0 20px;
+        font-size: 14px;
+        height: 38px;
+        line-height: 39px;
     }
 }
 
@@ -68,7 +75,7 @@
         &:focus {
             box-shadow: none;
             @include cx-color(primary, bg);
-            @extend .color-white;
+            @include cx-default-color(color, white);
         }
     }
 }

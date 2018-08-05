@@ -3,17 +3,9 @@
  *
  */
 
-.product-gallery {
-	position: relative;
-}
-
 .gallery-with-thumbs {
-	@extend %overflow-hidden;
 
 	.swiper-arrow {
-		top: auto;
-		bottom: 45px;
-
 		&.prev {
 			left: -21px;
 		}
@@ -24,12 +16,13 @@
 	}
 
 	.main-slider {
+		@extend %overflow-hidden;
 		.swiper-slide {
 			@extend %mb-half;
 			> a {
-				position: relative;
 				display: block;
 				border: 1px solid $cx-border-color;
+				@extend .pos-r;
 
 				&:hover {
 					.image-overlay {
@@ -55,13 +48,14 @@
 					left: 50%;
 					transform: translate(-50%, -50%);
 					font-size: 40px;
-					@extend %color-white;
+					@include cx-default-color(color, white);
 				}
 			}
 		}
 	}
 
 	.nav-slider {
+		@extend %overflow-hidden;
 		.swiper-slide {
 			border: 1px solid $cx-border-color;
 			@extend %cx-transition;
@@ -83,10 +77,10 @@
 .product-details {
 	.product-name {
 	    font-size: 24px;
-	    color: #333;
 	    text-transform: capitalize;
 	    line-height: 1;
 	    font-weight: 400;
+	    @include cx-default-color(color, dark);
 	}
 
 	.product-meta,
@@ -149,7 +143,7 @@
 			select {
 			    border: 1px solid $cx-border-color;
 			    width: 70px;
-			    @extend %bgc-white;
+			    @include cx-default-color(bgc, white);
 			}
 		}
 
@@ -166,8 +160,8 @@
 
 			.current {
 			    display: block;
-			    overflow: hidden;
 			    width: 100%;
+			    @extend %overflow-hidden;
 			}
 
 			&:hover {
@@ -197,7 +191,7 @@
 				}
 
 				.white {
-					@extend %bgc-white;
+					@include cx-default-color(bgc, white);
 				}
 
 				.orange {
@@ -277,6 +271,7 @@
 	    li {
 		    color: #3CABDA;
 		    margin-right: 2px;
+		    line-height: 1;
 
 		    &:last-child {
 		    	margin-right: 0;
@@ -294,6 +289,7 @@
 
 .product-price {
 	margin: 15px 0 25px;
+	line-height: 1;
 	> p {
 		> span {
 			&:not(:last-child) {
@@ -314,14 +310,14 @@
 
 		.price-discount {
 		    display: inline-block;
-		    position: relative;
 		    height: auto;
 		    line-height: 21px;
 		    width: auto;
 		    padding: 2px 7px 0;
 		    font-weight: 700;
 		    background: #ec0a0a;
-		    @extend %color-white;
+		    @include cx-default-color(color, white);
+		    @extend .pos-r;
 		}
 	}
 }
@@ -353,7 +349,7 @@
 				font-size: 13px;
 				padding: 7px 15px;
 				line-height: 40px;
-		    	@extend %color-white;
+		    	@include cx-default-color(color, white);
 		    	@extend %rounded-corners;
 
 			    @include respond-to(mobile) {
@@ -364,6 +360,69 @@
 
 		i {
 			margin-right: 7px;
+		}
+	}
+}
+
+.social-sharing {
+	li.list-inline-item {
+		span {
+			margin-right: 0;
+			font-size: inherit;
+
+			@include respond-to(tablet) {
+				display: none;
+			}
+		}
+
+		i {
+			@include respond-to(tablet) {
+				margin-right: 0;
+			}
+		}
+
+		a {
+			@include respond-to(tablet) {
+				width: 38px;
+				height: 38px;
+				line-height: 40px;
+				padding: 0;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@include respond-to(notebook) {
+	.social-sharing {
+		li.list-inline-item {
+			margin-right: 5px;
+
+			a {
+				padding: 7px 10px;
+			}
+		}
+	}
+}
+
+@include media-only(small-mobile, max) {
+	.social-sharing {
+		li.list-inline-item {
+			span {
+				display: none;
+			}
+
+			i {
+				margin-right: 0;
+			}
+
+			a {
+				width: 38px;
+				height: 38px;
+				line-height: 40px;
+				padding: 0;
+				display: inline-block;
+			}
 		}
 	}
 }
@@ -385,21 +444,21 @@
 
 	    .countdown-section {
 		    min-width: 55px;
-		    margin-right: 3px;
+		    margin-right: 2px;
 		    padding: 12px 5px 8px;
 		    background: none;
 		    display: inline-block;
 		    text-align: center;
-		    position: relative;
+		    @extend .pos-r;
 
 		    @include media-only(notebook, max) {
-		    	min-width: 46px;
+		    	min-width: 45px;
 		    }
 
 		    .countdown-amount {
 			    font-size: 18px;
 			    font-weight: 500;
-			    @extend %color-white;
+			    @include cx-default-color(color, white);
 
 			    @include respond-to(tablet) {
 			    	font-size: 12px;
@@ -415,7 +474,7 @@
 			    font-weight: 400;
 			    display: block;
 			    text-transform: uppercase;
-			    @extend %color-white;
+			    @include cx-default-color(color, white);
 		    }
 
 		    &::after {
@@ -463,9 +522,9 @@
 		    font-size: 18px;
 		    color: #666666;
 		    margin-right: 8px;
-			position: relative;
 		    bottom: -3px;
 		    @extend %cx-transition;
+		    @extend .pos-r;
 	    }
 
 	    &:hover {

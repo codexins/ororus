@@ -13,7 +13,7 @@
 		position: absolute;
 		opacity: 0;
 		cursor: pointer;
-		width: 100%;
+		// width: 100%;
 		left: 0;
 		@extend %cx-transition;
 	}
@@ -61,10 +61,10 @@
 
 .custom-radio {
     display: block;
-    position: relative;
     padding-left: 35px;
     cursor: pointer;
     user-select: none;
+    @extend .pos-r;
 
     &:hover {
 		input ~ .checkmark {
@@ -79,9 +79,9 @@
 	    height: 25px;
 	    width: 25px;
 	    background-color: #dedede;
-	    border-radius: 50%;
 	    z-index: -1;
 	    @extend %cx-transition;
+	    @extend .circle;
 
 	    &::after {
 		    content: "";
@@ -91,8 +91,8 @@
 			left: 0;
 			width: 8px;
 			height: 8px;
-			border-radius: 50%;
-			@extend .bgc-white;
+			@extend .circle;
+			@include cx-default-color(bgc, white);
 			@extend %cx-transition;
 	    }
 	}

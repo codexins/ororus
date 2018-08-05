@@ -41,6 +41,6 @@ header {
 }
 
 .intelligent-header-space {
-	position: relative;
 	z-index: -1;
+	@extend .pos-r;
 }

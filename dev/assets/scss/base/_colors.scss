@@ -132,6 +132,10 @@
 	color: #fff;
 }
 
+%color-dark {
+	color: #333;
+}
+
 %bgc-transparent {
 	background-color: transparent;
 }
@@ -180,34 +184,36 @@
 	@include cx-color(header, bg);
 }
 
-body {
-	.color-transparent {
-		@extend %color-transparent;
-	}
+.color-transparent {
+	@include cx-default-color(color, transparent);
+}
 
-	.color-offset {
-		@extend %color-offset;
-	}
+.color-offset {
+	@include cx-default-color(color, offset);
+}
 
-	.color-white {
-		@extend %color-white;
-	}
+.color-white {
+	@include cx-default-color(color, white);
+}
 
-	.bgc-transparent {
-		@extend %bgc-transparent;
-	}
+.color-dark {
+	@include cx-default-color(color, dark);
+}
 
-	.bgc-offset {
-		@extend %bgc-offset;
-	}
+.bgc-transparent {
+	@include cx-default-color(bgc, transparent);
+}
 
-	.bgc-white {
-		@extend %bgc-white;
-	}
+.bgc-offset {
+	@include cx-default-color(bgc, offset);
+}
 
-	.bgc-dark {
-		@extend %bgc-dark;
-	}
+.bgc-white {
+	@include cx-default-color(bgc, white);
+}
+
+.bgc-dark {
+	@include cx-default-color(bgc, dark);
 }
 
 
@@ -215,29 +221,41 @@ body {
 
 .bg-facebook {
 	background: $facebook-color;
-	&:hover {
+	@include cx-default-color(color, white);
+	&:hover,
+	&:focus {
 		background: darken($facebook-color, 10%);
+		@include cx-default-color(color, white);
 	}
 }
 
 .bg-twitter {
 	background: $twitter-color;
-	&:hover {
+	@include cx-default-color(color, white);
+	&:hover,
+	&:focus {
 		background: darken($twitter-color, 10%);
+		@include cx-default-color(color, white);
 	}
 }
 
 .bg-gplus {
 	background: $gplus-color;
-	&:hover {
+	@include cx-default-color(color, white);
+	&:hover,
+	&:focus {
 		background: darken($gplus-color, 10%);
+		@include cx-default-color(color, white);
 	}
 }
 
 .bg-pinterest {
 	background: $pinterest-color;
-	&:hover {
+	@include cx-default-color(color, white);
+	&:hover,
+	&:focus {
 		background: darken($pinterest-color, 10%);
+		@include cx-default-color(color, white);
 	}
 }
 

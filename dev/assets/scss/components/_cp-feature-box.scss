@@ -4,7 +4,8 @@
  */
 
 .feature-box {
-	padding-bottom: 3rem;
+	@extend %mb-half;
+
 	i {
 	    font-size: 40px;
 	    border: 1px solid $cx-border-color;
@@ -17,8 +18,8 @@
 	    @include cx-color(primary, color);
 
 	    &::before {
-		    position: relative;
 		    right: -1px;
+		    @extend .pos-r;
 	    }
 
 	    @include respond-to(tablet) {
@@ -30,7 +31,7 @@
 	}
 
 	.feature-content {
-		overflow: hidden;
+		@extend %overflow-hidden;
 	}
 
 	h2 {

@@ -19,12 +19,12 @@
 	    opacity: 0;
 	    border: 0;
 	    @extend .circle;
-	    @extend %color-white;
+	    @include cx-default-color(color, white);
 	    @extend %cx-transition;
 
 	    i {
 	    	font-size: 20px;
-	    	position: relative;
+			@extend .pos-r;
 	    }
 
 	    &.prev {
@@ -43,14 +43,35 @@
 	    }
 
 	    &:hover {
-	    	@extend %bgc-white;
+	    	@include cx-default-color(bgc, white);
 	    	@include cx-color(primary, color);
+	    }
+
+	    @include respond-to(notebook) {
+	    	opacity: 1;
+		    width: 50px;
+		    height: 50px;
+		    line-height: 56px;
+
+		    &.next {
+		    	right: 15px;
+		    }
+
+		    &.prev {
+		    	left: 15px;
+		    }
 	    }
 	}
 
 	&:hover {
 		.swiper-arrow {
 			opacity: 1;
+		}
+	}
+
+	@include media-only(notebook, max) {
+		.swiper-arrow {
+			display: none;
 		}
 	}
 
@@ -62,7 +83,8 @@
 		transform: translateY(-60%);
 
 	    @include respond-to(tablet) {
-	    	margin-top: 50px;
+	    	margin-top: 30px;
+	    	width: 460px;
 	    }
 
 	    @include respond-to(mobile) {
@@ -71,7 +93,7 @@
 	    }
 
 	    @include media-only(small-mobile, max) {
-	    	margin-top: 40px;
+	    	margin-top: 30px;
 	    	width: 285px;
 	    }
 
@@ -79,7 +101,7 @@
 		h2 {
 			text-transform: uppercase;
 			line-height: 1;
-			@extend %color-white;
+			@include cx-default-color(color, white);
 		}
 		h1 {
 		    font-size: 60px;
@@ -90,7 +112,7 @@
 		    }
 
 		    @include respond-to(tablet) {
-		    	font-size: 40px;
+		    	font-size: 36px;
 		    }
 
 		    @include respond-to(mobile) {
@@ -112,7 +134,7 @@
 		    }
 
 		    @include respond-to(tablet) {
-		    	font-size: 24px;
+		    	font-size: 22px;
 		    }
 
 		    @include respond-to(mobile) {
@@ -130,14 +152,14 @@
 		    font-size: 86px;
 		    font-weight: 600;
 		    line-height: 1;
-		    @extend %color-white;
+		    @include cx-default-color(color, white);
 
 		    @include respond-to(notebook) {
 		    	font-size: 66px;
 		    }
 
 		    @include respond-to(tablet) {
-		    	font-size: 50px;
+		    	font-size: 44px;
 		    }
 
 		    @include respond-to(mobile) {
@@ -151,10 +173,12 @@
 
 		.slide-button {
 			margin:30px 0 0;
-			.default-btn {
-				padding: 0 25px;
-				height: 46px;
-				line-height: 46px;
+			@include media-only(tablet, min) {
+				.default-btn {
+					padding: 0 25px;
+					height: 46px;
+					line-height: 46px;
+				}
 			}
 
 		    @include respond-to(mobile) {
@@ -213,4 +237,21 @@
 			}
 		}
 	}
+
+	&:not([class*='slider-type-']) {
+		@include media-only(notebook, min) {
+			.swiper-pagination {
+				display: none;
+			}
+		}
+	}
+
+	&.slider-4 {
+		@include media-only(notebook, min) {
+			.swiper-pagination {
+				display: block;
+			}
+		}
+	}
 }
+

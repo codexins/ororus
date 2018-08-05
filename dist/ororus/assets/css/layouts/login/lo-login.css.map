@@ -1,2 +1,0 @@
-{"version":3,"sources":["layouts/login/lo-login.scss"],"names":[],"mappings":"AAAA;;;GAGG;AAEH;EAEK,sDAA6C;UAA7C,8CAA6C;EAC7C,cAAa,EAChB;;AAJF;EAOE,gBAAe,EACf","file":"lo-login.css","sourcesContent":["/**\r\n * Layout Login / Register\r\n *\r\n */\r\n\r\n.login-wrapper {\r\n\t.login-form {\r\n\t    box-shadow: 2px 2px 11px 0 rgba(0, 0, 0, 0.1);\r\n\t    padding: 50px;\r\n\t}\r\n\r\n\tp {\r\n\t\tfont-size: 14px;\r\n\t}\r\n}"]
-}

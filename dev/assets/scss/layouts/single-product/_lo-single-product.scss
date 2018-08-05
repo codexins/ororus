@@ -102,8 +102,8 @@
 
 		input[type=radio] {
 			cursor: pointer;
-			position: relative;
 			top: 2px;
+			@extend .pos-r;
 			
 			&::after {
 				content: "";
@@ -111,7 +111,7 @@
 				width: 100%;
 				height: 100%;
 				border: 1px solid transparent;
-				border-radius: 50%;
+				@extend .circle;
 				@extend %cx-transition;
 			}
 
@@ -128,5 +128,47 @@
 	    margin-top: 5px;
 	    margin-bottom: 10px;
 	    color: #737373;
+	}
+}
+
+@include respond-to(mobile) {
+	.single-product-wrapper {
+		.product-info {
+			.nav {
+				.nav-item {
+					width: 40%;
+				}
+			}
+		}
+	}
+}
+
+@include media-only(small-mobile, max) {
+	.single-product-wrapper {
+		.product-details {
+			.product-ratings {
+			    flex-direction: column;
+
+			    .rating {
+			    	margin-bottom: 15px;
+			    }
+			}
+
+			.product-stock {
+				ul {
+					li.box-quantity {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		.product-info {
+			.nav {
+				.nav-link {
+					font-size: 14px;
+				}
+			}
+		}
 	}
 }

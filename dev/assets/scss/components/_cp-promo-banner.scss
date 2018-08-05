@@ -4,12 +4,17 @@
  */
 
 .promo-banner {
-	overflow: hidden;
+	@extend %overflow-hidden;
 	@extend %mb-half;
 
 	> a {
 		display: inline-block;
-		position: relative;
+		width: 100%;
+		@extend .pos-r;
+	}
+
+	img {
+		width: 100%;
 	}
 
 	&.hover-effect-1 {
@@ -83,11 +88,21 @@
 			width: 100%;
 		}
 	}
+
+	// &.mb-sm-half {
+	// 	@include respond-to(mobile) {
+	// 		margin-bottom: 30px;
+	// 	}
+	// }
 }
 
 .banner-with-text {
 	height: 360px;
 	@extend .pos-r;
+
+	@include media-only(wide, max) {
+		height: 400px;
+	}
 
 	.banner-content {
 	    position: absolute;
@@ -96,19 +111,29 @@
 	    width: 50%;
 	    text-align: center;
 
+	    @include respond-to(mobile) {
+	    	width: 60%;
+	    	left: 40px;
+	    }
+
 	    h3 {
 		    font-size: 24px;
 		    margin: 0;
 		    text-transform: uppercase;
-		    @extend .color-white;
+		    @include cx-default-color(color, white);
 	    }
 
 	    h2 {
 			font-size: 32px;
 		    text-transform: capitalize;
 		    font-weight: 500;
+		    line-height: 1.2;
 		    margin: 20px 0 0;
 		    @include cx-color(secondary, color);
+
+		    @include respond-to(mobile) {
+				font-size: 24px;
+		    }
 	    }
 
 	    .default-btn {
@@ -122,8 +147,29 @@
 	    	&:hover,
 	    	&:focus {
 		    	@include cx-color(secondary, bg);
-		    	@extend .color-white;
+		    	@include cx-default-color(color, white);
 	    	}
 	    }
+	}
+}
+
+.top-promo-banners {
+	@include media-only(small-mobile, max) {
+		.col-6 {
+			flex-basis: 100%;
+			max-width: 100%;
+
+			&:first-child {
+				.promo-banner {
+					margin-bottom: 0.75 * $cx-col-spacing;
+				}
+			}
+		}
+	}
+
+	.first {
+		@include media-only(notebook, max) {
+			margin-bottom: 0;
+		}
 	}
 }

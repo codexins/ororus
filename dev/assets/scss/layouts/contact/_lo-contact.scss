@@ -1,0 +1,42 @@
+/**
+ * Layout Contact
+ *
+ */
+
+.contact-form-wrapper {
+	padding: 30px;
+	@include cx-default-color(bgc, offset);
+
+	@include respond-to(mobile) {
+		margin-top: $cx-col-spacing;
+	}
+
+	@include media-only(small-mobile, max) {
+		padding: 20px;
+	}
+
+	input:not([type="submit"]),
+	textarea {
+		border-color: transparent;
+	}
+
+	textarea {
+	    min-height: 140px;
+	}
+
+	.btn-secondary {
+		@include cx-color(primary, bg);
+		@include cx-default-color(color, white);
+
+		&:hover {
+			#whole & {
+				background: #555;
+				@include cx-default-color(color, white);
+			}
+		}
+	}
+}
+
+#gmap {
+	min-height: 400px;
+}

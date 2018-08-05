@@ -27,12 +27,20 @@ INDEX:
 	c27 - Layout - Cart Page
 	c28 - Layout - Checkout
 	c29 - Layout - My Account
-	c30 - Layout - Modal
+	c30 - Layout - Login / Register
+	c31 - Layout - Wishlist & Compare
+	c32 - Layout - Blog
+	c32 - Layout - Blog Details
+	c33 - Layout - About Page
+	c34 - Layout - Contact Page
+	c35 - Layout - FAQs Page
+	c36 - Layout - 404 Page
+	c37 - Layout - Modal
 
 ******************************/
 
 /*
-	Deafult Primary Color:      #ec610a
+	Defult Primary Color:       #ec610a
 	Default Secondary Color:    #292929
 	Default Offset Color:       #f7f7f7
 	Default Border Color:       #ededed
@@ -55,6 +63,8 @@ INDEX:
 */
 
 @charset "UTF-8";
+
+/* Importing Google Font 'Poppins' */
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900');
 
 

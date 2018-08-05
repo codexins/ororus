@@ -6,8 +6,8 @@
 .categories-carousel {
 
 	.media-wrapper {
-		position: relative;
-	    overflow: hidden;
+	    @extend .pos-r;
+	    @extend %overflow-hidden;
 	    @extend .circle;
 	}
 
@@ -50,18 +50,18 @@
 			}
 			h2 {
 				a {
-					@extend %color-white;
+					@include cx-default-color(color, white);
 				}
 			}
 		}
 	}
 
 	.single-category-2 {
-	    position: relative;
-	    overflow: hidden;
 	    border: 1px solid $cx-border-color;
 	    padding: 10px;
+	    @extend %overflow-hidden;
 	    @extend %mb-half;
+	    @extend .pos-r;
 	    @extend %rounded-corners;
 
 	    @include media-only(wide, max) {
@@ -81,7 +81,7 @@
 	    		margin-bottom: 15px;
 
 	    		a {
-	    			color: #333;
+	    			@include cx-default-color(color, dark);
 				    font-size: 16px;
 				    font-weight: 400;
 				    text-transform: uppercase;

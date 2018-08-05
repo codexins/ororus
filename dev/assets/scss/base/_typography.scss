@@ -174,17 +174,10 @@ input[type="submit"] {
     height: 40px;
     display: inline-block;
     font-weight: 500;
-    border-radius: 3px;
     box-shadow: none;
+    cursor: pointer;
+    @extend %slight-rounded;
     @extend %cx-transition;
-}
-
-
-input::-webkit-input-placeholder,
-input:-moz-placeholder,
-input:-ms-input-placeholder,
-input[placeholder] {
-    color: #9d9d9d ;
 }
 
 select:focus,
@@ -200,6 +193,23 @@ input[type="submit"]:hover,
 input[type="button"]:hover {
     @include cx-color(primary, border);
     @include cx-color(primary, bg);
+}
+
+::-webkit-input-placeholder{
+  color: #888;
+  font-size: 12px;
+}
+::-moz-placeholder{
+  color: #888;
+  font-size: 12px;
+}
+:-ms-input-placeholder{
+  color: #888;
+  font-size: 12px;
+}
+:-moz-placeholder {
+  color: #888;
+  font-size: 12px;
 }
 
 .nice-select {

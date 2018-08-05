@@ -10,8 +10,12 @@
 	@extend %overflow-hidden;
 }
 
-.client-section {
-	@include media-only(small-mobile, max) {
-		padding-top: $cx-col-spacing;
-	}
-}
+// .client-section {
+// 	@include respond-to(mobile) {
+// 		padding-top: 0.7 * $cx-col-spacing;
+// 	}
+
+// 	@include media-only(small-mobile, max) {
+// 		padding-top: 0.5 * $cx-col-spacing;
+// 	}
+// }

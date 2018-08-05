@@ -10,6 +10,10 @@
     border: 1px solid #e9e9e9;
     @extend %rounded-corners;
 
+    @include media-only(small-mobile, max) {
+    	padding: 15px;
+    }
+
     .pagination {
     	line-height: 1;
     	margin: 0;
@@ -34,11 +38,19 @@
 			    &:focus {
 	    			@include cx-color(primary, bg);
 	    			@include cx-color(primary, border);
-	    			@extend .color-white;
+	    			@include cx-default-color(color, white);
 			    }
 
 			    &:last-child {
 			    	border-radius: 5px;
+			    }
+
+			    @include media-only(small-mobile, max) {
+			    	width: 26px;
+			    	height: 26px;
+			    	line-height: 27px;
+			    	// font-size: 12px;
+			    	margin-right: 2px;
 			    }
     		}
     		&.active {
@@ -47,13 +59,20 @@
 					cursor: default;
 	    			@include cx-color(primary, bg);
 	    			@include cx-color(primary, border);
-	    			@extend .color-white;
+	    			@include cx-default-color(color, white);
 				}
     		}
     	}
     }
 
     .page-amount {
+    	justify-content: flex-end;
+
+    	@include respond-to(mobile) {
+			justify-content: flex-start;
+			margin-top: 15px;
+    	}
+
     	p {
     		@extend %mb0;
     	}

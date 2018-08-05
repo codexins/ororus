@@ -4,12 +4,9 @@
  */
  
 header {
+	@extend .pos-r;
     .header-area {
     	padding: 30px 0 35px;
-    }
-
-    .logo {
-	    margin: 16px 0 0;
     }
 
 	.top-search {
@@ -23,8 +20,8 @@ header {
 		@extend %mb0;
 		li {
 			&.list-inline-item {
-				position: relative;
 				margin-right: 0;
+				@extend .pos-r;
 				button {
 					font-size: 13px;
 					text-transform: capitalize;
@@ -32,12 +29,14 @@ header {
 					text-decoration: none;
 					height: auto;
 					line-height: 20px;
-					@extend %bgc-transparent;
+					@include cx-default-color(bgc, transparent);
 				}
 
 				i {
 					margin-left: 8px;
 					font-size: 12px;
+					backface-visibility: hidden;
+					transition: transform 0.3s;
 				}
 
 				&::after {
@@ -54,6 +53,12 @@ header {
 					padding: 0 18px;
 					&::after {
 						content: none;
+					}
+
+					&.open {
+						i {
+							transform: rotate(180deg);
+						}
 					}
 				}
 
@@ -75,18 +80,18 @@ header {
 		.dropdown-menu {
 		    max-height: 0;
 		    display: block;
-		    overflow: hidden;
-		    opacity: 0;
 		    border: 0;
 		    padding: 0;
+		    right: 0;
+		    left: auto;
 		    z-index: 9921;
-	        transition: all .2s cubic-bezier(.2,1,.22,1),opacity .15s ease-out;
+	        transition: all .3s ease-out;
+	        @extend %overflow-hidden;
 	        @extend %rounded-corners;
-	        @extend %bgc-transparent;
+	        @include cx-default-color(bgc, transparent);
 
-		    &.show {
+		    &.open {
 			    max-height: 200px;
-			    opacity: 1;
 		    }
 
 		    ul {
@@ -97,9 +102,9 @@ header {
 			    box-shadow: none;
 			    min-width: 145px;
 			    list-style: none;
-			    overflow: hidden;
+			    @extend %overflow-hidden;
 			    @extend %rounded-corners;
-			    @extend %bgc-white;
+			    @include cx-default-color(bgc, white);
 
 				li {
 				    a {
@@ -128,18 +133,8 @@ header {
 		    }
 		}
 
-		@include media-only(notebook, max) {
-			text-align: center;
-			margin-top: 20px;
-		}
-
 		@include media-only(small-mobile, max) {
 			> li {
-				&:last-child {
-					margin-top: 20px;
-					display: block;
-				}
-
 				&.list-inline-item {
 					&::after {
 						content: none;
@@ -155,31 +150,45 @@ header {
 		}
 	}
 
-	.header-search-area {
-		@include media-only(notebook, max) {
-			max-width: 500px;
-			margin-bottom: 20px;
-		}
-	}
-
 	.bottom-header {
 	    display: inline-block;
 	    width: 100%;
 	    margin: 23px 0 0;
 	}
 
-	.header-contact,
-	.header-cart {
-		float: right;
+	// .header-contact,
+	// .header-cart {
+	// 	float: right;
 
-		@include media-only(notebook, max) {
-			float: none;
+	// 	@include media-only(notebook, max) {
+	// 		float: none;
+	// 	}
+	// }
+
+	.header-cart-area {
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	.header-cart {
+		order: 2;
+
+		@include respond-to(mobile) {
+			order: 1;
 		}
 	}
 
 	.header-contact {
 		align-items: center;
 		margin-right: 30px;
+
+		@include respond-to(mobile) {
+			order: 2;
+		}
+
+		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+			width: 60%;
+		}
 
 		i {
 		    font-size: 45px;
@@ -206,7 +215,7 @@ header {
 		@include media-only(notebook, max) {
 			justify-content: center;
 			align-items: center;
-			margin: 25px 0 0;
+			margin: 0;
 
 			.header-contact-content {
 				flex: 0 0 auto;
@@ -226,11 +235,11 @@ header {
 	}
 
 	&.white-scheme {
-		@extend .color-white;
+		@include cx-default-color(color, white);
 		
 		button,
 		a {
-			@extend .color-white;
+			@include cx-default-color(color, white);
 
 			&:hover,
 			&:focus {
@@ -240,38 +249,36 @@ header {
 
 		.header-contact-content {
 			span {
-				@extend .color-white;
+
+				@include cx-default-color(color, white);
 			}
 		}
 
 		.header-search-area {
 			border: 0;
-			@extend .bgc-white;
+			@include cx-default-color(bgc, white);
 		}
 
 		.header-search-btn {
-			i {
-				color: #333;
-				@extend %cx-transition;
-				&:hover,
-				&:focus {
-					@extend .color-white;
-				}
+			@include cx-default-color(color, dark);
+			&:hover,
+			&:focus {
+				@include cx-default-color(color, white);
 			}
 		}
 		
 		.header-cart {
 			.dropdown-toggle {
-				@extend %bgc-white;
+				@include cx-default-color(bgc, white);
 			}
 
 			.count-style {
-				color: #333;
+				@include cx-default-color(color, dark);
 			}
 
 			.shopping-cart-title {
 				a {
-					color: #333;
+					@include cx-default-color(color, dark);
 
 					&:hover {
 						@include cx-color(primary, color);
@@ -281,15 +288,26 @@ header {
 		}
 	}
 
+	.color-scheme-two &,
 	.color-scheme-three & {
 		.header-search-btn {
-			i {
-				color: #333;
-				@extend %cx-transition;
-				&:hover,
-				&:focus {
-					@extend .color-white;
-				}
+			@include cx-default-color(color, dark);
+
+			&:hover,
+			&:focus {
+				@include cx-default-color(color, white);
+			}
+		}
+	}
+
+	.color-scheme-four &,
+	.color-scheme-two & {
+		.shopping-cart-btn a {
+			@include cx-default-color(color, dark);
+
+			&:hover,
+			&:focus {
+				@include cx-default-color(color, white);
 			}
 		}
 	}
@@ -298,11 +316,7 @@ header {
 		@extend .pos-r;
 
 		.header-area {
-			padding: 40px 0 25px;
-		}
-
-		.logo {
-			margin: -5px 0 0;
+			padding: 30px 0;
 		}
 
 		.list-inline {
@@ -334,6 +348,10 @@ header {
 				    &:focus {
 				    	@include cx-color(secondary, color);
 				    }
+
+				    @include respond-to(mobile) {
+				    	padding: 0 8px;
+				    }
 				}
 
 				.dropdown-menu {
@@ -348,8 +366,39 @@ header {
 				&:last-child {
 					.dropdown-toggle {
 						padding-right: 15px;
+
+						@include respond-to(mobile) {
+							padding-right: 8px;
+						}
 					}
 				}
+
+				&:first-child {
+					.dropdown-menu {
+						@include respond-to(mobile) {
+							left: 0;
+							right: auto;
+						}
+					}
+				}
+			}
+
+			@include respond-to(tablet) {
+				position: absolute;
+			    right: 15px;
+			    top: 0;
+			    margin-top: -53px;
+			}
+
+			@include respond-to(mobile) {
+				text-align: center;
+				margin-top: 20px;
+			}
+		}
+
+		.header-search-area {
+			@include media-only(notebook, max) {
+				margin-top: 20px;
 			}
 		}
 
@@ -377,22 +426,21 @@ header {
 			    }
 
 			    .cart-text {
-					color: #333;
-					position: relative;
+					@include cx-default-color(color, dark);
 					text-transform: uppercase;
 					top: -4px;
+					@extend .pos-r;
 			    }
 		    }
 
 		    .dropdown-menu {
-		    	margin-top: 15px;
 
 		    	.default-btn {
 		    		@include cx-color(secondary, bg);
 		    		&:hover,
 		    		&:focus {
-		    			@extend .color-white;
-		    			background: #333;
+		    			@include cx-default-color(color, white);
+		    			@include cx-default-color(bgc, dark);
 		    		}
 		    	}
 
@@ -402,6 +450,39 @@ header {
 				    	@include cx-color(secondary, color);
 				    }
 				}
+		    }
+
+		    @include respond-to(tablet) {
+	    	    top: 30px;
+	    	    bottom: auto;
+		    }
+
+		    @include respond-to(mobile) {
+		    	bottom: -65px;
+
+		    	.dropdown-menu {
+		    		left: auto;
+		    		right: 0;
+		    	}
+		    }
+
+		    @include media-only(small-mobile, max) {
+		    	bottom: -70px;
+
+		    	.dropdown-toggle {
+		    		height: 50px;
+
+		    		i {
+					    margin-right: 0;
+					    line-height: 50px;
+					    font-size: 25px;
+					    left: 0;
+		    		}
+
+		    		span {
+		    			display: none;
+		    		}
+		    	}
 		    }
 		}
 	}
@@ -470,4 +551,79 @@ header {
 	    }
 	}
 
+	@include respond-to(tablet) {
+		.logo {
+			width: 50%;
+			text-align: left;
+		}
+
+		.top-header {
+			text-align: left;
+			.list-inline {
+				position: absolute;
+			    right: 15px;
+			    top: 0;
+			    margin-top: -65px;
+			}
+		}
+
+		.bottom-header {
+			margin-top: 10px;
+		}
+
+		.header-cart {
+			padding-left: 20px;
+		}
+	}
+
+	@include respond-to(mobile) {
+		.header-area {
+			padding: 25px 0;
+		}
+		.top-search {
+			display: none;
+		}
+
+		.top-header {
+			.list-inline {
+				text-align: center;
+
+				.list-inline-item {
+					.dropdown-toggle {
+						padding: 0 7px;
+					}
+
+					&:first-child {
+						.dropdown-toggle {
+							padding-left: 0;
+						}
+
+						.dropdown-menu {
+							left: 0;
+							right: auto;
+						}
+					}
+				}
+			}
+		}
+
+		.header-cart-area {
+			display: flex;
+			justify-content: space-evenly;
+			margin-top: 20px;
+
+			.dropdown-menu {
+				left: -25px;
+				right: auto;
+				&.open {
+					max-height: 500px;
+				}
+			}
+			.shopping-cart-total {
+				h4 {
+					font-size: 16px;
+				}
+			}
+		}
+	}
 }

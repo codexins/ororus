@@ -23,7 +23,9 @@ section {
 }
 
 .lead {
-	font-size: 14px;
+	font-size: 16px;
+	line-height: 1.65;
+	margin-bottom: 20px;
 }
 
 .main-content-wrapper {
@@ -53,6 +55,10 @@ section {
 	    border: 1px solid $cx-border-color;
 	    @extend %rounded-corners;
 	}
+}
+
+.pswp__caption__center {
+	text-align: center;
 }
 
 /* Modal Fixes */

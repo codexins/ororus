@@ -1,0 +1,146 @@
+/**
+ * Components Blog
+ *
+ */
+
+.blog-grid {
+	padding: 20px;
+	border: 1px solid $cx-border-color;
+	@extend %mb-half;
+	@extend %rounded-corners;
+
+	@include media-only(small-mobile, max) {
+		padding: 15px;
+	}
+
+	.post-media {
+		margin-bottom: 20px;
+		@extend %slight-rounded;
+		@extend %overflow-hidden;
+
+		img {
+			width: 100%;
+			@extend %cx-transition;
+		}
+	}
+
+	.post-meta ul,
+	.post-category {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			display: inline-block;
+		}
+	}
+
+	.post-category {
+		li {
+			margin-right: 7px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+			    display: inline-block;
+			    line-height: 1;
+			    padding: 7px 13px 6px;
+			    text-transform: capitalize;
+			    @extend %slight-rounded;
+			    @include cx-color(primary, bg);
+			    @include cx-default-color(color, white);
+
+			    &:hover {
+			    	@include cx-default-color(bgc, dark);
+			    }
+			}
+		}
+	}
+
+	.post-title {
+	    font-size: 18px;
+	    font-weight: 500;
+	    text-transform: initial;
+	    margin: 15px 0 10px;
+	    @include cx-truncation(2, 1.5, #fff);
+	}
+
+	.post-content {
+		p {
+			font-size: 14px;
+			@include cx-truncation(3, 1.65, #fff);
+			&:last-of-type {
+				@extend %mb0;
+			}
+		}
+	}
+
+	.post-footer {
+	    border-top: 1px solid $cx-border-color;
+	    margin: 20px 0 0;
+	    padding: 20px 0 0;
+		@extend .pos-r;
+
+		@include media-only(small-mobile, max) {
+			margin-top: 15px;
+			padding-top: 15px;
+		}
+
+		.post-meta {
+			@extend %cx-transition;
+			@extend %overflow-hidden;
+			li {
+				color: #242424;
+				&:last-child {
+					float: right;
+				}
+			}
+		}
+
+		.post-more {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			opacity: 0;
+			transform: translateY(100%);
+			@extend %cx-transition;
+
+			a {
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 14px;
+				letter-spacing: 0.5px;
+				@include cx-color(primary, color);
+
+				i {
+					transition: margin 0.3s;
+				}
+
+				&:hover {
+					@include cx-default-color(color, dark);
+
+					i {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	&:hover {
+		img {
+			transform: scale(1.09);
+		}
+
+		.post-meta {
+			opacity: 0;
+		}
+
+		.post-more {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}

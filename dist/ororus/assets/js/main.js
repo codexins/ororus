@@ -7,7 +7,7 @@ INDEX:
     s02 - Main Navigation Menu
     s03 - Image Background Settings
     s04 - Primary Slider Settings
-    s05 - Elements Spacing and classes
+    s05 - Elements Spacing & Classes
     s06 - Element Carousels
     s07 - Tooltips
     s08 - Product Gallery with Thumbnails
@@ -16,8 +16,9 @@ INDEX:
     s11 - Client Carousel
     s12 - Recent Post Widget Carousel
     s13 - Scroll to Top JS
-    s14 - Footer Accordion Activation
-    s15 - Price range Slider
+    s14 - Price range Slider
+    s15 - Interactive Behaviour
+    s16 - Instagram Settings
 
 
 
@@ -50,7 +51,8 @@ INDEX:
         $toTop              = $("#to_top"),
         $intelHeader        = $(".main-nav-area"),
         $footer             = $("#colophon"),
-        $priceRange         = $("#price_slider");
+        $priceRange         = $("#price_slider"),
+        $instagram          = $("#instagram_feed");
 
 
     // Check if element exists
@@ -75,20 +77,20 @@ INDEX:
         $mainMenu.stellarNav({
             theme: 'plain',
             breakpoint: 991,
-            openingSpeed: 250,
-            closingDelay: 250
+            openingSpeed: 300,
+            closingDelay: 100
         });
 
-        // Adding active class to nav menu dependent on page
+        // Adding active class to nav menu depending on page
         var pageUrl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
         $("#main_nav a").each(function() {
             if ($(this).attr("href") === pageUrl || $(this).attr("href") === '') {
                 $(this).closest('li').addClass("active");
                 $(this).parents('li').addClass('active');
             }
-            //  else if (window.location.pathname === '/') {
-            //     $('#main_nav a[href="index.html"]').parent('li').addClass('active');
-            // }
+            else if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                $('#main_nav a[href="index.html"]').parent('li').addClass('active');
+            }
         })
     };
 
@@ -128,7 +130,7 @@ INDEX:
             var swiperOptions = {
                 loop: true,
                 speed: 1000,
-                effect: (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'fade' : 'slide', // Show fade effect instead of parallax in Firefox
+                effect: (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) ? 'fade' : 'slide', // Show fade effect instead of parallax slide in Firefox
                 watchSlidesProgress: true,
                 mousewheelControl: true,
                 keyboardControl: true,
@@ -182,10 +184,10 @@ INDEX:
 
 
     /************************************************************
-        s05 - Elements Spacing and classes
+        s05 - Elements Spacing & Classes
     *************************************************************/
 
-    ORORUS.elementHeightsClasses = function() {
+    ORORUS.ElementsSpacingClasses = function() {
 
         // Fixed Navigation Menu Height
         var headerHeight = $intelHeader[0].getBoundingClientRect().height;
@@ -194,10 +196,10 @@ INDEX:
         // Sticky header
         $window.on('scroll', function() {
             var height = $window.scrollTop();
-            if (height < headerTopHeight + headerHeight) {
+            if (height < headerTopHeight) {
                 $(".fixed-header-space").height(0);
                 $intelHeader.removeClass("sticky");
-            } else {
+            } else if (height > headerTopHeight + headerHeight) {
                 $(".fixed-header-space").height(headerHeight);
                 $intelHeader.addClass("sticky");
             }
@@ -205,20 +207,29 @@ INDEX:
 
         // For Main Menu float over Primary Slider
         if ($mainMenufl.elExists()) {
-            var navHeight       = $mainMenufl[0].getBoundingClientRect().height;
-
+            var navHeight = $mainMenufl[0].getBoundingClientRect().height;
             $pSlider.css("margin-top", -navHeight);
         }
 
+        // Slider content dynamic height
         if ($pSlider.elExists()) {
-            var sliderHeight    = $pSlider[0].getBoundingClientRect().height;
+            var sliderHeight = $pSlider[0].getBoundingClientRect().height;
             $("#primary_slider .slide-content").parent(this).css("height", sliderHeight);
         }
 
+        // Equal height columns in slider section
         if ($window.width() > 991) {
             if ($(".top-promo-banners").elExists()) {
                 var topBanners = $('.top-promo-banners')[0].getBoundingClientRect().height;
                 $pSlider.height(topBanners);
+            }
+        }
+
+        // Equal height columns in Google Map section
+        if ($window.width() > 767) {
+            if ($("#gmap").elExists()) {
+                var formHeight = $(".contact-form-wrapper")[0].getBoundingClientRect().height;
+                $('#gmap').css("height", formHeight);
             }
         }
     };
@@ -265,6 +276,9 @@ INDEX:
                     spaceBetween: slideSpace,
                     speed: slideSpeed,
                     loop: slideLoop,
+                    autoplay: {
+                        delay: 100000000
+                    },
 
                     navigation: {
                         nextEl: '.swiper-arrow.next',
@@ -281,18 +295,18 @@ INDEX:
                     breakpoints: {
                         1199: {
                             slidesPerView: visibleSlides_lg,
-                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         991: {
                             slidesPerView: visibleSlides_md,
-                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         767: {
                             slidesPerView: visibleSlides_sm,
-                            // centeredSlides: (visibleSlides_lg % 2 === 0) ? false : true,
                         },
                         479: {
-                            slidesPerView: 1
+                            slidesPerView: 1,
+                            autoplay: {
+                                delay: 5000
+                            }
                         }
                     }
                 });
@@ -306,7 +320,7 @@ INDEX:
             }, 50);
 
             // Updating the sliders in tab
-            $('a[data-toggle="tab"], a[data-toggle="pill"]').on('shown.bs.tab', function (e) {
+            $('body').on('shown.bs.tab', 'a[data-toggle="tab"], a[data-toggle="pill"]', function (e) {
                 for (const slider of swiperInstances) {
                     slider.update();
                 }
@@ -342,6 +356,8 @@ INDEX:
                 speed:1000,
                 loopAdditionalSlides: 10,
                 watchSlidesProgress: true,
+                observer: true,
+                observeParents: true
             };
             var mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 
@@ -351,7 +367,11 @@ INDEX:
                 loopAdditionalSlides: 10,
                 speed:1000,
                 slidesPerView: 3,
+                centeredSlides: true,
                 spaceBetween: 15,
+                autoplay: {
+                    delay: 100000000
+                },
                 touchRatio: 0.2,
                 grabCursor: true,
                 slideToClickedSlide: true,
@@ -363,9 +383,10 @@ INDEX:
 
                 // Responsive breakpoints
                 breakpoints: {
-                    991: {
-                        slidesPerView: 2,
-                        centeredSlides : false
+                    479: {
+                        autoplay: {
+                            delay: 5000
+                        }
                     }
                 }
             };
@@ -376,7 +397,7 @@ INDEX:
             navSlider.controller.control = mainSlider;
 
             // Updating slider in modal
-            $("#product_quick_view").on('show.bs.modal', function() {
+            $('body').on('show.bs.modal', '#product_quick_view', function() {
                 setTimeout(function() {
                     navSlider.update();
                     mainSlider.update();
@@ -494,7 +515,8 @@ INDEX:
                         slidesPerView: 3
                     },
                     479: {
-                        slidesPerView: 1
+                        slidesPerView: 2,
+                        centeredSlides: false
                     }
                 }
             })
@@ -511,8 +533,12 @@ INDEX:
             var postCarousel = new Swiper($recentPosts, {
                 loop: true,
                 slidesPerView: 1,
-                spaceBetween: 0,
+                spaceBetween: 10,
                 speed: 1000,
+
+                autoplay: {
+                    delay: 5000
+                },
 
                 // Responsive breakpoints
                 breakpoints: {
@@ -521,16 +547,9 @@ INDEX:
                         centeredSlides: false
                     },
                     575: {
-                        slidesPerView: 1,
+                        slidesPerView: 1
                     }
                 }
-            });
-
-            // Slider update in footer accordion
-            $footer.on('click', '.widgettitle', function() {
-                setTimeout(function() {
-                    postCarousel.update();
-                }, 500);
             });
         }
     };
@@ -559,22 +578,7 @@ INDEX:
 
 
     /************************************************************
-        s14 - Footer Accordion Activation
-    *************************************************************/
-
-    ORORUS.footerAccordion = function() {
-        if ($window.width() < 991) {
-            $footer.on('click', '.widgettitle', function(){     
-                $(this).parent('.widget-container').toggleClass('active').siblings().removeClass('active'); 
-                $(this).next('.widget-container .widget-content').toggle(300);
-                $(this).parent('.widget-container.active').siblings().children('.widget-container .widget-content').slideUp(300); 
-            });
-        }
-    };
-
-
-    /************************************************************
-        s15 - Price Range Slider
+        s14 - Price Range Slider
     *************************************************************/
 
     ORORUS.rangeSlider = function() {
@@ -594,11 +598,96 @@ INDEX:
         }
     };
 
+    /************************************************************
+        s15 - Interactive Behaviour
+    *************************************************************/
+
+    ORORUS.interactiveBehaviour = function() {
+
+        // Checkout Page Accordion Behaviour
+        $( '#show_login' ).on('click', function() {
+            $( '#checkout_login' ).slideToggle(300);
+        });
+
+        $( '#show_coupon' ).on('click', function() {
+            $( '#checkout_coupon' ).slideToggle(300);
+        });
+
+        $("#different_shipping").on("change",function(){
+            $(".ship-box-info").slideToggle(300);
+        });
+
+        $("#create_account").on("change",function(){
+            $(".new-account-info").slideToggle(300);
+        });
+        
+
+        // Header Custom dropdowns
+        $("header .dropdown-toggle").on("click", function() {
+            $(this).toggleClass('open').next('.dropdown-menu').toggleClass('open');
+            $(this).parents().siblings().find('.dropdown-menu, .dropdown-toggle').removeClass('open');
+        });
+
+        // Closing the dropdown by clicking in the menu button or anywhere in the screen
+        $('body').on('click', function (e) {
+            var target = e.target;
+            if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+                $('.dropdown-toggle, .dropdown-menu').removeClass('open');
+            }
+        });
+
+        // Prevent closing dropdown upon clicking inside the dropdown
+        $("header .dropdown-menu").on("click", function(e) {
+            e.stopPropagation();
+        });
+
+
+        // Newsletter Popup
+        setTimeout(function () {
+            $('#newsletter_popup').css({
+                "opacity": "1",
+                "visibility": "visible"
+            });
+
+            // Closing the popup by clicking in the close button or anywhere in the screen
+            $('body, .popup-close').on('click', function () {
+                $("#newsletter_popup").css('visibility', 'hidden').animate({opacity: 0}, 100);
+            });
+
+            // Prevent closing popup upon clicking inside the popup
+            $('#newsletter_popup .popup-container').on('click', function (e) {
+                e.stopPropagation();
+            });
+        }, 2500);
+    };
+
+
+    /************************************************************
+        s16 - Instagram Settings
+    *************************************************************/
+
+    ORORUS.instagramSettings = function() {
+        if ($instagram.elExists()) {
+            var feed = new Instafeed({
+                get: 'user',
+                userId: 6000547549,
+                accessToken: '6000547549.1677ed0.cf5efae242d14b1e8ca149d38059cdee',
+                target: 'instagram_feed',
+                resolution: 'standard_resolution',
+                limit: 9,
+                template: '<figure><a href="{{image}}" data-size="640x640"><img src="{{image}}"/></a><figcaption class="visually-hidden"><span>{{caption}}</span></figcaption></figure>'
+            });
+            
+            feed.run();
+        }
+    };
 
 
 
     // Window load functions
     $window.on('load', function() {
+        ORORUS.primarySlider(),
+        ORORUS.interactiveBehaviour();
         ORORUS.imageBgSettings();
     });
 
@@ -606,7 +695,6 @@ INDEX:
     $document.on('ready', function() {
         ORORUS.niceInit(),
         ORORUS.mainNav(),
-        ORORUS.primarySlider(),
         ORORUS.productCarousel(),
         ORORUS.galleryWithThumb(),
         ORORUS.testimonialCarousel(),
@@ -616,14 +704,12 @@ INDEX:
         ORORUS.scrollToTop(),        
         ORORUS.toolTips(),
         ORORUS.rangeSlider(),
-        ORORUS.footerAccordion();
+        ORORUS.instagramSettings();
     });
 
     // Window load and resize functions
     $window.on('load resize', function() {
-        ORORUS.elementHeightsClasses();
+        ORORUS.ElementsSpacingClasses();
     });
 
 })(jQuery);
-
-

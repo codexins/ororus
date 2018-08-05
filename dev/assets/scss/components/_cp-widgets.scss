@@ -3,13 +3,56 @@
  *
  */
 
+@include respond-to(tablet) {
+	#secondary {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		> .sidebar-widget {
+			flex: 0 0 49%;
+			margin-right: 2%;
+
+			&:nth-child(odd) {
+				margin-right: 0;
+			}
+		}
+		
+		.price-filter-widget,
+		.search-widget {
+			flex: 0 0 100%;
+		}
+
+		.list-widget {
+			order: 3;
+		}
+
+		.recent-posts {
+			order: 4;
+		}
+
+		.instagram-widget {
+			order: 5;
+		}
+
+		.sidebar-widget {
+			&.banner {
+				order: 4;
+
+				a {
+					max-width: 200px;
+				}
+			}
+		}
+	}
+}
+
 /* Widget Title */
 .widgettitle {
     font-size: 18px;
     padding-bottom: 16px;
     border-bottom: 1px solid $cx-border-color;
-    position: relative;
 	margin-bottom: 40px;
+	@extend .pos-r;
 
     &::before {
 	    content: '';
@@ -36,6 +79,40 @@
 	}
 }
 
+/* Search Widget */
+.search-widget {
+	form {
+		flex-wrap: nowrap;
+	}
+
+	input {
+		&[type="search"] {
+		    flex: 0 0 70%;
+		    max-width: 80%;
+		    padding: 0 15px;
+		    border-right: 0;
+		    border-top-left-radius: 3px;
+		    border-bottom-left-radius: 3px;
+		    border-color: $cx-border-color;
+		}
+
+		&[type="submit"] {
+		    flex: 0 0 30%;
+		    padding: 0;
+		    border-top-left-radius: 0;
+		    border-bottom-left-radius: 0;
+
+		    @include cx-color(primary, bg);
+		    @include cx-default-color(color, white);
+
+			#whole & {
+			    &:hover {
+			    	background: #555;
+			    }
+			}
+		}
+	}
+}
 
 /* Text Widget */
 .widget-content {
@@ -43,7 +120,7 @@
 	    font-size: 14px;
 	    font-weight: 400;
 	    line-height: 25px;
-	    color: #333;
+	    @include cx-default-color(color, dark);
 	}
 
 	> p {
@@ -60,8 +137,8 @@
 		margin-top: 20px;
 		> p {
 		    padding-left: 35px;
-		    position: relative;
 		    margin: 10px 0 0;
+		    @extend .pos-r;
 
 			&::before {
 			    display: inline-block;
@@ -94,8 +171,8 @@
 	}
 }
 
-
 /* Recent Posts Widget */
+.recent-posts-widget-container,
 .recent-posts-widget {
 	@extend %overflow-hidden;
 
@@ -114,7 +191,9 @@
 	.post-thumbnail {
 		> a {
 			display: block;
-			position: relative;
+			@extend %slight-rounded;
+			@extend %overflow-hidden;
+			@extend .pos-r;
 		}
 	}
 
@@ -167,7 +246,6 @@
 	}
 }
 
-
 /* Widgetized Menu */
 .widgetized-menu {
 	li {
@@ -215,7 +293,7 @@
 			    &:hover {
 			    	@include cx-color(primary, border);
 			    	@include cx-color(primary, bg);
-			    	@extend %color-white;
+			    	@include cx-default-color(color, white);
 			    }
 			}
 		}
@@ -224,7 +302,7 @@
 	.color-scheme-two & {
 		a {
 			&:hover {
-				color: #333;
+				@include cx-default-color(color, dark);
 			}
 		}
 	}
@@ -232,13 +310,15 @@
 
 /* Price Slider Widget */
 .filter-price-content {
+    padding-right: 7px;
+
 	#price_slider {
 	    margin: 10px 0px 0px;
 	    border-radius: 0;
 	    background: #29323b;
 	    border: none !important;
 	    height: 4px;
-	    position: relative;
+	    @extend .pos-r;
 
 	    .ui-slider-range {
 		    position: absolute;
@@ -255,10 +335,10 @@
 		    width: 14px;
 		    height: 14px;
 		    top: -5px;
-		    border-radius: 50%;
 		    position: absolute;
 		    border: 0;
 		    cursor: pointer;
+		    @extend .circle;
 		    @include cx-color(primary, bg);
 	    }
 	}
@@ -282,12 +362,13 @@
 			    background: none;
 			    text-align: center;
 			    font-size: 14px;
+			    height: auto;
 	    	}
 	    }
     }
 }
 
-/* Category Widget */
+/* List Widget */
 .list-widget {
 	.list-group {
 		> a {
@@ -328,11 +409,112 @@
 		    	@include cx-color(primary, color);
 
 		    	&::before {
-		    		@extend .color-white;
+		    		@include cx-default-color(color, white);
 		    		@include cx-color(primary, bg);
 		    		@include cx-color(primary, border);
 		    	}
 		    }
+		}
+	}
+}
+
+/* Categories Widget */
+.categories-widget {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			margin-bottom: 5px;
+			padding-bottom: 13px;
+			padding-left: 15px;
+
+			a {
+			    font-size: 14px;
+			    text-transform: capitalize;
+			    @extend .pos-r;
+
+			    &::before {
+				    content: "\e684";
+				    font-family: 'Pe-icon-7-stroke';
+				    font-size: 24px;
+				    position: absolute;
+				    right: 100%;
+				    top: 0;
+			    }
+				
+				span {
+					float: right;
+				}
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+				@extend %mb0;
+			}
+		}
+	}
+}
+
+/* Instagram Widget */
+.instagram-area {
+	.image-popup {
+		display: flex;
+		flex-wrap: wrap;
+
+		figure {
+			flex: 0 0 32%;
+		    margin-right: 2%;
+		    margin-bottom: 2%;
+		    @extend %slight-rounded;
+		    @extend %overflow-hidden;
+			a {
+			    display: block;
+			    @extend .pos-r;
+			    @include respond-to(mobile) {
+			    	max-width: 175px;
+			    }
+				img {
+					width: 100%;
+					height: auto;
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					height: 0;
+					width: 100%;
+					background: rgba(#000, 0.5);
+				    @extend %cx-transition;
+				}	
+
+				&:hover {
+					&::before {
+						height: 100%;
+						top: 0;
+					}
+				}	
+			}
+
+			&:nth-of-type(3n) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	p {
+		font-size: 14px;
+		margin-top: 5px;
+		@extend %mb0;
+
+		a {
+			@include cx-color(primary, color);
+
+			&:hover {
+				@include cx-default-color(color, dark);
+			}
 		}
 	}
 }

@@ -17,24 +17,19 @@
 
     .nice-select {
     	font-size: 13px;
-	    color: #333;
 	    height: 40px;
 	    line-height: 40px;
 	    width: 32%;
 	    z-index: 9910;
 	    border: 0;
+	    @include cx-default-color(color, dark);
 
-    	@include media-only(notebook, max) {
+    	@include media-only(wide, max) {
     		width: 40%;
     	}
 
     	@include media-only(small-mobile, max) {
-		    width: 100%;
-		    border-bottom: 1px solid $cx-border-color;
-		    margin-bottom: 10px;
-		    display: block;
-		    height: 50px;
-		    line-height: 50px;
+			display: none;
     	}
 
 	    &::after {
@@ -65,8 +60,8 @@
 
 		    li {
 			    text-transform: capitalize;
-			    color: #333;
 			    font-size: 12px;
+			    @include cx-default-color(color, dark);
 		    }
 	    }
 
@@ -84,11 +79,11 @@
     }
 
     .search-wrapper {
-    	overflow: hidden;
-    	position: relative;
     	width: 68%;
+    	@extend .pos-r;
+    	@extend %overflow-hidden;
 
-    	@include media-only(notebook, max) {
+    	@include media-only(wide, max) {
     		width: 60%;
     	}
 
@@ -136,7 +131,7 @@
 	    top: 0;
 	    cursor: pointer;
 	    @extend %rounded-corners;
-	    @extend %color-white;
+	    @include cx-default-color(color, white);
 	    @include cx-color(secondary, bg);
 
 	    &:focus,

@@ -52,14 +52,22 @@
 		.btn-danger {
 		    background-color: #f4f4f4;
 		    border-color: #f4f4f4;
-		    color: #333;
+		    @include cx-default-color(color, dark);
 
 		    &:hover,
 		    &:focus {
 			    @include cx-color(primary, bg);
 			    @include cx-color(primary, border);
-			    @extend .color-white;
+			    @include cx-default-color(color, white);
 		    }
+		}
+
+		@include respond-to(mobile) {
+			tbody {
+				td {
+					min-width: 140px;
+				}
+			}
 		}
 	}
 }
@@ -93,7 +101,7 @@
 
 		    &:first-child {
 		    	background-color: #337ab7;
-		    	@extend .color-white;
+		    	@include cx-default-color(color, white);
 
 		    	&:hover,
 		    	&:focus {

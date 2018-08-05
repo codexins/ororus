@@ -533,6 +533,9 @@
 }
 
 
+//-------------------- Color Scheme --------------------//
+// Usage @include cx-color(primary, color);
+
 @mixin cx-color($color, $property) {
 
     $schemes: one two three four;
@@ -558,4 +561,24 @@
         }
 
     }
+}
+
+
+//-------------------- Default Color --------------------//
+// Usage @include cx-default-color(color, white);
+
+@mixin cx-default-color($property, $selector) {
+
+    @if $property == color {
+        body & {
+            @extend %color-#{$selector};
+        }
+    }
+
+    @if $property == bgc {
+        body & {
+            @extend %bgc-#{$selector};
+        }
+    }
+
 }

@@ -64,6 +64,26 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+
+		@include respond-to(mobile) {
+			tbody {
+				td {
+					min-width: 200px;
+				}
+			}
+		}
+	}
+
+	@include respond-to(mobile) {
+		.cart-amount-wrapper {
+			.table {
+				tbody {
+					td {
+						min-width: auto;
+					}
+				}
+			}
+		}
 	}
 
 	input,
@@ -78,6 +98,10 @@
 
 	label {
 		@extend %mb0;
+
+		@include respond-to(mobile) {
+			margin-bottom: 5px;
+		}
 	}
 
 	.card {
@@ -87,9 +111,23 @@
 	.card-body {
 		padding: 30px;
 
+		@include media-only(small-mobile, max) {
+			padding: 20px;
+		}
+
 		input {
 			&[type="button"] {
 				margin-left: 10px;
+			}
+
+			@include media-only(small-mobile, max) {
+				flex: 0 0 100%;
+				margin-bottom: 10px;
+
+				&[type="button"] {
+					margin-left: 0;
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -99,7 +137,7 @@
 
 		i {
 			float: right;
-			@extend %cx-transition;
+			transition: transform 0.3s;
 		}
 
 		a {

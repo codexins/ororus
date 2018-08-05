@@ -17,14 +17,14 @@
     	position: absolute;
     	top: 0;
 	    bottom: 0;
-	    left: 0;
 	    right: 0;
 	    height: 390px;
-	    left: 0;
+	    left: 50%;
+	    transform: translateX(-50%);
 	    margin: auto;
-	    max-width: 790px;
+	    width: 790px;
 	    padding: 50px;
-	    @extend .bgc-white;
+	    @include cx-default-color(bgc, white);
 
 	    .popup-close {
 		    position: absolute;
@@ -35,7 +35,7 @@
 		    line-height: 25px;
 		    text-align: center;
 		    cursor: pointer;
-		    @extend .bgc-white;
+		    @include cx-default-color(bgc, white);
 		    @extend .circle;
 
 		    .p-close {
@@ -62,7 +62,7 @@
 	    }
 
 	    .popup-body {
-    		width: 70%;
+    		width: 470px;
     		margin-left: auto;
     		margin-right: auto;
 
@@ -86,7 +86,7 @@
 	    }
 
 	    .form-check {
-	    	width: 38%;
+	    	width: 260px;
 	    	margin-left: auto;
 	    	margin-right: auto;
 	    }
@@ -94,5 +94,9 @@
 	    .checkmark {
 	    	z-index: 1;
 	    }
+    }
+
+    @include media-only(notebook, max) {
+    	display: none;
     }
 }

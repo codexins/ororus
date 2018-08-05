@@ -6,7 +6,7 @@
 
 #main_nav {
     .menu-toggle {
-        @extend %color-white;
+        @include cx-default-color(color, white);
     }
     > ul {
         > li {
@@ -15,7 +15,7 @@
                 font-size: 15px;
                 text-transform: uppercase;
                 line-height: 20px;
-                @extend %color-white;
+                @include cx-default-color(color, white);
 
                 span {
                     padding: 5px 15px;
@@ -67,8 +67,8 @@
                     font-family: FontAwesome;
                     margin-left: 5px;
                     font-size: 13px;
-                    position: relative;
                     left: 5px;
+                    @extend .pos-r;
                 }
             }
         }
@@ -77,17 +77,17 @@
     .mega-container,
     > ul >li > ul {
         padding: 45px 40px;
-        color: #333;
         border-radius: 0 0 3px 3px;
         box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.1);
-        @extend %bgc-white;
+        @include cx-default-color(color, dark);
+        @include cx-default-color(bgc, white);
     }
     
     .mega-container {
         // display: block !important;
 
         ul {
-            @extend %bgc-white;
+            @include cx-default-color(bgc, white);
         }
 
         li {
@@ -98,7 +98,7 @@
             margin-bottom: 20px;
             padding: 0 0 12px;
             border-bottom: 1px solid $cx-border-color;
-            position: relative;
+            @extend .pos-r;
 
             &::before {
                 content: '';
@@ -128,11 +128,11 @@
         }
 
         a {
-            color: #333;
             text-transform: capitalize;
             font-size: 14px;
             padding: 0;
             line-height: 30px;
+            @include cx-default-color(color, dark);
             &:hover,
             &:focus {
                 @include cx-color(primary, color);
@@ -146,10 +146,10 @@
                 padding: 30px;
                 a {
                     padding: 0 0 10px;
-                    color: #333;
                     text-transform: capitalize;
                     line-height: 30px;
                     font-size: 14px;
+                    @include cx-default-color(color, dark);
 
                     &:hover {
                         @include cx-color(primary, color);

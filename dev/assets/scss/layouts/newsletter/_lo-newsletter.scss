@@ -33,7 +33,7 @@
 		form {
 		    display: block;
 		    width: 100%;
-		    position: relative;
+		    @extend .pos-r;
 		}
 		input {
 			&[type="email"] {
@@ -45,7 +45,7 @@
 			    height: 48px;
 			    line-height: 46px;
 			    width: 100%;
-			    @extend %bgc-white;
+			    @include cx-default-color(bgc, white);
 			    @extend %rounded-corners;
 			    @extend %cx-transition;
 
@@ -65,11 +65,11 @@
 			    text-transform: capitalize;
 			    font-weight: 400;
 			    @include cx-color(primary, bg);
-			    @extend %color-white;
+			    @include cx-default-color(color, white);
 			    @extend %rounded-corners;
 
 			    &:hover {
-			    	background: #333;
+			    	@include cx-default-color(bgc, dark);
 			    }
 			}
 		}
@@ -100,6 +100,7 @@
 
 			h3 {
 				margin-top: 20px;
+				margin-left: 0;
 			}
 		}
 
@@ -114,9 +115,9 @@
 	.color-scheme-two & {
 		input {
 			&[type="submit"] {
-				color: #333;
+				@include cx-default-color(color, dark);
 				&:hover {
-					@extend .color-white;
+					@include cx-default-color(color, white);
 				}
 			}
 		}

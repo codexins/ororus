@@ -9,7 +9,7 @@
 			@include cx-color(primary, color);
 
 			&:hover {
-				color: #333;
+				@include cx-default-color(color, dark);
 			}
 		}
 	}
@@ -23,11 +23,50 @@
     [class*="col-"]:not(:last-child) {
     	.single-info {
     		border-right: 1px solid $cx-border-color;
+
+    		@include respond-to(mobile) {
+    			border-right: 0;
+    		}
     	}
+    }
+
+    @include respond-to(tablet) {
+    	border: 1px solid $cx-border-color;
+
+    	[class*="col-"]:nth-child(1),
+    	[class*="col-"]:nth-child(2) {
+    		border-bottom: 1px solid $cx-border-color;
+    	}
+
+    	[class*="col-"]:nth-child(2) {
+    		.single-info {
+    			border-right: 0;
+    		}
+    	}
+    }
+
+    @include respond-to(mobile) {
+    	border-top: 0;
+    	padding-bottom: 40px;
     }
 
 	.single-info {
 	    padding: 30px 20px;
+
+	    @include media-only(wide, max) {
+	    	min-height: 150px;
+	    	display: flex;
+	    	align-items: center;
+	    }
+
+	    @include respond-to(tablet) {
+	    	min-height: 105px;
+	    }
+
+	    @include respond-to(mobile) {
+	    	min-height: auto;
+	    	padding: 15px 0;
+	    }
 	}
 
 	.user-name {
@@ -91,6 +130,17 @@
     border: 1px solid $cx-border-color;
     padding: 30px;
 
+    @include media-only(notebook, max) {
+    	margin-top: $cx-col-spacing;
+    	padding: 20px;
+    }
+
+    @include respond-to(mobile) {
+    	padding: 40px 0 0;
+    	border: 0;
+    	border-top: 1px solid $cx-border-color;
+    }
+
     h3 {
 		border-bottom: 1px solid $cx-border-color;
 	    font-size: 24px;
@@ -134,6 +184,31 @@
     		line-height: 35px;
     	}
     }
+
+	#downloads,
+    #orders {
+		.table {
+			tbody {
+				td:not(:first-child) {
+				    @include respond-to(mobile) {
+				    	min-width: 150px;
+				    }
+				}
+			}
+		}
+    }
+
+    #downloads {
+		.table {
+			tbody {
+				td:first-child {
+				    @include respond-to(mobile) {
+				    	min-width: 300px;
+				    }
+				}
+			}
+		}
+    }
 }
 
 .billing-address {
@@ -175,7 +250,7 @@
 	    border-radius: 0;
 	    background: #878787;
 	    cursor: pointer;
-	    @extend .color-white;
+	    @include cx-default-color(color, white);
 
 	    &:hover,
 	    &:focus {

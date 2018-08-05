@@ -26,13 +26,14 @@
 
     <!-- Plugins stylesheet -->
     <!--build:css assets/css/plugins.css-->
-    <link rel="stylesheet" href="assets/css/vendor/toc.css">
-    <link rel="stylesheet" href="assets/css/vendor/stellarnav.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/toc.css">    
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/vendor/nice-select.min.css">
     <link rel="stylesheet" href="assets/css/vendor/swiper.min.css">
     <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
     <link rel="stylesheet" href="assets/css/vendor/venobox.min.css">
     <link rel="stylesheet" href="assets/css/photoswipe.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/stellarnav.min.css">
     <!--endbuild-->
 
     <!-- Master stylesheet -->
@@ -55,12 +56,45 @@
     <!-- Start of Whole Site Wrapper with mobile menu support -->
     <div id="whole" class="whole-site-wrapper color-scheme-three">
 
+        <!-- Start of Newsletter Popup -->
+        <div id="newsletter_popup" class="newsletter-popup">
+            <div class="popup-container">
+                <div class="popup-close">
+                    <span class="p-close"><span>X</span></span>
+                </div> <!-- end of popup-close -->
+
+                <div class="popup-area text-center">
+                    <h2>Subscribe to our Newsletter</h2>
+                    <div class="popup-body">
+                        <p>Subscribe to the Ororus mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+                        <div class="subscribe-form-group">
+                            <form action="#">
+                                <input type="text" name="message" id="message" class="form-control" placeholder="Enter your email address" required>
+                                <button type="submit" class="btn btn-secondary">Subscribe</button>
+                            </form>
+                        </div>
+                    </div> <!-- end of popup-body -->
+
+                    <div class="popup-footer">
+                        <div class="form-check">
+                            <div class="custom-checkbox">
+                                <input class="form-check-input" type="checkbox" id="cancel_popup">
+                                <span class="checkmark"></span>
+                                <label class="form-check-label" for="cancel_popup">Don't show this popup again</label>
+                            </div>
+                        </div>
+                    </div> <!-- end of popup-footer -->
+                </div> <!-- end of popup-area -->
+            </div> <!-- end of popup-container -->
+        </div>
+        <!-- End of Newsletter Popup -->
+
         <!-- Start of Header -->
-        <header class="header">
+        <header class="header bgc-white">
             <div class="header-area">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-3 align-self-center">
                             <div class="logo">
                                 <a href="index.html"><img src="assets/images/logo3.png" alt="Logo" class="img-fluid"></a>
                             </div>
@@ -68,18 +102,16 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                             <div class="top-header">
                                 <div class="row align-items-center">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                    <div class="col-12 col-sm-12 col-md-7 col-lg-6 order-md-2 order-lg-1">
                                         <div class="top-search">
                                             <p>Trending Search: <a href="#">Headphones</a>, <a href="#">Electronics</a>, <a href="#">Mobile</a>...</p>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 order-md-1 order-lg-2">
                                         <ul class="list-inline">
                                             <li class="top-links list-inline-item">
                                                 <div class="btn-group">
-                                                    <button class="btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                       My Account <i class="fa fa-angle-down"></i>
-                                                    </button>
+                                                    <button class="btn-link dropdown-toggle">My Account <i class="fa fa-angle-down"></i></button>
                                                     <div class="dropdown-menu">
                                                         <ul>
                                                            <li><a href="login-register.html">Register</a></li>
@@ -92,8 +124,7 @@
                                             </li>
                                             <li class="language list-inline-item">
                                                 <div class="btn-group">
-                                                    <button class="btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/icons/en-gb.png" alt="Icons"> English <i class="fa fa-angle-down"></i>
-                                                    </button>
+                                                    <button class="btn-link dropdown-toggle"><img src="assets/images/icons/en-gb.png" alt="Icons"> English <i class="fa fa-angle-down"></i></button>
                                                     <div class="dropdown-menu">
                                                         <ul>
                                                            <li><a href="#"><img src="assets/images/icons/en-gb.png" alt="Icons"> English</a></li>
@@ -104,9 +135,8 @@
                                             </li>
                                             <li class="currency list-inline-item">
                                                 <div class="btn-group">
-                                                    <button class="btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> USD <i class="fa fa-angle-down"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                    <button class="btn-link dropdown-toggle"> USD <i class="fa fa-angle-down"></i></button>
+                                                    <div class="dropdown-menu">
                                                         <ul>
                                                            <li><a href="#">€ Euro</a></li>
                                                            <li><a href="#">£ Pound Sterling</a></li>
@@ -122,7 +152,7 @@
 
                             <div class="bottom-header">
                                 <div class="row align-items-center">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-7">
+                                    <div class="col-12 col-sm-12 col-md-7 col-lg-7">
                                         <div class="header-search-area">
                                             <div class="search-categories">
                                                 <form action="#">
@@ -160,26 +190,31 @@
                                             </div>
                                         </div> <!-- end of header-search-area -->
                                     </div>
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-5">
+                                    <div class="col-12 col-sm-12 col-md-5 col-lg-5">
                                         <div class="header-cart-area">
                                             <div class="header-cart">
                                                 <div class="btn-group">
-                                                    <button class="btn-link dropdown-toggle icon-cart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <button class="btn-link dropdown-toggle icon-cart">
                                                         <i class="pe-7s-cart"></i>
                                                         <span class="count-style">2</span>
                                                     </button>
-                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="dropdown-menu">
                                                         <div class="shopping-cart-content">
                                                             <ul class="list-unstyled">
                                                                 <li class="single-cart-item media">
                                                                     <div class="shopping-cart-img mr-4">
-                                                                        <a href="#"><img class="img-fluid" alt="Cart Item" src="assets/images/cart/cart-1.jpg"></a>
+                                                                        <a href="#">
+                                                                            <img class="img-fluid" alt="Cart Item" src="assets/images/cart/cart-1.jpg">
+                                                                            <span class="product-quantity">1x</span>
+                                                                        </a>
                                                                     </div>
                                                                     <div class="shopping-cart-title media-body">
                                                                         <h4><a href="#">Donec Ac Tempus</a></h4>
-                                                                        <p>- Color Black</p>
-                                                                        <span class="cart-quantity">2 X</span>
-                                                                        <span class="cart-price">$120.00</span>
+                                                                        <p class="cart-price">$120.00</p>
+                                                                        <div class="product-attr">
+                                                                            <span>Size: S</span>
+                                                                            <span>Color: Black</span>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="shopping-cart-delete">
                                                                         <a href="#"><i class="ion ion-md-close"></i></a>
@@ -187,13 +222,18 @@
                                                                 </li>
                                                                 <li class="single-cart-item media">
                                                                     <div class="shopping-cart-img mr-4">
-                                                                        <a href="#"><img class="img-fluid" alt="Cart Item" src="assets/images/cart/cart-2.jpg"></a>
+                                                                        <a href="#">
+                                                                            <img class="img-fluid" alt="Cart Item" src="assets/images/cart/cart-2.jpg">
+                                                                            <span class="product-quantity">2x</span>
+                                                                        </a>
                                                                     </div>
                                                                     <div class="shopping-cart-title media-body">
                                                                         <h4><a href="#">Aliquam Consequat</a></h4>
-                                                                        <p>- Color Black</p>
-                                                                        <span class="cart-quantity">2 X</span>
-                                                                        <span class="cart-price">$120.00</span>
+                                                                        <p class="cart-price">$200.00</p>
+                                                                        <div class="product-attr">
+                                                                            <span>Color: White</span>
+                                                                            <span>Accessories: Yes</span>
+                                                                        </div>
                                                                     </div>
                                                                     <div class="shopping-cart-delete">
                                                                         <a href="#"><i class="ion ion-md-close"></i></a>
@@ -201,11 +241,11 @@
                                                                 </li>
                                                             </ul>
                                                             <div class="shopping-cart-total">
-                                                                <h4>Sub-Total : <span>$120.00</span></h4>
-                                                                <h4>Total : <span>$120.00</span></h4>
+                                                                <h4>Sub-Total : <span>$320.00</span></h4>
+                                                                <h4>Total : <span>$320.00</span></h4>
                                                             </div>
                                                             <div class="shopping-cart-btn">
-                                                                <a class="default-btn" href="cart-page.html">view cart</a>
+                                                                <a class="default-btn" href="cart.html">view cart</a>
                                                                 <a class="default-btn" href="checkout.html">checkout</a>
                                                             </div>
                                                         </div>
@@ -243,38 +283,34 @@
                                     <li><a href="index-4.html">Home Page 4</a></li>
                                 </ul>
                             </li>
-                            <li class="mega" data-columns="3"><a href="#"><span>Page</span></a>
+                            <li class="mega" data-columns="3"><a href="my-account.html"><span>Pages</span></a>
                                 <ul class="mega-container">
-                                    <li><a href="#" class="mega-menu-title"><h3>Inner pages</h3></a>
+                                    <li><a href="my-account.html" class="mega-menu-title"><h3>Inner pages 01</h3></a>
                                         <ul>
-                                            <li><a href="#">My Account</a></li>
-                                            <li><a href="#">Login &amp; Register</a></li>
-                                            <li><a href="#">FAQs Page</a></li>
-                                            <li><a href="#">Error 404</a></li>
+                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="register.html">Register</a></li>
                                         </ul>
                                     </li>
 
-                                    <li><a href="#" class="mega-menu-title"><h3>Blog Pages</h3></a>
+                                    <li><a href="#" class="mega-menu-title"><h3>Inner pages 02</h3></a>
                                         <ul>
-                                            <li><a href="#">Blog Left</a></li>
-                                            <li><a href="#">Blog Right</a></li>
-                                            <li><a href="#">Blog Full Width</a></li>
-                                            <li><a href="#">Blog Details</a></li>
+                                            <li><a href="cart.html">Cart Page</a><li>
+                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
                                         </ul>
                                     </li>
 
-                                    <li><a href="#" class="mega-menu-title"><h3>Other Pages</h3></a>
+                                    <li><a href="#" class="mega-menu-title"><h3>Inner pages 03</h3></a>
                                         <ul>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Contact Us</a></li>
-                                            <li><a href="#">Wishlist</a></li>
-                                            <li><a href="#">Checkout</a></li>
+                                            <li><a href="compare.html">Product Compare</a></li>
+                                            <li><a href="faqs.html">FAQs Page</a></li>
+                                            <li><a href="404.html">404 Page</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#"><span>Blog</span></a></li>
-                            <li><a href="shop-grid.html"><span>Shop</span></a>
+                            <li><a href="shop-grid.html"><span>Shop Pages</span></a>
                                 <ul>
                                     <li><a href="shop-grid.html">Shop Grid</a></li>
                                     <li><a href="shop-list.html">Shop List</a></li>
@@ -283,8 +319,16 @@
                                     <li><a href="single-product.html">Single Product Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><span>About Us</span></a></li>
-                            <li><a href="#"><span>Contact Us</span></a></li>
+                            <li><a href="blog.html"><span>Blog Pages</span></a>
+                                <ul>
+                                    <li><a href="blog.html">Blog FullWidth</a></li>
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="about.html"><span>About Us</span></a></li>
+                            <li><a href="contact.html"><span>Contact Us</span></a></li>
                         </ul>
                     </nav>
                 </div> <!-- end of container -->
@@ -296,11 +340,11 @@
         <div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
 
         <!-- Start of Support Section -->
-        <section class="support-section mb0">
+        <section class="support-section mb0 mt-half">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12 col-md-4 col-lg-4">
-                        <div class="feature-box media align-items-center mb0 py-4">
+                        <div class="feature-box media align-items-center">
                             <div class="feature-icon mr-4 mr-md-3 mr-lg-4"><i class="pe-7s-alarm"></i></div>
                             <div class="feature-content media-body">
                                 <h2>Mon - Fri / 8:00 - 18:00</h2>
@@ -309,7 +353,7 @@
                         </div> <!-- end of feaure-box -->
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">
-                        <div class="feature-box media align-items-center mb0 py-4">
+                        <div class="feature-box media align-items-center">
                             <div class="feature-icon mr-4 mr-md-3 mr-lg-4"><i class="pe-7s-car"></i></div>
                             <div class="feature-content media-body">
                                 <h2>Free Return</h2>
@@ -318,10 +362,10 @@
                         </div> <!-- end of feaure-box -->
                     </div>
                     <div class="col-12 col-md-4 col-lg-4">
-                        <div class="feature-box media align-items-center mb0 py-4">
+                        <div class="feature-box media align-items-center">
                             <div class="feature-icon mr-4 mr-md-3 mr-lg-4"><i class="pe-7s-mail-open-file"></i></div>
                             <div class="feature-content media-body">
-                                <h2>support@ororus.com</h2>
+                                <h2>support@example.com</h2>
                                 <p>Orders Support!</p>
                             </div>
                         </div> <!-- end of feaure-box -->
@@ -351,7 +395,7 @@
                                                         <h2>Wireless Bluetooth Headphone</h2>                                                        
                                                         <p><span>At a price</span><span class="secondary-color">$199</span></p>
                                                         <div class="slide-button">
-                                                            <a class="default-btn transparent" href="#" title="Shop Now">Shop Now</a>
+                                                            <a class="default-btn transparent" href="shop-grid.html" title="Shop Now">Shop Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -371,7 +415,7 @@
                                                         <h2>CCtv camera</h2>
                                                         <p><span>Industry-leading image quality and video stram in all conditions</span></p>                                                        
                                                         <div class="slide-button">
-                                                            <a class="default-btn transparent" href="#" title="Shop Now">Shop Now</a>
+                                                            <a class="default-btn transparent" href="shop-grid.html" title="Shop Now">Shop Now</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -387,15 +431,22 @@
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-12 col-lg-4 top-promo-banners">
-                        <div class="promo-banner hover-effect-1">
-                            <a href="#">
-                                <img src="assets/images/banners/banner-11.jpg" alt="Promo Banner">
-                            </a>
-                        </div>
-                        <div class="promo-banner hover-effect-1 mb0">
-                            <a href="#">
-                                <img src="assets/images/banners/banner-12.jpg" alt="Promo Banner">
-                            </a>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-12">
+                                <div class="promo-banner hover-effect-1 first">
+                                    <a href="#">
+                                        <img src="assets/images/banners/banner-11.jpg" alt="Promo Banner">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-12">
+                                <div class="promo-banner hover-effect-1 mb0">
+                                    <a href="#">
+                                        <img src="assets/images/banners/banner-12.jpg" alt="Promo Banner">
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -422,7 +473,7 @@
                             <div class="best-selling-wrapper pos-r">
 
                                 <!-- Nav Pills -->
-                                <ul class="nav nav-pills top-nav-pills mb-5 justify-content-center" id="best_products" role="tablist">
+                                <ul class="nav nav-pills top-nav-pills mb-4 justify-content-center" id="best_products" role="tablist">
                                     <li class="nav-item">
                                         <a class="nav-link active" id="nav_headphones" data-toggle="pill" href="#category_headphones" role="tab" aria-controls="category_headphones" aria-selected="true">Audio Headphones</a>
                                     </li>
@@ -446,7 +497,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -470,7 +521,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Accumsan Elit</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Accumsan Elit</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$330.00</span>
                                                                     <span class="price-new">$120.00</span>
@@ -485,7 +536,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-64%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -509,7 +560,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Aliquam Consequat</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Aliquam Consequat</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$420.00</span>
                                                                     <span class="price-new">$150.00</span>
@@ -524,7 +575,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-44%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -548,7 +599,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Cas Meque Metus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Cas Meque Metus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$320.00</span>
                                                                     <span class="price-new">$180.00</span>
@@ -563,7 +614,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-67%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-4-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -587,7 +638,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Ac Tempus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Ac Tempus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$100.00</span>
@@ -602,7 +653,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-5-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-5-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -626,7 +677,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Non Est</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Non Est</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$280.00</span>
                                                                 </p>
@@ -640,7 +691,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-6-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-6-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -664,7 +715,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$100.00</span>
                                                                 </p>
@@ -678,7 +729,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-7-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-7-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -702,7 +753,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Aliquam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Aliquam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$240.00</span>
                                                                 </p>
@@ -716,7 +767,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -740,7 +791,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Sheam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Sheam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$180.00</span>
                                                                 </p>
@@ -754,7 +805,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
                                                                 <div class="action-links">
@@ -777,7 +828,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Letraset Sheets</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Letraset Sheets</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$260.00</span>
                                                                 </p>
@@ -791,7 +842,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-53%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-10-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-10-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -815,7 +866,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Lorem Ipsum</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Lorem Ipsum</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$200.00</span>
@@ -841,7 +892,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -865,7 +916,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Accumsan Elit</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Accumsan Elit</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$330.00</span>
                                                                     <span class="price-new">$120.00</span>
@@ -880,7 +931,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-64%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -904,7 +955,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Aliquam Consequat</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Aliquam Consequat</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$420.00</span>
                                                                     <span class="price-new">$150.00</span>
@@ -919,7 +970,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-44%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -943,7 +994,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Cas Meque Metus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Cas Meque Metus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$320.00</span>
                                                                     <span class="price-new">$180.00</span>
@@ -958,7 +1009,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-67%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-4-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -982,7 +1033,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Ac Tempus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Ac Tempus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$100.00</span>
@@ -997,7 +1048,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-5-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-5-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1021,7 +1072,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Non Est</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Non Est</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$280.00</span>
                                                                 </p>
@@ -1035,7 +1086,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-6-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-6-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1059,7 +1110,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$100.00</span>
                                                                 </p>
@@ -1073,7 +1124,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-7-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-7-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1097,7 +1148,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Aliquam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Aliquam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$240.00</span>
                                                                 </p>
@@ -1111,7 +1162,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1135,7 +1186,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Sheam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Sheam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$180.00</span>
                                                                 </p>
@@ -1149,7 +1200,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
                                                                 <div class="action-links">
@@ -1172,7 +1223,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Letraset Sheets</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Letraset Sheets</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$260.00</span>
                                                                 </p>
@@ -1186,7 +1237,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-53%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-10-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-10-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1210,7 +1261,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Lorem Ipsum</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Lorem Ipsum</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$200.00</span>
@@ -1237,7 +1288,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1261,7 +1312,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Accumsan Elit</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Accumsan Elit</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$330.00</span>
                                                                     <span class="price-new">$120.00</span>
@@ -1276,7 +1327,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-64%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1300,7 +1351,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Aliquam Consequat</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Aliquam Consequat</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$420.00</span>
                                                                     <span class="price-new">$150.00</span>
@@ -1315,7 +1366,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-44%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1339,7 +1390,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Cas Meque Metus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Cas Meque Metus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$320.00</span>
                                                                     <span class="price-new">$180.00</span>
@@ -1354,7 +1405,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-67%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-4-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1378,7 +1429,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Ac Tempus</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Ac Tempus</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$100.00</span>
@@ -1393,7 +1444,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-5-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-5-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1417,7 +1468,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Donec Non Est</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Donec Non Est</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$280.00</span>
                                                                 </p>
@@ -1431,7 +1482,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-6-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-6-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1455,7 +1506,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$100.00</span>
                                                                 </p>
@@ -1469,7 +1520,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-7-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-7-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1493,7 +1544,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Aliquam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Aliquam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$240.00</span>
                                                                 </p>
@@ -1507,7 +1558,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1531,7 +1582,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Fusce Sheam</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Fusce Sheam</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$180.00</span>
                                                                 </p>
@@ -1545,7 +1596,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-new">New</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
                                                                 <div class="action-links">
@@ -1568,7 +1619,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Letraset Sheets</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Letraset Sheets</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-new">$260.00</span>
                                                                 </p>
@@ -1582,7 +1633,7 @@
                                                         <div class="product-inner">
                                                             <div class="product-image">
                                                                 <div class="label-product label-sale">-53%</div>
-                                                                <a href="#">
+                                                                <a href="single-product.html">
                                                                     <img src="assets/images/products/best/products-10-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                     <img src="assets/images/products/best/products-10-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                 </a>
@@ -1606,7 +1657,7 @@
                                                                         </ul>
                                                                     </div>
                                                                 </div>
-                                                                <h4 class="product-name"><a href="#">Lorem Ipsum</a></h4>
+                                                                <h4 class="product-name"><a href="single-product.html">Lorem Ipsum</a></h4>
                                                                 <p class="product-price">
                                                                     <span class="price-old">$430.00</span>
                                                                     <span class="price-new">$200.00</span>
@@ -1650,7 +1701,7 @@
                                             <div class="product-inner with-bottom-padding">
                                                 <div class="product-image">
                                                     <div class="label-product label-sale">-64%</div>
-                                                    <a href="#">
+                                                    <a href="single-product.html">
                                                         <img src="assets/images/products/deals/product-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                         <img src="assets/images/products/deals/product-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                     </a>
@@ -1677,7 +1728,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                     <p class="product-price">
                                                         <span class="price-old">$330.00</span>
                                                         <span class="price-new">$120.00</span>
@@ -1692,7 +1743,7 @@
                                             <div class="product-inner with-bottom-padding">
                                                 <div class="product-image">
                                                     <div class="label-product label-sale">-64%</div>
-                                                    <a href="#">
+                                                    <a href="single-product.html">
                                                         <img src="assets/images/products/deals/product-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                         <img src="assets/images/products/deals/product-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                     </a>
@@ -1719,7 +1770,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4 class="product-name"><a href="#">Fusce Aliquam</a></h4>
+                                                    <h4 class="product-name"><a href="single-product.html">Fusce Aliquam</a></h4>
                                                     <p class="product-price">
                                                         <span class="price-old">$420.00</span>
                                                         <span class="price-new">$150.00</span>
@@ -1734,7 +1785,7 @@
                                             <div class="product-inner with-bottom-padding">
                                                 <div class="product-image">
                                                     <div class="label-product label-sale">-44%</div>
-                                                    <a href="#">
+                                                    <a href="single-product.html">
                                                         <img src="assets/images/products/deals/product-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                         <img src="assets/images/products/deals/product-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                     </a>
@@ -1761,7 +1812,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4 class="product-name"><a href="#">Fusce Sheam</a></h4>
+                                                    <h4 class="product-name"><a href="single-product.html">Fusce Sheam</a></h4>
                                                     <p class="product-price">
                                                         <span class="price-old">$320.00</span>
                                                         <span class="price-new">$180.00</span>
@@ -1776,7 +1827,7 @@
                                             <div class="product-inner with-bottom-padding">
                                                 <div class="product-image">
                                                     <div class="label-product label-sale">-77%</div>
-                                                    <a href="#">
+                                                    <a href="single-product.html">
                                                         <img src="assets/images/products/deals/product-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                     </a>
                                                     <div class="action-links">
@@ -1802,7 +1853,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4 class="product-name"><a href="#">Letraset Sheets</a></h4>
+                                                    <h4 class="product-name"><a href="single-product.html">Letraset Sheets</a></h4>
                                                     <p class="product-price">
                                                         <span class="price-old">$430.00</span>
                                                         <span class="price-new">$100.00</span>
@@ -1817,7 +1868,7 @@
                                             <div class="product-inner with-bottom-padding">
                                                 <div class="product-image">
                                                     <div class="label-product label-sale">-53%</div>
-                                                    <a href="#">
+                                                    <a href="single-product.html">
                                                         <img src="assets/images/products/deals/product-1-1.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                         <img src="assets/images/products/deals/product-1-2.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                     </a>
@@ -1844,7 +1895,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <h4 class="product-name"><a href="#">Lorem Ipsum</a></h4>
+                                                    <h4 class="product-name"><a href="single-product.html">Lorem Ipsum</a></h4>
                                                     <p class="product-price">
                                                         <span class="price-old">$430.00</span>
                                                         <span class="price-new">$200.00</span>
@@ -1871,12 +1922,12 @@
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                             <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-8">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-8">
                                     <div class="section-title left-aligned with-border">
                                         <h2>Featured Products</h2>
                                     </div>
-                                    <div class="product-carousel-wrapper pos-r">
-                                        <div class="product-carousel with-border with-narrow-margin" data-visible-slide="2" data-visible-lg-slide="2" data-visible-md-slide="2" data-loop="true" data-speed="1000" data-space-between="20">
+                                    <div class="product-carousel-wrapper pos-r mb-half">
+                                        <div class="product-carousel with-border with-narrow-margin" data-visible-slide="2" data-visible-lg-slide="2" data-visible-md-slide="1" data-visible-sm-slide="1" data-loop="true" data-speed="1000" data-space-between="20">
 
                                             <!-- Slides -->
                                             <div class="swiper-wrapper">
@@ -1884,8 +1935,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -1903,7 +1954,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -1921,8 +1972,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -1940,7 +1991,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -1958,8 +2009,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -1977,7 +2028,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -1997,8 +2048,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-4-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2016,7 +2067,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2034,8 +2085,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-5-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-5-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2053,7 +2104,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2071,8 +2122,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-6-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-6-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2090,7 +2141,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2110,8 +2161,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-7-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-7-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2129,7 +2180,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2147,8 +2198,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2166,7 +2217,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2184,8 +2235,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-9-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
                                                                 </div> <!-- end of product-image -->
@@ -2202,7 +2253,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2222,8 +2273,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-10-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-10-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2241,7 +2292,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2259,8 +2310,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2278,7 +2329,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2296,8 +2347,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2315,7 +2366,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2335,8 +2386,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-5-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-5-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2354,7 +2405,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2372,8 +2423,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-8-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-8-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2391,7 +2442,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2409,8 +2460,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-10-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-10-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2428,7 +2479,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2448,8 +2499,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2467,7 +2518,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2485,8 +2536,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-4-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2504,7 +2555,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2522,8 +2573,8 @@
                                                     <div class="product-list-single">
                                                         <div class="product-thumb">
                                                             <div class="product-inner media align-items-center">
-                                                                <div class="product-image mr-md-2 mr-xl-3">
-                                                                    <a href="#">
+                                                                <div class="product-image mr-3 mr-sm-3 mr-md-5 mr-lg-3 mr-xl-3">
+                                                                    <a href="single-product.html">
                                                                         <img src="assets/images/products/featured/products-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                                         <img src="assets/images/products/featured/products-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                                     </a>
@@ -2541,7 +2592,7 @@
                                                                             </ul>
                                                                         </div>
                                                                     </div>
-                                                                    <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                                    <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                                     <p class="product-price">
                                                                         <span class="price-old">$330.00</span>
                                                                         <span class="price-new">$120.00</span>
@@ -2564,8 +2615,8 @@
                                         </div> <!-- end of product-carousel -->
                                     </div> <!-- end of product-carousel-wrapper -->
                                 </div>
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-4">
-                                    <div class="promo-banner hover-effect-2 mb-half">
+                                <div class="col-5 col-sm-5 col-md-5 col-lg-4">
+                                    <div class="promo-banner hover-effect-2 mb-half mb-sm-half">
                                         <a href="#">
                                             <img src="assets/images/banners/banner-13.jpg" alt="Promo Banner">
                                         </a>
@@ -2579,7 +2630,7 @@
                                 <h2>New Arrivals</h2>
                             </div>
                             <div class="latest-product-wrapper pos-r">
-                                <div class="product-carousel" data-visible-slide="1" data-visible-lg-slide="1" data-visible-md-slide="1" data-visible-sm-slide="1" data-loop="false" data-speed="1000">
+                                <div class="product-carousel" data-visible-slide="1" data-visible-lg-slide="1" data-visible-md-slide="3" data-visible-sm-slide="2" data-loop="false" data-speed="1000">
 
                                     <!-- Slides -->
                                     <div class="swiper-wrapper">
@@ -2587,7 +2638,7 @@
                                             <div class="product-thumb">
                                                 <div class="product-inner">
                                                     <div class="product-image">
-                                                        <a href="#">
+                                                        <a href="single-product.html">
                                                             <img src="assets/images/products/deals/product-1-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                             <img src="assets/images/products/deals/product-1-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                         </a>
@@ -2611,7 +2662,7 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <h4 class="product-name"><a href="#">Donec Non Est</a></h4>
+                                                        <h4 class="product-name"><a href="single-product.html">Donec Non Est</a></h4>
                                                         <p class="product-price">
                                                             <span class="price-new">$280.00</span>
                                                         </p>
@@ -2624,7 +2675,7 @@
                                             <div class="product-thumb">
                                                 <div class="product-inner">
                                                     <div class="product-image">
-                                                        <a href="#">
+                                                        <a href="single-product.html">
                                                             <img src="assets/images/products/deals/product-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                             <img src="assets/images/products/deals/product-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                         </a>
@@ -2648,7 +2699,7 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <h4 class="product-name"><a href="#">Etiam Gravida</a></h4>
+                                                        <h4 class="product-name"><a href="single-product.html">Etiam Gravida</a></h4>
                                                         <p class="product-price">
                                                             <span class="price-new">$100.00</span>
                                                         </p>
@@ -2661,7 +2712,7 @@
                                             <div class="product-thumb">
                                                 <div class="product-inner">
                                                     <div class="product-image">
-                                                        <a href="#">
+                                                        <a href="single-product.html">
                                                             <img src="assets/images/products/deals/product-3-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                             <img src="assets/images/products/deals/product-3-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                         </a>
@@ -2685,7 +2736,7 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <h4 class="product-name"><a href="#">Fusce Aliquam</a></h4>
+                                                        <h4 class="product-name"><a href="single-product.html">Fusce Aliquam</a></h4>
                                                         <p class="product-price">
                                                             <span class="price-new">$240.00</span>
                                                         </p>
@@ -2699,7 +2750,7 @@
                                                 <div class="product-inner">
                                                     <div class="product-image">
                                                         <div class="label-product label-new">New</div>
-                                                        <a href="#">
+                                                        <a href="single-product.html">
                                                             <img src="assets/images/products/deals/product-2-2.jpg" alt="Proin Lectus Ipsum" class="hover-image">
                                                             <img src="assets/images/products/deals/product-2-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                         </a>
@@ -2723,7 +2774,7 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <h4 class="product-name"><a href="#">Fusce Sheam</a></h4>
+                                                        <h4 class="product-name"><a href="single-product.html">Fusce Sheam</a></h4>
                                                         <p class="product-price">
                                                             <span class="price-new">$180.00</span>
                                                         </p>
@@ -2737,7 +2788,7 @@
                                                 <div class="product-inner">
                                                     <div class="product-image">
                                                         <div class="label-product label-new">New</div>
-                                                        <a href="#">
+                                                        <a href="single-product.html">
                                                             <img src="assets/images/products/deals/product-4-1.jpg" alt="Proin Lectus Ipsum" title="Proin Lectus Ipsum">
                                                         </a>
                                                         <div class="action-links">
@@ -2760,7 +2811,7 @@
                                                                 </ul>
                                                             </div>
                                                         </div>
-                                                        <h4 class="product-name"><a href="#">Letraset Sheets</a></h4>
+                                                        <h4 class="product-name"><a href="single-product.html">Letraset Sheets</a></h4>
                                                         <p class="product-price">
                                                             <span class="price-new">$260.00</span>
                                                         </p>
@@ -2920,7 +2971,7 @@
                 <div class="container">
                     <div class="footer-inner">
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                                 <aside class="widget-container">
                                     <h4 class="widgettitle">Contact Info</h4>
                                     <div class="widget-content">
@@ -2928,13 +2979,13 @@
                                         <div class="footer-contact">
                                             <p class="footer-address">The Barn, Ullenhall, Henley in Arden B578 5CC, England</p>
                                             <p class="footer-phone">+123.456.789 - +123.456.678</p>
-                                            <p class="footer-email">support@ororus.com</p>
+                                            <p class="footer-email">support@example.com</p>
                                         </div>
                                     </div> <!-- end of widget-content -->
                                 </aside> <!-- end of widget-container -->
                             </div>
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-3">
                                 <aside class="widget-container">
                                     <h4 class="widgettitle">Recent Posts</h4>
                                     <div class="widget-content">
@@ -3011,7 +3062,7 @@
                                 </aside> <!-- end of widget-container -->
                             </div>
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-2">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-2">
                                 <aside class="widget-container">
                                     <h4 class="widgettitle">Information</h4>
                                     <div class="widget-content">
@@ -3029,7 +3080,7 @@
                                 </aside> <!-- end of widget-container -->
                             </div>
 
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                                 <aside class="widget-container">
                                     <h4 class="widgettitle">Popular Tags</h4>
                                     <div class="widget-content">
@@ -3166,33 +3217,34 @@
                                                     </div>
                                                 </div> <!-- end of product-full-image -->
 
-                                                <div class="product-thumb-image nav-slider">
+                                                <div class="product-thumb-image pos-r">
+                                                    <div class="nav-slider">
+                                                        <!-- Slides -->
+                                                        <div class="swiper-wrapper">
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-1.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-2.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-3.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-4.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-5.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                            <div class="swiper-slide">
+                                                                <img src="assets/images/products/single/product-thumb-6.jpg" alt="Product Thumbnail Image">
+                                                            </div>
+                                                        </div>
 
-                                                    <!-- Slides -->
-                                                    <div class="swiper-wrapper">
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-1.jpg" alt="Product Thumbnail Image">
-                                                        </div>
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-2.jpg" alt="Product Thumbnail Image">
-                                                        </div>
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-3.jpg" alt="Product Thumbnail Image">
-                                                        </div>
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-4.jpg" alt="Product Thumbnail Image">
-                                                        </div>
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-5.jpg" alt="Product Thumbnail Image">
-                                                        </div>
-                                                        <div class="swiper-slide">
-                                                            <img src="assets/images/products/single/product-thumb-6.jpg" alt="Product Thumbnail Image">
-                                                        </div>
+                                                        <!-- Navigation -->
+                                                        <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
+                                                        <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
                                                     </div>
-
-                                                    <!-- Navigation -->
-                                                    <div class="swiper-arrow next"><i class="fa fa-angle-right"></i></div>
-                                                    <div class="swiper-arrow prev"><i class="fa fa-angle-left"></i></div>
                                                 </div> <!-- end of product-thumb-image -->
                                             </div> <!-- end of gallery-with-thumbs -->
                                         </div> <!-- end of product-gallery -->
@@ -3273,10 +3325,10 @@
                                 <div class="social-sharing d-flex align-items-center">
                                     <span>Share</span>
                                     <ul class="list-inline">
-                                        <li class="list-inline-item"><a href="#" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i>Share</a></li>
-                                        <li class="list-inline-item"><a href="#" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i>Tweet</a></li>
-                                        <li class="list-inline-item"><a href="#" class="bg-gplus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i>Google+</a></li>
-                                        <li class="list-inline-item"><a href="#" class="bg-pinterest" data-toggle="tooltip" data-position="top" data-original-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i>Pinterest</a></li>
+                                        <li class="list-inline-item"><a href="#" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i><span>Share</span></a></li>
+                                        <li class="list-inline-item"><a href="#" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i><span>Tweet</span></a></li>
+                                        <li class="list-inline-item"><a href="#" class="bg-gplus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i><span>Google+</span></a></li>
+                                        <li class="list-inline-item"><a href="#" class="bg-pinterest" data-toggle="tooltip" data-position="top" data-original-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a></li>
                                     </ul>
                                 </div>
                             </div> <!-- end of modal-footer -->
@@ -3360,6 +3412,7 @@
     <script src="assets/js/vendor/photoswipe-ui.min.js"></script>
     <script src="assets/js/vendor/photoswipe-trigger.js"></script>
     <script src="assets/js/vendor/simplyCountdown.min.js"></script>
+    <script src="assets/js/vendor/instafeed.min.js"></script>
     <!--endbuild-->
 
     <!-- Main JS -->

@@ -32,7 +32,7 @@
 			&:hover,
 		    &.active {
 				@include cx-color(primary, border);
-				@extend %bgc-transparent;
+				@include cx-default-color(bgc, transparent);
 				@include cx-color(primary, color);
 		    }
 		}

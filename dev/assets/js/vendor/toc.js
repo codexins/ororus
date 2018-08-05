@@ -10,5 +10,6 @@ INDEX:
 	v05 - Photoswipe
 	v06 - simplyCountdown.js
 	v07 - Stellarnav Menu
+	v08 - Instafeed JS
 
 ******************************/

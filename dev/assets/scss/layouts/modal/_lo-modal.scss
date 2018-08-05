@@ -18,12 +18,12 @@
 		border-bottom: 0;
 
 		.close {
-		    position: relative;
 		    top: -5px;
 		    font-size: 24px;
+		    @extend .pos-r;
 
 		    &:hover {
-		    	@extend %bgc-transparent;
+		    	@include cx-default-color(bgc, transparent);
 		    	@include cx-color(primary, color);
 		    }
 		}
@@ -41,6 +41,14 @@
 
 	.modal-footer {
 		padding: 20px 15px;
+	}
+
+	.gallery-with-thumbs {
+		.swiper-arrow {
+			@include respond-to(tablet) {
+				bottom: 58px;
+			}
+		}
 	}
 }
 
