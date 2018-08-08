@@ -91,9 +91,9 @@
 	    	margin-right: auto;
 	    }
 
-	    .checkmark {
-	    	z-index: 1;
-	    }
+	    // .checkmark {
+	    // 	z-index: 1;
+	    // }
     }
 
     @include media-only(notebook, max) {

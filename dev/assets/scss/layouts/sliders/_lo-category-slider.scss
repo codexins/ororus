@@ -71,6 +71,10 @@
 
 	    .media-image {
 	    	width: 170px;
+
+	    	img {
+	    		width: 100%;
+	    	}
 	    	@include media-only(wide, max) {
 	    		width: 100%;
 	    	}

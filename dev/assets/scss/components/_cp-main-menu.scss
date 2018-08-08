@@ -169,8 +169,8 @@
 
     @include media-only(notebook, max) {
         &.mobile {
-            max-height: 500px;
-            overflow-y: auto;
+            // max-height: 500px;
+            // overflow-y: auto;
             overflow-x: hidden;
             
             .menu-toggle {

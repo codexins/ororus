@@ -255,7 +255,7 @@ INDEX:
 
             $prodCarousel.each(function(index, element) {
 
-                const $this = $(this);
+                var $this = $(this);
 
                 // Fetching from data attributes
                 var visibleSlides       = $this.attr("data-visible-slide") ? parseInt($this.attr("data-visible-slide")) : 5;
@@ -314,16 +314,16 @@ INDEX:
             
             // Updating the sliders
             setTimeout(function () {
-                for (const slider of swiperInstances) {
+                swiperInstances.forEach(function(slider) {
                     slider.update();
-                }
+                })
             }, 50);
 
             // Updating the sliders in tab
             $('body').on('shown.bs.tab', 'a[data-toggle="tab"], a[data-toggle="pill"]', function (e) {
-                for (const slider of swiperInstances) {
+                swiperInstances.forEach(function(slider) {
                     slider.update();
-                }
+                })
             });
         }
     };
@@ -417,7 +417,7 @@ INDEX:
             let countInstances = [];
             $countDownTimer.each(function(index, element) {
 
-                const $this = $(this);
+                var $this = $(this);
 
                 // Fetching from data attibutes
                 var year    = $this.attr("data-countdown-year") ? $this.attr("data-countdown-year") : 2019;

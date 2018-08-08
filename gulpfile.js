@@ -39,7 +39,7 @@ gulp.task('sass', function() {
     return gulp.src('dev/assets/scss/**/*.scss') // Gets all files ending with .scss in dev/assets/scss
 	    .pipe(sourcemaps.init())
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
-        .pipe(autoprefixer('last 4 versions')) // Browser Prefix
+        .pipe(autoprefixer('last 8 versions')) // Browser Prefix
         .pipe(sourcemaps.write('.')) // Source maps for sass
         // .pipe(gcmq())
         .pipe(gulp.dest('dev/assets/css')) // destination

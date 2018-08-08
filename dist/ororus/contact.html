@@ -336,28 +336,28 @@
                                 <div class="section-title left-aligned with-border">
                                     <h2>get In Touch</h2>
                                 </div>
-                                <form id="contact-form" action="mail.php" method="post">
+                                <form id="contact-form" action="sendemail.php" method="post">
                                     <div class="form-row mb-2">
                                         <div class="form-group col-12 col-sm-12 col-md-6">
-                                            <input type="text" class="form-control" id="com-name" placeholder="Your Name *" required>
+                                            <input type="text" name="name" class="form-control" id="com-name" placeholder="Your Name *" required>
                                         </div>
                                         <div class="form-group col-12 col-sm-12 col-md-6">
-                                            <input type="email" class="form-control" id="com-email" placeholder="Your Email *" required>
+                                            <input type="email" name="email" class="form-control" id="com-email" placeholder="Your Email *" required>
                                         </div>
                                     </div>
                                     <div class="form-row mb-2">
                                         <div class="form-group col-12 col-sm-12 col-md-12">
-                                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Your Subject">
+                                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Your Subject">
                                         </div>
                                     </div>
                                     <div class="form-row mb-2">
                                         <div class="form-group col-12 col-sm-12 col-md-12">
-                                            <textarea id="comment" placeholder="Type Your Message....." name="comment" class="form-control" required></textarea>
+                                            <textarea id="comment" placeholder="Type Your Message....." name="message" class="form-control" required></textarea>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-12 col-sm-12 col-md-12">
-                                            <button type="submit" class="btn btn-secondary">Send Your Message</button>
+                                            <button name="send_message" type="submit" class="btn btn-secondary">Send Your Message</button>
                                         </div>
                                     </div>
                                 </form>

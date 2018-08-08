@@ -25,16 +25,7 @@
     <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
 
     <!-- Plugins stylesheet -->
-    <!--build:css assets/css/plugins.css-->
-    <link rel="stylesheet" href="assets/css/vendor/toc.css">    
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/nice-select.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/venobox.min.css">
-    <link rel="stylesheet" href="assets/css/photoswipe.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/stellarnav.min.css">
-    <!--endbuild-->
+    <link rel="stylesheet" href="assets/css/plugins.css">
 
     <!-- Master stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -305,7 +296,7 @@
             <!-- End of Main and Mobile Navigation -->
         </header>
         <!-- End of Header -->
-
+        
         <div class="fixed-header-space"></div> <!-- empty placeholder div for Fixed Menu bar height-->
 
         <!-- Start of Breadcrumbs -->
@@ -315,8 +306,15 @@
                     <div class="col-12 col-sm-12 col-md-12">
                         <nav class="breadcrumb">
                             <a class="breadcrumb-item" href="index.html">Home</a>
-                            <a class="breadcrumb-item" href="shop-grid.html">Shop</a>
-                            <span class="breadcrumb-item active">Wishlist</span>
+                            <?php 
+                                if(!isset($_POST['send_message'])) { ?>
+                                    <span class="breadcrumb-item active">Form Not Submitted</span>                                
+                                <?php
+                                } else { ?>
+                                    <span class="breadcrumb-item active">Thanks for Your Submission</span>
+                                <?php
+                                }
+                             ?>
                         </nav>
                     </div>
                 </div> <!-- end of row -->
@@ -326,102 +324,59 @@
 
         <!-- Start of Main Content Wrapper -->
         <div id="content" class="main-content-wrapper">
-            
-            <!-- Start of Wishlist Wrapper -->
-            <div class="wishlist-wrapper">
+            <div class="feedback-section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2 text-center">
                             <main id="primary" class="site-main">
-                                <div class="wishlist">
-                                    <div class="row">
-                                        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                            <div class="section-title left-aligned with-border">
-                                                <h2>Wishlist</h2>
-                                            </div>
+                                <section class="feedback-wrapper">
+                                    <div class="section-heading">
+                                        <?php
 
-                                            <form action="#">
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered">
-                                                        <thead>
-                                                            <tr>
-                                                                <td>Image</td>
-                                                                <td>Product Name</td>
-                                                                <td>Model</td>
-                                                                <td>Stock</td>
-                                                                <td>Unit Price</td>
-                                                                <td>Action</td>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="single-product.html"><img src="assets/images/products/best/products-1-1.jpg" alt="Wishlist Product Image" title="Cas Meque Metus"></a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="single-product.html">Cas Meque Metus</a>
-                                                                </td>
-                                                                <td>3</td>
-                                                                <td>In Stock</td>
-                                                                <td>
-                                                                    <div class="price"><strong>$100.00</strong> <small><s>$430.00</s></small></div>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" data-toggle="tooltip" class="btn btn-primary" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                                    <a href="#" data-toggle="tooltip" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-times"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="single-product.html"><img src="assets/images/products/best/products-6-1.jpg" alt="Wishlist Product Image" title="Proin Lectus Ipsum"></a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="single-product.html">Proin Lectus Ipsum</a>
-                                                                </td>
-                                                                <td>3</td>
-                                                                <td>In Stock</td>
-                                                                <td>
-                                                                    <div class="price"><strong>$180.00</strong> <small><s>$440.00</s></small></div>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" data-toggle="tooltip" class="btn btn-primary" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                                    <a href="#" data-toggle="tooltip" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-times"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <a href="single-product.html"><img src="assets/images/products/best/products-8-2.jpg" alt="Wishlist Product Image" title="Aliquam Consequat"></a>
-                                                                </td>
-                                                                <td>
-                                                                    <a href="single-product.html">Aliquam Consequat</a>
-                                                                </td>
-                                                                <td>3</td>
-                                                                <td>In Stock</td>
-                                                                <td>
-                                                                    <div class="price">$200.00</div>
-                                                                </td>
-                                                                <td>
-                                                                    <button type="button" data-toggle="tooltip" class="btn btn-primary" data-original-title="Add to Cart"><i class="fa fa-shopping-cart"></i></button>
-                                                                    <a href="#" data-toggle="tooltip" class="btn btn-danger" data-original-title="Remove"><i class="fa fa-times"></i></a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </form>
+                                            if(isset($_POST['send_message'])) {
+                                                $status = 'Thanks for <span class="primary-color">contacting us!</span>';
+                                                $feedback = 'We will get back to you as quickly as possible.';
 
-                                            <div class="cart-button-wrapper d-flex justify-content-end mt-4">
-                                                <a href="cart.html" class="btn btn-secondary align-self-end">Continue</a>
-                                            </div>
+                                                $name = @trim(stripslashes($_POST['name'])); 
+                                                $email = @trim(stripslashes($_POST['email'])); 
+                                                $subject = @trim(stripslashes($_POST['subject']));
+                                                $message = @trim(stripslashes($_POST['message']));
+                                                $notes = 'This email was sent from '.$_SERVER['HTTP_HOST'];
+                                                $email_from = $email;
+                                                $email_to = 'admin@example.com'; //replace with your email
+
+                                                $body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' ."\n". $message . "\n\n\n\n" . $notes;
+                                                $success = @mail($email_to, $subject, $body, 'From: <'.$name.'>'); ?>
+
+                                                <h2><?php echo $status; ?></h2>
+                                                <p class="subtitle"><?php echo $feedback; ?></p>
+                                            <?php
+                                            } else { ?>
+
+                                                <h2>Form Not Submitted!</h2>
+                                                <p class="subtitle">Please make sure you entered the form information correctly.</p>
+
+                                            <?php
+                                            }
+                                        ?>
+                                    </div>
+                                    <div class="feedback-socials mt-full">
+                                        <h3>Follow Us:</h3>
+                                        <div class="social-sharing d-flex align-items-center justify-content-center">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><a href="#" class="bg-facebook" data-toggle="tooltip" data-position="top" data-original-title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                <li class="list-inline-item"><a href="#" class="bg-twitter" data-toggle="tooltip" data-position="top" data-original-title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                                <li class="list-inline-item"><a href="#" class="bg-gplus" data-toggle="tooltip" data-position="top" data-original-title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                                <li class="list-inline-item"><a href="#" class="bg-pinterest" data-toggle="tooltip" data-position="top" data-original-title="Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </div> <!-- end of wishlist -->
+                                </section> <!-- end of feedback-wrapper -->
                             </main> <!-- end of #primary -->
                         </div>
                     </div> <!-- end of row -->
                 </div> <!-- end of container -->
             </div>
-            <!-- End of Wishlist Wrapper -->
 
             <!-- Start of Newsletter Section -->
             <section class="newsletter-section vpadding bgc-offset">
@@ -687,22 +642,11 @@
     <script src="assets/js/bootstrap.min.js"></script>
 
     <!-- Plugins JS -->
-    <!--build:js assets/js/plugins.js-->
-    <script src="assets/js/vendor/toc.js"></script>
-    <script src="assets/js/vendor/jquery-ui.min.js"></script>
-    <script src="assets/js/vendor/stellarnav.min.js"></script>
-    <script src="assets/js/vendor/jquery.nice-select.min.js"></script>
-    <script src="assets/js/vendor/swiper.min.js"></script>
-    <script src="assets/js/vendor/venobox.min.js"></script>
-    <script src="assets/js/vendor/photoswipe.min.js"></script>
-    <script src="assets/js/vendor/photoswipe-ui.min.js"></script>
-    <script src="assets/js/vendor/photoswipe-trigger.js"></script>
-    <script src="assets/js/vendor/simplyCountdown.min.js"></script>
-    <script src="assets/js/vendor/instafeed.min.js"></script>
-    <!--endbuild-->
+    <script src="assets/js/plugins.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
 </body>
 </html>
+<?php die; ?>

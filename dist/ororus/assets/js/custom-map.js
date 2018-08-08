@@ -26,11 +26,10 @@ jQuery(window).on('load', function($){
         lat: 38.435828,
         lng: -122.728091,
         icon: image,
-        animation: google.maps.Animation.DROP,
+        animation: google.maps.Animation.BOUNCE,
         verticalAlign: 'bottom',
         horizontalAlign: 'center',
         backgroundColor: '#3e8bff',
-        animation: google.maps.Animation.BOUNCE
     });
 
 
