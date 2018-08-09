@@ -38,7 +38,7 @@
 			a {
 			    padding: 10px 0 13px;
 			    display: block;
-				color: $cx-text-color;
+				@include cx-default-color(color, black);
 			}
 		}
 	}
@@ -104,9 +104,9 @@
 
 			a {
 			    font-size: 14px;
-			    color: #666;
 			    font-weight: 300;
 			    text-transform: capitalize;
+			    @include cx-default-color(color, black);
 			    &:hover,
 			    &:active {
 			    	padding-left: 5px;

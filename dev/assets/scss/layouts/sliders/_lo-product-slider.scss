@@ -96,7 +96,7 @@
 		    @include cx-truncation(1, 1.2, #fff);
 
 		    > a {
-		    	color: #333333;
+		    	@include cx-default-color(color, black);
 
 		    	&:hover {
 		    		@include cx-color(primary, color);
@@ -119,11 +119,11 @@
 	    }
 
 	    .price-old {
-		    color: #b1b1b1;
 		    font-size: 14px;
 		    text-decoration: line-through;
 		    margin-right: 5px;
 		    font-weight: 300;
+		    @include cx-default-color(color, black);
 
 		    @include media-only(wide, max) {
 		    	font-size: 12px;
@@ -371,7 +371,7 @@
 				    padding: 0;
 				    border: 0;
 				    background: none;
-				    color: #9a9999;
+				    color: #777;
 				    margin: 0;
 				    font-size: 20px;
 				    line-height: 1;

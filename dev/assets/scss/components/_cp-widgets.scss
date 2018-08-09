@@ -112,6 +112,19 @@
 			}
 		}
 	}
+
+	::-webkit-input-placeholder{
+	  color: #292929;
+	}
+	::-moz-placeholder{
+	  color: #292929;
+	}
+	:-ms-input-placeholder{
+	  color: #292929;
+	}
+	:-moz-placeholder {
+	  color: #292929;
+	}
 }
 
 /* Text Widget */
@@ -124,9 +137,9 @@
 	}
 
 	> p {
-		color: #666;
 	    font-weight: 300;
 	    margin: 0 0 20px;
+	    @include cx-default-color(color, black);
 
 	    &:last-of-type {
 	    	@extend %mb0;
@@ -214,11 +227,18 @@
 	.post-title {
 		h5 {
 		    font-size: 14px;
-		    color: #666;
 		    text-transform: capitalize;
 		    line-height: 20px;
 		    font-weight: 400;
 		    margin-bottom: 13px;
+
+		    a {
+		    	@include cx-default-color(color, black);
+
+		    	&:hover {
+		    		@include cx-color(primary, color);
+		    	}
+		    }
 
 		    @include media-only(wide, max) {
 		    	margin-bottom: 5px;
@@ -228,7 +248,7 @@
 
 	.post-date {
 	    font-size: 13px;
-	    color: #999;
+	    color: #555;
 	    line-height: 1;
 	    text-transform: capitalize;
 	    font-style: italic;
@@ -251,10 +271,10 @@
 	li {
 		a {
 		    font-size: 14px;
-		    color: #666;
 		    text-transform: capitalize;
 		    display: block;
 		    padding-bottom: 15px;
+		    @include cx-default-color(color, black);
 
 		    &:hover {
 		    	@include cx-color(primary, color);
@@ -286,8 +306,8 @@
 			    display: block;
 			    margin: 0 10px 10px 0;
 			    font-size: 14px;
-			    color: #666666;
 			    text-transform: capitalize;
+			    @include cx-default-color(color, black);
 			    @extend %rounded-corners;
 
 			    &:hover {
@@ -373,12 +393,12 @@
 	.list-group {
 		> a {
 		    text-transform: capitalize;
-		    color: #333333;
 		    font-size: 14px;
 		    font-weight: 400;
 		    padding-bottom: 13px;
 		    display: block;
 		    margin: 5px 0;
+		    @include cx-default-color(color, black);
 
 		    &:first-child {
 		    	margin-top: 0;
@@ -433,7 +453,13 @@
 			a {
 			    font-size: 14px;
 			    text-transform: capitalize;
+			    @include cx-default-color(color, black);
 			    @extend .pos-r;
+
+			    &:hover,
+			    &:focus {
+			    	@include cx-color(primary, color);
+			    }
 
 			    &::before {
 				    content: "\e684";
@@ -442,6 +468,7 @@
 				    position: absolute;
 				    right: 100%;
 				    top: 0;
+				    @include cx-default-color(color, black);
 			    }
 				
 				span {
@@ -507,6 +534,7 @@
 	p {
 		font-size: 14px;
 		margin-top: 5px;
+		@include cx-default-color(color, black);
 		@extend %mb0;
 
 		a {

@@ -37,10 +37,10 @@
 		}
 
 		p {
-		    color: #666;
 		    font-size: 15px;
 		    margin-bottom: 3px;
 		    letter-spacing: .2px;
+		    @include cx-default-color(color, black);
 
 	    	&:last-of-type {
 	    		@extend %mb0;
@@ -48,7 +48,7 @@
 		}
 
 		a {
-			color: #666;
+			@include cx-default-color(color, black);
 
 			&:hover {
 				@include cx-color(primary, color);

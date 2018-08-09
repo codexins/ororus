@@ -40,8 +40,8 @@ gulp.task('sass', function() {
 	    .pipe(sourcemaps.init())
         .pipe(sass()) // Converts Sass to CSS with gulp-sass
         .pipe(autoprefixer('last 8 versions')) // Browser Prefix
-        .pipe(sourcemaps.write('.')) // Source maps for sass
-        // .pipe(gcmq())
+        // .pipe(sourcemaps.write('.')) // Source maps for sass
+        .pipe(gcmq())
         .pipe(gulp.dest('dev/assets/css')) // destination
         .pipe(cssbeautify())
         .pipe(gulp.dest('dist/ororus/assets/css')) // final build destination
@@ -60,6 +60,12 @@ gulp.task('fonts', function() {
 gulp.task('cx-css', function() {
     return gulp.src('dev/assets/css/*.css')
         .pipe(gulp.dest('dist/ororus/assets/css'))
+})
+
+// Gulp php function
+gulp.task('cx-php', function() {
+    return gulp.src('dev/*.php')
+        .pipe(gulp.dest('dist/ororus/'))
 })
 
 // Gulp js function
@@ -95,7 +101,7 @@ gulp.task('clean-cache', function(callback) {
 
 // Gulp useref imagemin to optimize images
 gulp.task('images', function() {
-    return gulp.src('dev/assets/images/**/*.+(png|jpg|gif|svg)')
+    return gulp.src('dev/assets/images/**/*.+(png|jpg|gif|svg|ico)')
         // Caching images that ran through imagemin
         .pipe(cache(imagemin({
             interlaced: true
@@ -114,7 +120,7 @@ gulp.task('watch', function() {
 
 // Gulp default task sequence
 gulp.task('build', function(callback) {
-    runSequence('clean', ['sass', 'useref', 'images', 'fonts', 'cx-css', 'cx-js'],
+    runSequence('clean', ['sass', 'useref', 'images', 'fonts', 'cx-css', 'cx-php', 'cx-js'],
         callback
     )
 })

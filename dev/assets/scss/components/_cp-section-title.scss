@@ -49,8 +49,8 @@
 	.subtitle {
 	    font-size: 14px;
 	    line-height: 23px;
-	    color: #666;
 	    margin: 20px 0 0;
+	    @include cx-default-color(color, black);
 	}
 
 	&.type-2 {

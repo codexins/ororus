@@ -13,7 +13,13 @@
 
     .breadcrumb-item {
     	font-size: 14px;
+    	@include cx-default-color(color, black);
     	@extend .pos-r;
+
+		&:hover,
+		&:focus {
+			@include cx-color(primary, color);
+		}
     	
     	+ .breadcrumb-item {
     		padding-left: 30px;

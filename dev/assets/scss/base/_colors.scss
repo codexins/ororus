@@ -136,6 +136,10 @@
 	color: #333;
 }
 
+%color-black {
+	color: #000;
+}
+
 %bgc-transparent {
 	background-color: transparent;
 }
@@ -198,6 +202,10 @@
 
 .color-dark {
 	@include cx-default-color(color, dark);
+}
+
+.color-black {
+	@include cx-default-color(color, black);
 }
 
 .bgc-transparent {

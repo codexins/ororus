@@ -24,12 +24,12 @@
 	}
 
 	h2 {
-	    color: #4c4c4c;
 	    font-size: 32px;
 	    font-weight: 700;
 	    line-height: 32px;
 	    margin-bottom: 20px;
 	    text-transform: uppercase;
+	    @include cx-default-color(color, dark);
 
 	    @include respond-to(tablet) {
 	    	font-size: 28px;
@@ -46,12 +46,13 @@
 	}
 
 	p {
-	    color: #4c4c4c;
+	    // color: #4c4c4c;
 	    font-size: 21px;
 	    font-weight: 300;
 	    line-height: 30px;
 	    margin-bottom: 25px;
 	    padding: 0px 130px;
+	    @include cx-default-color(color, black);
 
 	    @include respond-to(tablet) {
 	    	font-size: 18px;

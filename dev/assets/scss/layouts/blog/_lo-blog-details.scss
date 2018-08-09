@@ -76,7 +76,7 @@
 	    border-bottom: 1px solid $cx-border-color;
 	    margin-top: 15px;
 	    padding-bottom: 15px;
-	    color: #666;
+	    @include cx-default-color(color, black);
 	    @extend %mb-half;
 
 	    p {

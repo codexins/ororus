@@ -196,12 +196,17 @@ INDEX:
         // Sticky header
         $window.on('scroll', function() {
             var height = $window.scrollTop();
-            if (height < headerTopHeight) {
+            if ($window.width() > 991) {
+                if (height < headerTopHeight) {
+                    $(".fixed-header-space").height(0);
+                    $intelHeader.removeClass("sticky");
+                } else if (height > headerTopHeight + headerHeight) {
+                    $(".fixed-header-space").height(headerHeight);
+                    $intelHeader.addClass("sticky");
+                }
+            } else {
                 $(".fixed-header-space").height(0);
                 $intelHeader.removeClass("sticky");
-            } else if (height > headerTopHeight + headerHeight) {
-                $(".fixed-header-space").height(headerHeight);
-                $intelHeader.addClass("sticky");
             }
         });
 
@@ -251,7 +256,7 @@ INDEX:
 
         if ($prodCarousel.elExists()) {
 
-            let swiperInstances = [];
+            var swiperInstances = [];
 
             $prodCarousel.each(function(index, element) {
 
@@ -414,7 +419,7 @@ INDEX:
     ORORUS.countDown = function() {
         if ($countDownTimer.elExists()) {
 
-            let countInstances = [];
+            var countInstances = [];
             $countDownTimer.each(function(index, element) {
 
                 var $this = $(this);

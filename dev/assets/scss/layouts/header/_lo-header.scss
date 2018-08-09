@@ -109,7 +109,7 @@ header {
 				li {
 				    a {
 				    	display: block;
-					    color: #4d4d4d;
+					    color: #000;
 					    font-size: 13px;
 					    text-decoration: none;
 					    padding: 6px 0 12px;
@@ -200,7 +200,7 @@ header {
 			}
 			span {
 			    font-size: 14px;
-			    color: #888888;
+			    color: #333;
 			    text-transform: uppercase;
 			}
 
@@ -422,11 +422,11 @@ header {
 			    	width: auto;
 			    	height: 36px;
 			    	line-height: 38px;
-			    	color: #333
+			    	@include cx-default-color(color, black);
 			    }
 
 			    .cart-text {
-					@include cx-default-color(color, dark);
+					@include cx-default-color(color, black);
 					text-transform: uppercase;
 					top: -4px;
 					@extend .pos-r;

@@ -60,7 +60,7 @@
 
 	.toolbar-amount {
 	    font-size: 14px;
-	    color: #666666;
+	    @include cx-default-color(color, black);
 	}
 
 	.product-select-box {

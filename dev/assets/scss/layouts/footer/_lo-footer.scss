@@ -54,18 +54,18 @@
 	@extend %pb-full;
 
 	h2 {
-    color: #333333;
-    font-size: 18px;
-    margin: 0;
-    text-transform: capitalize;
+	    font-size: 18px;
+	    margin: 0;
+	    text-transform: capitalize;
+	    @include cx-default-color(color, black);
 	}
 
 	p {
-    font-size: 14px;
-    color: #666666;
-    margin: 16px 0 0;
-    line-height: 25px;
-    font-weight: 300;
+	    font-size: 14px;
+	    margin: 16px 0 0;
+	    line-height: 25px;
+	    font-weight: 300;
+	    @include cx-default-color(color, black);
 	}
 }
 

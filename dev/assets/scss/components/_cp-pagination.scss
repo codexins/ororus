@@ -24,7 +24,6 @@
 			    border: none;
 			    border-radius: 5px;
 			    background: #f1f2f4;
-			    color: #929292;
 			    font-size: 13px;
 			    font-weight: 400;
 			    padding: 0;
@@ -33,9 +32,11 @@
 			    line-height: 28px;
 			    margin: 0 5px;
 			    text-align: center;
+			    @include cx-default-color(color, black);
 
 			    &:hover,
 			    &:focus {
+			    	box-shadow: none;
 	    			@include cx-color(primary, bg);
 	    			@include cx-color(primary, border);
 	    			@include cx-default-color(color, white);

@@ -73,9 +73,9 @@
 		}
 
 		span {
-		    color: #454545;
 		    font-size: 14px;
 		    letter-spacing: 0.2px;
+		    @include cx-default-color(color, black);
 		}
 	}
 

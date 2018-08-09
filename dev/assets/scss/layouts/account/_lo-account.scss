@@ -172,9 +172,9 @@
     	> tbody {
     		> tr {
     			> td {
-				    color: #7b7b7b;
 				    border: 0;
 				    vertical-align: middle;
+				    @include cx-default-color(color, dark);
     			}
     		}
     	}

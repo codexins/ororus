@@ -33,9 +33,9 @@
 
 		p {
 			font-size: 13px;
-		    color: #666666;
 		    line-height: 23px;
 		    width: 100%;
+		    @include cx-default-color(color, black);
 		    &:last-of-type {
 		    	@extend %mb0;
 		    }

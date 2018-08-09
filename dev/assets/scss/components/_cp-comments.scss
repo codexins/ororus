@@ -20,7 +20,7 @@
 			text-transform: capitalize;
 
 			+ span {
-			    color: #777;
+			    @include cx-default-color(color, dark);
 			}
 		}
 	}
@@ -48,5 +48,18 @@
 				width: 100%;
 			}
 		}
+	}
+
+	::-webkit-input-placeholder{
+	  color: #292929;
+	}
+	::-moz-placeholder{
+	  color: #292929;
+	}
+	:-ms-input-placeholder{
+	  color: #292929;
+	}
+	:-moz-placeholder {
+	  color: #292929;
 	}
 }

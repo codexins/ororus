@@ -21,12 +21,12 @@
 		}
 		.nav-link {
 			font-size: 14px;
-		    color: #666666;
 		    height: 36px;
 		    line-height: 36px;
 		    padding: 0 15px;
 		    text-transform: capitalize;
 		    border: 1px solid transparent;
+		    @include cx-default-color(color, black);
 		    @extend %rounded-corners;
 
 			&:hover,

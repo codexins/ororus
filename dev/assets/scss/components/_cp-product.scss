@@ -85,12 +85,12 @@
 
 	.product-meta,
 	.product-description {
-		color: #666666;
 	    font-size: 14px;
 	    line-height: 25px;
 	    border-top: 1px solid $cx-border-color;
 	    padding: 25px 0;
 	    border-bottom: 1px solid $cx-border-color;
+	    @include cx-default-color(color, black);
 
 	    p {
 	    	&:last-of-type {
@@ -283,8 +283,8 @@
 .product-des {
     margin: 20px 0 0 0;
     font-size: 14px;
-    color: #666666;
     line-height: 26px;
+    @include cx-default-color(color, black);
 }
 
 .product-price {
@@ -508,23 +508,23 @@
 	    border: none;
 	    padding: 0;
 	    background: none;
-	    color: #666666;
 	    font-size: 14px;
 	    box-shadow: none;
 	    text-transform: initial;
 	    font-weight: normal;
 	    cursor: pointer;
 	    line-height: 1;
+	    @include cx-default-color(color, black);
 
 	    &::before {
 			font-family: 'Pe-icon-7-stroke';
 		    display: inline-block;
 		    font-size: 18px;
-		    color: #666666;
 		    margin-right: 8px;
 		    bottom: -3px;
 		    @extend %cx-transition;
 		    @extend .pos-r;
+		    @include cx-default-color(color, black);
 	    }
 
 	    &:hover {

@@ -196,19 +196,19 @@ input[type="button"]:hover {
 }
 
 ::-webkit-input-placeholder{
-  color: #888;
+  color: #292929;
   font-size: 12px;
 }
 ::-moz-placeholder{
-  color: #888;
+  color: #292929;
   font-size: 12px;
 }
 :-ms-input-placeholder{
-  color: #888;
+  color: #292929;
   font-size: 12px;
 }
 :-moz-placeholder {
-  color: #888;
+  color: #292929;
   font-size: 12px;
 }
 
@@ -239,7 +239,7 @@ input[type="button"]:hover {
 
     span {
         &.current {
-            color: #777
+            @include cx-default-color(color, black);
         }
     }
 

@@ -18,6 +18,15 @@
         @include media-only(small-mobile, max) {
         	padding: 20px;
         }
+
+        a {
+        	@include cx-default-color(color, black);
+
+        	&:hover,
+        	&:focus {
+				@include cx-color(primary, color);
+        	}
+        }
 	}
 
 	p {

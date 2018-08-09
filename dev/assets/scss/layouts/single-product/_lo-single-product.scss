@@ -57,7 +57,6 @@
 		
 	    li {
 	    	> .nav-link {
-			    color: #999999;
 			    font-size: 16px;
 			    font-weight: 500;
 			    text-transform: uppercase;
@@ -66,6 +65,7 @@
 			    margin: 0;
 			    height: auto;
 			    line-height: 1.4;
+			    @include cx-default-color(color, dark);
 	    	}
 	    }
 	}
@@ -75,8 +75,8 @@
 		    padding: 30px 0 0;
 		    border: 0;
 		    font-size: 14px;
-		    color: #666666;
 		    line-height: 28px;
+		    @include cx-default-color(color, black);
 		}
 	}
 

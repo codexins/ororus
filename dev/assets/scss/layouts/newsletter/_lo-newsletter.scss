@@ -6,7 +6,6 @@
 .newsletter-section {
 	.newsletter-title {
 		h6 {
-		    color: #333333;
 		    font-weight: 400;
 		    font-size: 24px;
 		    margin: 0;
@@ -14,11 +13,11 @@
 		    line-height: 28px;
 		    flex: 0 0 30%;
 		    max-width: 30%;
+		    @include cx-default-color(color, black);
 		}
 
 		h3 {
 		    font-size: 14px;
-		    color: #666666;
 		    margin: 5px 0 0 50px;
 		    text-transform: inherit;
 		    font-weight: 400;
@@ -26,6 +25,7 @@
 		    line-height: 24px;
 		    flex: 0 0 60%;
 		    max-width: 60%;
+		    @include cx-default-color(color, black);
 		}
 	}
 
@@ -75,16 +75,16 @@
 		}
 
 		::-webkit-input-placeholder{
-		  color: #9d9d9d;
+		  color: #333;
 		}
 		::-moz-placeholder{
-		  color: #9d9d9d;
+		  color: #333;
 		}
 		:-ms-input-placeholder{
-		  color: #9d9d9d;
+		  color: #333;
 		}
 		:-moz-placeholder {
-		  color: #9d9d9d;
+		  color: #333;
 		}
 	}
 
